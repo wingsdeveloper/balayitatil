@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="37px" height="37px" viewBox="0 0 37 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>date-arrow</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="date-arrow" transform="translate(1.000000, 1.000000)">
+            <path d="M11.185,17.592 L15.051,13.722 C15.2871017,13.4858983 15.6698983,13.4858983 15.906,13.722 C16.1421017,13.9581017 16.1421017,14.3408983 15.906,14.577 L13.071,17.415 L23.396,17.415 C23.7301323,17.415 24.001,17.6858677 24.001,18.02 C24.001,18.3541323 23.7301323,18.625 23.396,18.625 L13.07,18.625 L15.904,21.463 C16.1255554,21.7012251 16.119053,22.0720075 15.889281,22.3023177 C15.6595089,22.5326279 15.2887427,22.5399976 15.05,22.319 L11.184,18.448 C11.0704178,18.3345242 11.0065991,18.1805542 11.0065991,18.02 C11.0065991,17.8594458 11.0704178,17.7054758 11.184,17.592 L11.185,17.592 Z" id="Path" fill="#A1A0A0"></path>
+            <rect id="Rectangle" stroke="#A1A0A0" transform="translate(17.500000, 17.500000) scale(-1, 1) translate(-17.500000, -17.500000) " x="0" y="0" width="35" height="35" rx="17.5"></rect>
+        </g>
+    </g>
+</svg>

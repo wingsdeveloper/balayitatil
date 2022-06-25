@@ -1,0 +1,457 @@
+
+.addon{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  pointer-events: none;
+}
+
+.icon {
+  display: inline-block;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.icon-man{
+  width: 51px;
+  height: 51px;
+  color: #102754;
+}
+.icon-star{
+  width: 40px;
+  height: 40px;
+  color: $orange;
+}
+.icon-bahar{
+  width: 45px;
+  height: 45px;
+  color: $orange;
+}
+.icon-lock{
+  width: 41px;
+  height: 41px;
+  color: #102754;
+}
+.icon-lock_o{
+  width: 20px;
+  height: 24px;
+  color: $orange;
+}
+.icon-phone{
+  width: 15px;
+  height: 27px;
+  color: $orange;
+}
+
+.icon-sbahar{
+  width: 45px;
+  height: 45px;
+  color: $orange;
+}
+.icon-kis{
+  width: 45px;
+  height: 45px;
+  color: $orange;
+}
+.icon-yaz{
+  width: 45px;
+  height: 45px;
+  color: $orange;
+}
+
+
+
+.icon-restorant{
+  width: 36px;
+  height: 36px;
+  color: white;
+}
+.icon-medicane2{
+  width: 36px;
+  height: 36px;
+  color: white;
+}
+.icon-city{
+  width: 36px;
+  height: 36px;
+  color: white;
+}
+.icon-airport2{
+  width: 36px;
+  height: 36px;
+  color: white;
+}
+.icon-cycling{
+  width: 75px;
+  height: 50px;
+
+}
+.icon-market{
+  width: 33px;
+  height: 27px;
+  color: white;
+
+}
+.icon-sea{
+  width: 36px;
+  height: 20px;
+  color: white;
+
+}
+.icon-house2{
+  width: 34px;
+  height: 34px;
+  color: white;
+
+}
+.icon-medicane{
+  width: 33px;
+  height: 31px;
+  color: white;
+
+}
+.icon-airport{
+  width: 37px;
+  height: 34px;
+  color: white;
+
+}
+.icon-person{
+  width: 14px;
+  height: 14px;
+  color: white;
+}
+.icon-send{
+  width: 53px;
+  height: 14px;
+  color: white;
+}
+.icon-user{
+  width: 18px;
+  height: 16px;
+  color: white;
+}
+.icon-heart{
+  width: 14px;
+  height: 14px;
+  color: white;
+}
+.icon-search{
+  width: 25px;
+  height: 25px;
+  color: white;
+}
+.icon-like_close{
+  width: 79px;
+  height: 70px;
+  color: $orange;
+
+}
+
+.icon-caret-down{
+  width: 20px;
+  height: 20px;
+  color: $orange;
+}
+.icon-date{
+  width: 20px;
+  height: 20px;
+  color: $orange;
+}
+.icon-bed{
+  width: 23px;
+  height: 18px;
+  color: white;
+}
+.icon-shower{
+  width: 24px;
+  height: 29px;
+  color: white;
+}
+.icon-user{
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+.icon-point{
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+.icon-wallet{
+  width: 22px;
+  height: 22px;
+  color: white;
+}
+.icon-right-arrow{
+  width: 16px;
+  height: 16px;
+  color: white;
+}
+.icon-question{
+  width: 91px;
+  height: 65px;
+}
+.icon-play-button{
+  width: 74px;
+  height: 74px;
+  color: white;
+}
+.icon-play-button-2{
+  width: 33px;
+  height: 33px;
+  color: $orange;
+}
+.icon-logo{
+  width: 134px;
+  height: 48px;
+  color: white;
+}
+.icon-menu{
+  width: 32px;
+  height: 32px;
+  color: white;
+}
+.icon-close{
+  width: 30px;
+  height:24px;
+  color: white;
+}
+
+.icon-angle-down{
+  width: 20px;
+  height: 20px;
+  color: $orange;
+}
+.logo_vk{
+  width: 186px;
+  height: 66px;
+}
+.icon-gallery{
+  width: 70px;
+  height: 60px;
+  color: white;
+}
+
+.icon-unlem{
+  width: 13.8px;
+  height: 13.8px;
+  color:#a5a9b2;
+}
+.icon-location{
+  width: 26px;
+  height: 35px;
+  color:$orange;
+}
+.icon-location2{
+  width: 53px;
+  height: 52px;
+}
+.icon-card{
+  width: 51px;
+  height: 51px;
+}
+.icon-target{
+  width: 51px;
+  height: 51px;
+}
+.icon-house{
+  width: 51px;
+  height: 48px;
+}
+.icon-car{
+  width: 124px;
+  height: 124px;
+}
+.icon-plane{
+  width: 124px;
+  height: 124px;
+}
+
+.icon-chevron-right{
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+.icon-yes{
+  width: 83px;
+  height: 83px;
+  color:#6ac259;
+}
+.icon-agly{
+  width: 95px;
+  height: 95px;
+  color:$orange;
+}
+.icon-long-arrow{
+  width: 16px;
+  height: 7px;
+  color:$orange;
+}
+.icon-logo_vk_w{
+width: 130px;
+  height: 45px;
+  color:white;
+}
+.icon-eye{
+  width: 16px;
+  height: 15px;
+  color:$orange;
+}
+.icon-credi_card{
+  width: 48px;
+  height: 48px;
+  color:#808080;
+}
+.icon-bank_transfer{
+  width: 48px;
+  height: 48px;
+  color:#808080;
+}
+.icon-western{
+  width: 48px;
+  height: 48px;
+  color:#808080;
+}
+.icon-khome{
+  width: 20px;
+  height: 20px;
+  color:$orange;
+}
+.icon-unlem2{
+  width: 20px;
+  height: 20px;
+  color:$orange;
+}
+.icon-clock{
+  width: 20px;
+  height: 20px;
+  color:$orange;
+}
+.icon-heart2{
+  width: 42px;
+  height: 43px;
+}
+.icon-shaer{
+  width: 43px;
+  height: 43px;
+}
+.icon-sweet{
+  width: 39px;
+  height: 39px;
+}
+
+.icon-mail{
+  width: 24px;
+  height: 24px;
+}
+.icon-whatsapp{
+  width: 24px;
+  height: 24px;
+  color: #19c169;
+}
+
+.icon-messenger{
+  width: 24px;
+  height: 24px;
+  color: #6196d9;
+}
+.icon-twitter{
+  width: 24px;
+  height: 24px;
+  color: #72ceff;
+}
+.icon-copy{
+  width: 22px;
+  height: 26px;
+}
+
+.icon-heart-like{
+  width: 79px;
+  height: 70px;
+  color: $orange;
+}
+.icon-heart-fav{
+  width: 42px;
+  height: 38px;
+  color: white;
+}
+.icon-warning{
+  width: 26px;
+  height: 24px;
+  color: #d80027;
+}
+.icon-user2{
+  width: 26px;
+  height: 26px;
+  color: $orange;
+}
+.icon-spy{
+  width: 52px;
+  height: 60px;
+  color: #102754;
+}
+.icon-road{
+  width: 37px;
+  height: 48px;
+  color: white;
+}
+.icon-sea2{
+  width: 41px;
+  height: 24px;
+  color: white;
+}
+.icon-bplane{
+  width: 47px;
+  height: 36px;
+  color: white;
+}
+
+.icon-minus{
+  width: 24px;
+  height: 24px;
+  color: #102754;
+}
+.icon-plus{
+  width: 24px;
+  height: 24px;
+  color: #102754;
+}
+
+.icon-i_email{
+  width: 36px;
+  height: 36px;
+  color:$orange;
+}
+
+.icon-mail2{
+  width: 36px;
+  height: 36px;
+  color:$orange;
+}
+.icon-image{
+  width: 30px;
+  height: 30px;
+}
+
+.icon-i_no{
+  width: 24px;
+  height: 24px;
+  color: white;
+
+}
+.icon-i_phone{
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+.icon-i_locasyon{
+  width: 32px;
+  height: 32px;
+  color: white;
+}
+
+

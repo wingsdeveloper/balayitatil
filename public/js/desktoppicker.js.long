@@ -1,0 +1,211 @@
+//var blockedDates0 = {"2018-07-27":"","2018-07-28":"","2017-02-19":"","2017-02-26":"","2017-03-05":"","2017-03-12":"","2017-03-19":"","2017-03-26":"","2017-04-02":"","2017-04-09":"","2017-04-16":"Eastern","2017-04-17":"Eastern","2017-04-23":""};
+var blockedDates = {};
+
+function tarihGetir() {
+    if ($("#dgiris_tarih").attr("data-page") == "detail") {
+        var villa_id = $("#data_villa").text();
+        var status;
+        $.ajax({
+            type: "GET",
+            url: url + "/villa_status/" + villa_id + "/" + new Date().getFullYear(),
+            success: function (sonc) {
+                var data = $.parseJSON(sonc);//parse JSON
+
+                data.forEach(function (date) {
+                    if (date.status == "2") {
+                        if (date.start == false && date.end == false) {
+                            var tarih = date.tarih.split("-");
+                            var gun = parseInt(parseInt(tarih[2]));
+                            if (gun < 10) {
+                                gun = "0" + gun;
+                            }
+                            tarih = tarih[0] + "-" + tarih[1] + "-" + gun;
+                            blockedDates[tarih] = "";
+
+                        }
+                    }
+                });
+
+                var nextYear = parseInt(new Date().getFullYear()) + 1;
+                // $.ajax({
+                //     type: "GET",
+                //     url: url + "/villa_status/" + villa_id + "/" + nextYear,
+                //     success: function (sonc) {
+                //         var data = $.parseJSON(sonc);//parse JSON
+                //
+                //         data.forEach(function (date) {
+                //             if (date.status == "2") {
+                //                 if (date.start == false && date.end == false) {
+                //                     var tarih = date.tarih.split("-");
+                //                     var gun = parseInt(parseInt(tarih[2]));
+                //                     if (gun < 10) {
+                //                         gun = "0" + gun;
+                //                     }
+                //                     tarih = tarih[0] + "-" + tarih[1] + "-" + gun;
+                //                     blockedDates[tarih] = "";
+                //
+                //                 }
+                //             }
+                //         });
+                //     }
+                // });
+            }
+        });
+    }
+    // console.log(blockedDates);
+}
+
+function resetDateRange() {
+    $('#two-inputs').data('dateRangePicker').clear();
+    $('#dgiris_tarih').val('');
+    $('#dcikis_tarih').val('');
+}
+
+/* Simule la mise à jour des dates invalides */
+
+
+/**
+ 2016-6-20  ou 2016-06-2 semble ne pas fonctionner
+ getMonth() commence à 0, 0 = janvier
+ @param Date  Objet date ou null
+ @return      une chaine vide ou xxxx-xx-xx
+ */
+function formatDate(oDate) {
+    /*
+    var sMin = '',iMois = null,iDate = null;
+    if(oDate instanceof Date){
+      iMois = (oDate.getMonth()+1);
+      iDate = oDate.getDate();
+      sMin  = oDate.getFullYear()+'-'+(iMois<10? "0":'')+iMois+'-'+(iDate<10? "0":'')+iDate;
+    }//if
+    */
+    var date = new Date(oDate);isoDate = new Date(date.getTime() - (date.getTimezoneOffset() * 60000)).toISOString().substr(0, 10);return isoDate;
+    console.log(isoDate + ' ' + oDate.toISOString().substr(0, 10));
+
+
+
+    return oDate.toISOString().substr(0, 10);
+}//fct
+
+/**
+ * Traitement de la date
+ * doit être délaré avant la décalration $(*).dateRangePicker()
+ * @param Date oDate
+ * @return Boolean
+ * si true la oDate est ok
+ * si false la oDate n'est pas ok
+ */
+function traiteDate(oDate) {
+
+    //Si pas de tableau de dates invalides
+    if (window["blockedDates"] == undefined) {
+        return true;
+    }//if
+    //Si la date n'est pas dans le tableau return true
+    return (blockedDates[formatDate(oDate)] == undefined);
+}//fct
+
+$(function () {
+    tarihGetir();
+    $(".Dropdown-buton").click(function () {
+        $('.Dropdown-menu').slideToggle();
+    });
+    $(".Dropdown-close").click(function () {
+        $('.Dropdown-menu').slideToggle(400);
+    });
+
+    var nowDate = new Date();
+    var today = new Date(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate(), 0, 0, 0, 0);
+
+
+    $('#two-inputs').dateRangePicker({
+        separator: ' ile ',
+        language: 'tr',
+        stickyMonths: true,
+        startOfWeek: 'monday',
+        startDate: today,
+        showShortcuts: true,
+        /* selectForward: true,*/
+        format: 'DD-MM-YYYY',
+        beforeShowDay: function (t) {
+
+            var valid = traiteDate(t);  //disable
+            var _class = '';
+            var _tooltip = valid ? '' : 'Bu Tarih Doludur';
+            return [valid, _class, _tooltip];
+        },
+
+        customShortcuts:
+            [
+                {
+                    name: 'Temizle',
+                    dates: resetDateRange
+                }
+            ],
+
+        autoClose: true,
+        hoveringTooltip: function (days) {
+            return days < 1 ? "Giriş Tarihi" : days + " Gece";
+        },
+        getValue: function () {
+            if ($('#dgiris_tarih').val() && $('#dcikis_tarih').val()) return $('#dgiris_tarih').val() + ' to ' + $('#dcikis_tarih').val();
+            else return '';
+        },
+        setValue: function (s, s1, s2) {
+            $('#dgiris_tarih').val(s1);
+            $('#dcikis_tarih').val(s2);
+            if ($("#dgiris_tarih").attr("data-page") == "detail") {
+                reservationDone('d');
+            } else {
+                if ($(window).width() > 991) {
+                    if ($(document).scrollTop() > 400) {
+                        $(".desktop_takvim_label").css("visibility", "hidden");
+                    }
+                }
+            }
+        }
+    });
+
+    $('#dmst_btn').click(function (evt) {//Desktop müsaitlik sorgulanırsa takvim açılacak
+        evt.stopPropagation();
+        $('#two-inputs').data('dateRangePicker').open();
+    });
+
+    $('#dcikis_tarih').click(function (evt) {//Desktop müsaitlik sorgulanırsa takvim açılacak
+        evt.stopPropagation();
+        $('#two-inputs').data('dateRangePicker').open();
+    });
+
+    if ($("#dgiris_tarih").attr("data-page") == "detail") {
+        $(window).scroll(function () {
+            if ($(document).scrollTop() > 300) {
+                $(".Villa_detay-menu-links ul li a").removeClass('active');
+                $(".Villa_detay-menu-links ul li:nth-child(1) a").addClass('active');
+            }
+            if ($(document).scrollTop() > $("#fiyat").offset().top - 150) {
+                $(".Villa_detay-menu-links ul li a").removeClass('active');
+                $(".Villa_detay-menu-links ul li:nth-child(2) a").addClass('active');
+            }
+            if ($(document).scrollTop() > $("#genel").offset().top - 150) {
+                $(".Villa_detay-menu-links ul li a").removeClass('active');
+                $(".Villa_detay-menu-links ul li:nth-child(3) a").addClass('active');
+            }
+            if ($(document).scrollTop() > $("#kat").offset().top - 150) {
+                $(".Villa_detay-menu-links ul li a").removeClass('active');
+                $(".Villa_detay-menu-links ul li:nth-child(4) a").addClass('active');
+            }
+            if ($(document).scrollTop() > $("#harita").offset().top - 150) {
+                $(".Villa_detay-menu-links ul li a").removeClass('active');
+                $(".Villa_detay-menu-links ul li:nth-child(5) a").addClass('active');
+            }
+            if ($(document).scrollTop() > $("#sss").offset().top - 150) {
+                $(".Villa_detay-menu-links ul li a").removeClass('active');
+                $(".Villa_detay-menu-links ul li:nth-child(6) a").addClass('active');
+            }
+            if ($(document).scrollTop() > $("#extra").offset().top - 140) {
+                $(".Villa_detay-menu-links ul li a").removeClass('active');
+                $(".Villa_detay-menu-links ul li:nth-child(7) a").addClass('active');
+            }
+        });
+    }
+});

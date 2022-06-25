@@ -1,0 +1,70 @@
+
+.Villas{
+  position: relative;
+  z-index: 2;
+
+  &-in{margin-right: -30px;}
+  &-filter{
+    .Dropdown-buton{&:hover,&:active,&:focus{color: #102754;}}
+ .bootstrap-select{
+   width: 200px!important;
+   .dropdown-menu{background-color: #e8e9f0;}
+   .dropdown-item{
+     font-size: 13px;color: #102754;
+     &:focus{ background-color: transparent;}
+     &:hover{ background-color: white!important;}
+   }
+   .dropdown-item.active{background-color: transparent;}
+   .dropdown-toggle{
+     font-size: 13px;
+     cursor: pointer;
+     border: none!important;
+     background-color:white;
+     color: #102754;
+     .filter-option{font-size: 13px;color: #102754;}
+     &:after{opacity: 0;}
+   }
+ }
+
+    margin-top: 50px;
+    margin-bottom: 20px;
+    &-item{
+
+      position: relative;
+      .btn{ border-radius: 4px;padding-left: 10%;}
+      .addon:nth-of-type(1){margin-top: -23px;transform: rotate(180deg)  translateY(-50%);}
+      .addon:nth-of-type(2){margin-top: 5px}
+    }
+    p{
+      font-size: 13px;
+      color: #102754;
+    }
+  }
+
+  .f_item{margin-bottom: 30px;}
+
+}
+
+
+
+.pagination{
+ margin-top: 50px;
+  .page-item{}
+  .page-link{
+   display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;height: 45px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #102754;
+    margin-left: 6px;
+    margin-right: 6px;
+    transition: 500ms;
+    border-radius: 0px!important;
+  }
+  .active{
+    color: white;
+    background-color: $orange;
+  }
+}

@@ -1,0 +1,1486 @@
+
+.Villa_detay{
+position: relative;
+  z-index: 9;
+  overflow: hidden;
+  margin-top: -250px;
+  &-header{ svg{margin-right: 10px;}}
+  &-images{
+margin-top: 10px;
+    position: relative;
+    &-item{
+      background-color: white;
+      margin-left: 20px;
+      margin-right: 20px;
+      position: relative;
+      width: 220px;height: 58px;
+    border-radius: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg{
+        position: absolute;
+        left: 15px;
+      }
+      p{
+        font-size: 13px;
+        font-weight: 500;
+        color: #102754;
+        span{color: $orange}
+      }
+    }
+    #gallery{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+      opacity: 0;
+    }
+  }
+  &-in{
+    padding-left: 6%;
+    margin-top: 200px;
+  margin-left: 375px;
+  }
+
+  &-property{
+    margin-top: 20px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ebedf0;
+    &-name{
+      position: relative;
+      margin-left: 20px;
+      span{
+        font-size: 11px;
+        letter-spacing: 5px;
+        color: #102754;
+      }
+      h6{line-height: 0.8;}
+      &:before{
+        content: "";
+      display: inline-block;
+        background-color: $orange;
+        width: 21px;height: 2px;
+        border-radius: 1px;
+      position: absolute;
+        bottom: 13px;
+        left: -25px;
+      }
+    }
+    &-in{
+      margin-top: 20px;
+    }
+    &-item{
+      display: flex;
+      align-items: center;
+      p{
+        font-size: 14px;
+        font-weight: bold;
+        color: #78849c;
+        display: flex;
+        line-height: 1.2;
+        flex-direction: column;
+        span{
+          font-weight: normal;
+          font-size: 11px;
+          color: #78849c;
+        }
+      }
+      svg{
+        margin-right: 10px;
+      }
+      .icon-user{color: $orange;width: 32px;height: 32px;}
+      .icon-bed{color: $orange;width: 37px;height: 36px;}
+      .icon-shower{color: $orange;width: 44px;height: 46px;}
+
+    }
+  }
+  &-price{
+
+    padding-bottom: 50px;
+    &-info{
+      &-head{
+        margin-top: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        p{
+          font-size: 18px;
+          font-weight: bold;
+          color: #f5841f;
+          display: flex;
+          flex-direction: column;
+          span{
+            font-size: 12px;
+            letter-spacing: 5px;
+            color: #102754;
+          }
+        }
+
+        .nav-tabs{
+         margin-right: 46%;
+          .nav-item{
+            margin-bottom: 0px;
+            .nav-link{
+              background-color: transparent!important;
+              border:none;
+              padding-left: 5px;
+              padding-right: 5px;
+              border-radius: 0px;
+              font-size: 13px;
+              color: #102754;
+              height: 100%;position: relative;
+              display: flex;
+              align-items: center;transition: 500ms;
+              justify-content: center;
+              &:before{
+                content: "" ;
+                display: inline-block;
+                transition: 500ms;
+                width: 4px;height: 4px;
+                background-color: $orange;
+                margin-right: 5px;
+                border-radius: 100%;
+                opacity: 0;
+              }
+              &:hover{
+                margin-top: -3px;
+                transition: 500ms;
+                &:before{}
+              }
+
+            }
+            .active{
+              opacity: 1;font-weight: bold;
+              &:before{opacity: 1;transition: 500ms;}
+             &:hover{margin-top: 0px;}
+            }
+
+
+          }
+
+        }
+      }
+    }
+    &-left{
+      width: 54%;
+      .thead{
+        margin-left: auto;
+        min-width: 36%;
+        display: flex;
+        margin-bottom: 10px;
+        justify-content: space-around;
+        span{
+          font-size: 12px;
+          color: #102754;
+        }
+      }
+    }
+    &-item{
+      margin-left: -17px;
+      display: flex;border-radius: 4px;
+      background-color: #F5F5F7;
+      padding-top: 12px;
+      padding-left: 17px;
+      padding-bottom: 12px;
+      margin-bottom: 3px;
+      transition: 400ms;
+      &-date{
+        width: 100%;
+        position: relative;
+        font-size: 12px;
+        color: #78849c;
+        display: flex;
+        line-height: 1.3;
+        flex-direction: column;
+        span{
+          display: flex;
+          align-items: center;
+white-space: nowrap;
+        }
+        svg{margin-left: 7px;}
+      }
+      &-cash{
+      min-width: 18%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        font-weight: 500;
+        color: #78849c;
+      }
+      &:hover{
+       p,span, svg{ color: white;}
+        box-shadow: 0 0 42px 0 rgba(16, 39, 84, 0.34);
+        background-color: #183266;
+        transition: 400ms;
+        transform: scale(1.05);
+      }
+    }
+    &-right{
+      width: 46%;
+      padding-left: 4%;
+    &-head{
+      margin-top: 25px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #36bb5a;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.4;
+      &:nth-of-type(2){color: #4f4849;}
+      span{
+        font-size: 12px;
+        letter-spacing: 5px;
+        color: #102754;
+        font-weight: normal;
+      }
+    }
+      ul{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+      li{
+        width: 50%;
+        font-size: 12px;
+        color: #102754;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        svg{margin-left: 7px;}
+        &:before{
+          content: "" ;
+          display: inline-block;
+          transition: 500ms;
+          width: 4px;height: 4px;
+          background-color: $orange;
+          margin-right: 5px;
+          border-radius: 100%;
+        }
+      }
+    }
+       &:before{
+              content: "" ;
+             display: inline-block;
+            transition: 500ms;
+         width: 100%;
+         position: absolute;
+        left: 0;height: 520px;
+         z-index: -1;
+         background-image: linear-gradient(to bottom, white, #f6f7f9);
+           }
+  }
+  &-info{
+    margin-bottom: 30px;
+    &-head{
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #f5841f;
+    }
+    p{
+      font-size: 12px;
+      color: #78849c;
+      margin-top: 10px;
+    }
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    li{
+      width: 25%;
+      margin-top: 15px;
+      &:before{
+        content: "" ;
+        display: inline-block;
+        transition: 500ms;
+        width: 4px;height: 4px;
+        background-color: $orange;
+        margin-right: 5px;
+        border-radius: 100%;
+      }
+    }
+  }
+  &-floor{
+    padding-top: 40px;
+    margin-bottom: 50px;
+
+    overflow: hidden;
+    .Villa_detay-header a{
+      font-size: 14px;
+      font-weight: bold;
+      color: #102754;
+    }
+    &-head{
+    margin-top: 40px;
+      display: flex;
+      height: 75px;
+      background-color: #ebedf0;
+      padding-left: 3%;
+      padding-right: 3%;
+      align-items: center;
+      justify-content: space-between;
+      .nav-tabs{
+        .nav-item{
+          height: 75px;
+          .nav-link{
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 14px;font-weight: bold;
+            color: #102754;margin-right: 20px;
+            &:before{
+              content: "" ;
+              display: inline-block;
+              transition: 500ms;
+              width: 100%;
+              height: 5px;
+              background-color: $orange;
+            position: absolute;
+            opacity: 0;top: 0;
+            }
+            &:hover{transition: 500ms;color: $orange;}
+          }
+          .active{
+            opacity: 1;
+            background-color: white;
+            &:before{opacity: 1;transition: 500ms;}
+            &:hover{}
+          }
+        }
+      }
+    }
+    .tab_oda{
+      padding-bottom: 30px;
+
+      border: solid 1px #ebedf0;
+      border-top: none;
+      .nav-tabs{
+        padding-left: 20px;
+        border-bottom: solid 1px #ebedf0;
+        .nav-item{
+          height: 60px;
+          .nav-link{
+            padding-left: 0;
+            margin-right: 20px;
+            font-size: 13px;
+            color: #102754;
+            &:hover{color:$orange;transition: 500ms;}
+          }
+          .active{opacity: 1;color: $orange;}
+        }
+      }
+
+
+    }
+    &-in{padding-top: 15px;}
+    .carousel-control-prev{transform: rotate(180deg);}
+    &-info{
+margin-top: 10px;
+      &-head{
+        font-size: 16px;
+        color: #f5841f;
+        margin-bottom: 5px;
+      }
+      p{
+        margin-bottom: 15px;
+        font-size: 13px;
+        color: #102754;
+        span{
+          font-size: 13px;
+          font-weight: bold;
+         width: 80px;
+          display: inline-block;
+          color: #102754;
+        }
+      }
+    }
+    &:before{
+      content: "" ;
+      display: inline-block;
+      transition: 500ms;
+      width: 100%;
+      position: absolute;
+      left: 0;height: 500px;
+      z-index: -1;
+      background-image: linear-gradient(to bottom, white, #f6f7f9);
+    }
+  }
+  &-map{
+    margin-bottom: 60px;
+    position: relative;
+    &:before{
+     content: "";
+      width: 70%;display: block;
+      height: 495px;z-index: -1;
+      position: absolute;
+      right: 0;top: 85px;
+      background-color: #465064;
+    }
+    .Villa_detay-header{margin-bottom: 50px;}
+    .Villa_detay-info-head{margin-top: 40px;}
+    &-info{
+      padding-top: 15px;
+      padding-left: 3%;
+
+      h6{
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        margin-bottom: 30px;
+      }
+    }
+    &-item{
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      .icon{opacity: 0.32;}
+      p{
+        font-size: 13px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        span{color: $orange;font-weight: 500;}
+      }
+    }
+    &-road{
+      margin-top: 30px;
+      &-head{
+        display: flex;
+        align-items: center;
+        .nav-tabs{
+          width: 100%;
+          display: flex;
+          flex-wrap: nowrap;
+          .nav-item{
+            .nav-link{
+              opacity: 0.3;font-size: 13px;
+              color: #102754;
+              padding-left: 0;
+            }
+            .active{opacity: 1;color: $orange;}
+          }
+        }
+      }
+      &-item{
+        width: 47%;
+        &:first-child{margin-right: 6%;}
+      }
+      p{
+        font-size: 12px;
+        color: #102754;
+        padding-right: 15px;
+      }
+    }
+    #map1{width: 60%;height: 460px;}
+  }
+  &-sss{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+
+    &-video{
+      position: relative;
+      width: 222px;
+      height: 60px;
+      background-color: #ebedf0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 32px;
+      &-link{
+        margin-top: 0px!important;
+        height: 100%;
+        font-size: 14px;
+        color: #102754;
+        display: flex;
+        margin-left: 20px!important;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none!important;
+        svg{
+          position: absolute;
+          left: 15px;
+        }
+      }
+    }
+    a{
+      margin-left: auto;
+      font-size: 14px;
+      font-weight: 500;
+     text-decoration: underline;
+      color: #102754;margin-top: 30px;
+    }
+.Villa_detay-header{margin-bottom: 30px}
+  }
+  &-extra{
+
+&-in{margin-right: -20px;;margin-top: 30px;}
+&-item{
+  width: calc(100% - 20px);
+  margin-right: 20px;
+  h6{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #102754;
+  }
+  p{
+    margin-bottom: 10px;
+  }
+}
+    p{
+      font-size: 13px;
+      font-weight: 500;
+      color: #78849c;
+    }
+
+  }
+
+  &-menu{
+
+    opacity: 0;
+  display: none;
+    align-items: center;
+    position: relative;
+    z-index: 9999999;
+    height: 80px;
+    transition: 500ms;
+    background-color: #eef2f9;
+   &-name{
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #102754;
+    padding-right: 4%;
+    padding-left: calc((100vw - 1400px) / 2);
+     &:after{
+       content: "";
+       position: absolute;
+       right: -20px;
+       border-left:20px solid #102754;
+       border-top:40px solid transparent;
+       border-bottom:40px solid transparent;
+     }
+  p{
+    white-space: nowrap;
+    margin-left: 30px;
+    font-size: 28px;
+    font-weight: bold;
+      color: white;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    span{
+      font-size: 11px;
+      font-weight: normal;
+      letter-spacing: 5px;
+    }
+  }
+  }
+    &-links{
+        transform: translateX(10px);
+      margin-right: auto;
+      margin-left: auto;
+  ul{
+    display: flex;
+    align-items: center;
+  }
+      li{
+        a{
+          font-size: 13px;
+          font-weight: bold;
+          color: #636c7f;
+          margin-right: 20px;
+          position: relative;
+          &:before{
+            content: "" ;
+            display: inline-block;
+            transition: 500ms;
+            width: 100%;height: 5px;
+            background-color: $orange;
+            position: absolute;
+            bottom: -32px;opacity: 0;
+          }
+        }
+        .active{
+            &:before{
+              transition: 500ms;
+              opacity: 1;
+          }
+        }
+      }
+    }
+    &-active{
+    display: flex!important;
+      transition: 500ms;
+      position: fixed!important;
+      width: 100%;
+      opacity: 1!important;
+    }
+    #UpTotop{
+      height: 80px;
+      padding-bottom: 15px;
+      width: 10%;
+      font-size: 12px;
+      color: #78849c;
+      font-weight: bold;
+      background-color: #e0e4eb;
+    }
+  }
+
+}
+
+.Rezervasyon{
+  position: absolute;
+  top: 0;
+  transition: 500ms;
+margin-left: 29px;
+display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-slogan{
+    padding: 8px 25px;
+    width: 85%;
+    display: flex;
+    align-items: center;background-color: white;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+
+
+    svg{
+      color: $orange;
+      width: 32px;
+      height: 32px;
+    margin-right: 13px;
+    }
+    p{
+      font-size: 20px;
+      color: #102754;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      span{
+        font-size: 14px;
+        color: #102754;
+        font-weight:normal;
+      }
+    }
+  }
+  &-in{
+    padding: 10px 23px 20px 23px;
+    width: 370px;
+   // box-shadow: 0 -17px 45px 0 rgba(0, 111, 209, 0.28);
+    background-color: #102754;
+    border-radius: 8px;
+
+  }
+  &-availability{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-name{
+      p{
+
+        font-size: 17px;
+        color: white;
+        font-weight: 600;
+      }
+    }
+    &-takvim{
+      width: 130px;
+      height: 39px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      background-color: #f5841f;
+    button{
+cursor: pointer;
+      font-size: 12px;
+      color: white;
+      background-color: transparent;
+    }
+    }
+  }
+  &-search{
+    margin-top: 15px;
+    .addon{margin-top: 12px;right: 15px;}
+    .form-control{height: 48px;}
+    &-item{
+      position: relative;
+      &:first-child{margin-right: 15px}
+    }
+
+    &-date{
+      margin-bottom: 5px;
+      display: flex;
+     input{
+        width: 100%;
+
+       border: solid 1px #1d3b72;
+       background-color: #183266;
+       height: 50px;
+       padding-left: 10px;
+       font-size: 13px;
+       color: white;
+       font-weight: 500;
+       text-align: left;
+
+     }
+    }
+    label{
+      margin-bottom:5;
+
+      color: white;
+      font-size: 11px;
+
+    }
+
+    &-person{
+      .Dropdown-menu-item{
+       justify-content: space-between;
+        padding-left: 25px;
+        input{
+          color: #102754;
+          font-size: 13px;
+
+        }
+      }
+
+      .Dropdown-close{
+        width: 120px;
+        text-align: center;
+        color: white;
+        margin-left: auto;
+        font-size: 13px;
+        height: 40px;
+        background-color: #102754;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+  p{
+    font-size: 13px;
+    font-weight: 500;
+    color: #102754;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    span{
+      opacity: 0.5;
+      font-size: 11px;
+      color: #102754;
+    }
+  }
+    }
+  }
+  &-info{
+    background-color: #183266;
+    padding: 0px 20px 10px 20px;margin-top: 10px;
+
+    &-head{
+      font-size: 14px;
+      font-weight: bold;
+    color: $orange;
+      padding-top: 15px;
+    }
+    &-item{
+      display: flex;
+      border-bottom: 1px solid #304671;
+      padding-top: 13px;
+      padding-bottom: 8px;
+      svg{margin-left: 15px;}
+      span{
+        font-size: 12px;
+      color: white;
+        &:last-child{margin-left: auto}
+      }
+    }
+    &-toplam{
+      margin-top: 5px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      span{
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+      }
+      p{
+        margin-left: auto;
+        font-size: 26px;
+        font-weight: bold;
+        color: white;
+      }
+    }
+    &-bilgi{
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p{
+        white-space: nowrap;
+        margin-right: 5px;
+        font-size: 12px;
+        color: white;
+      }
+    }
+  }
+  &-gonder{
+    margin-top: 20px;
+    width: 80%;
+    margin-left: 10%;
+    height: 50px;
+    background-color: #36bb5a;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+border: none;
+    transition: 500ms;
+    border-radius:4px;
+    cursor: pointer;
+    &:hover{
+      letter-spacing:1px;
+      transition: 500ms;
+    }
+  }
+
+  &-Question{
+    position: absolute;
+    bottom: -20px;
+    display: flex;
+    align-items: center;
+    left: -181px;
+    transform: rotate(-90deg) translateX(55%);
+    h6{
+      margin-right: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 17px 45px 0 rgba(0, 111, 209, 0);
+      background-color: #c5c9d4;
+      color: #183266;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    padding: 20px 30px;
+    display: flex;
+      justify-content: center;
+    }
+    p{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 21px;
+      font-weight: bold;
+      color: #183266;
+      span{
+        font-size: 9px;
+        font-weight: normal;
+        letter-spacing: 2px;
+        color: #183266;
+
+      }
+    }
+  }
+
+  &-fixed{
+    position: fixed;
+    top: 120px;
+    transition: 500ms;
+    &-open{
+      top: 90px;
+      transition: 500ms;
+    }
+  }
+
+
+}
+
+.nav-tabs{
+  border: none;
+  .nav-item{
+    margin-bottom: 0px;
+    .nav-link{
+      background-color: transparent;
+      border:none;
+      border-radius: 0px;
+      height: 100%;position: relative;
+      display: flex;
+      align-items: center;transition: 500ms;
+      justify-content: center;
+      &:hover{border: none;transition: 500ms;}
+    }
+   }
+
+}
+
+
+.RezervasyonM{
+  padding: 25px 20px;
+  margin-top: -120px;
+position: relative;
+  z-index: 99;
+ // background-image: linear-gradient(to bottom, #fff , #f6f7f9);
+  &-head{
+    position: relative;
+      &:before{
+             content: "" ;
+            display: inline-block;
+           transition: 500ms;
+        border-top: solid 1px #979797;
+        position: absolute;
+        top: -15px;left: -20px;
+        right: -20px;
+        width: calc(100% + 40px);
+        height: 1px;
+          }
+    a{
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      font-weight: bold;
+      color: white;
+      margin-right: 0px;
+    }
+    p{
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      line-height: 1.2;
+      display: flex;
+      flex-direction: column;
+      span{
+        font-size: 12px;
+        font-weight: normal;
+
+      }
+    }
+    .icon-play-button-2{
+      margin-right: 5px;
+      width: 40px;height: 40px;color:white;
+    }
+  }
+  &-header{
+    margin-top: 50px;
+    &-name{
+      h6{
+        font-size: 13px;
+        letter-spacing: 1.9px;
+        color: #102754;
+      }
+      p{
+        font-size: 15px;
+        color: $orange;
+        font-weight: 600;
+        line-height: 1.3;
+      }
+      h5{
+        line-height: 1.2;
+        font-size: 17px;
+        font-weight: bold;
+        color: #102754;
+      }
+    }
+    &-date{
+      background-color: $orange;
+      height: 50px;
+      width: 140px;
+      margin-right: -20px;
+      padding-left: 10px;
+      border-top-left-radius: 32px;
+      border-bottom-left-radius: 32px;
+    button{
+      font-size: 12px;
+      font-weight: 600;
+      color: white;
+      height: 100%;
+      width: 100%;
+      background-color: transparent;
+    }
+    }
+
+  }
+
+
+  .Rezervasyon-search-date{
+
+  }
+  .Rezervasyon-search-item{
+    margin-top: 20px;
+    input{
+      padding-left: 5px;
+      height: 40px;
+      background-color: transparent;
+      border: none;color: #102754;
+      border-bottom: solid 1px #d8dee9;
+    }
+    .addon{right: 5px;}
+
+    .Dropdown{
+      border: none;
+      margin-bottom: 30px;
+      &-buton{
+        padding-left: 5px;
+        height: 40px;
+        background-color: transparent;
+        color: #102754;
+        border-bottom: solid 1px #d8dee9;
+      }
+      &-menu{
+        border: solid 1px #d8dee9;
+        border-top: none;
+        &-item{
+          input{border: none;padding-left: 0;}
+        }
+      }
+      &-item{}
+
+    }
+
+
+
+  }
+
+  .Rezervasyon-gonder{border-radius: 32px;width: 80%;}
+  .Rezervasyon-info-bilgi{ p{color: #102754;}}
+}
+
+.Villa_detayM{
+
+  .Villa_detay-property{
+border: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    &-name{
+      margin-left: 0;
+      text-align: center;
+      span{font-size: 11px;}
+    h6{font-size: 30px;}
+      &:before{display: none;}
+    }
+    &-in{
+      justify-content: space-around;
+      flex-wrap: wrap;margin-top: 30px;
+    }
+    &-item{
+  width: 50%;
+     flex-direction: column;margin-bottom: 20px;
+      p{align-items: center;margin-top: 5px;}
+      .icon{margin-right: 0;height: 35px;}
+    }
+
+
+  }
+
+  .Villa_detay-header{
+    svg{height: 36px;margin-right: 5px;}
+    h4{  font-size: 22px!important;}
+  }
+
+  .Rezervasyon-info{
+    background-color: transparent;
+   padding: 0;
+    margin-top: 10px;
+
+    &-head{padding-top: 0px;}
+    &-item{
+      border-bottom: 1px solid #d8dee9;
+      svg{margin-left: 10px;}
+      span{color: #102754;}
+    }
+    &-toplam{
+      margin-top: 5px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      span{color: #102754;}
+      p{color: #102754;}
+    }
+
+  }
+
+  .Villa_detay-price{
+   padding-top: 30px;
+    background-image: linear-gradient(to top, #fff ,  #f6f7f9);
+    padding-left: 20px;padding-right: 20px;
+    &-info{
+      &-head{
+        margin-top: 20px;
+        p{ span{letter-spacing: 4px;opacity: 0.5;} }
+        .nav-tabs{margin-right: 0px;}
+
+      }
+    }
+    &-left{width: 100%;}
+    &-item{
+      background-color: #EDEFF2;
+      width:calc(100% + 24px );
+      margin-left: -12px;
+      padding-left: 15px;
+      margin-bottom: 4px;
+      &-cash{
+        border-right: 1px solid #E4E6EA;
+        &:last-child{border: none;}
+      }
+      &:hover{background-color: #183266;}
+    }
+    &-right{
+      margin-top: 30px;
+      width: 100%;
+      padding-left: 0%;
+      ul{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+      li{
+       white-space: nowrap;
+           &:before{margin-right: 4px;}
+        svg{margin-left: 3px;}
+      }
+      .nav-tabs{
+
+        margin-right: 0%;
+        .nav-item{
+          margin-bottom: 0px;
+          &:first-child{ .nav-link{margin-right: 15px;}}
+          .nav-link{
+            border: solid 1px #eaecee;
+            padding-left: 5px;
+            padding-right: 5px;
+            border-radius: 30px;
+            white-space: normal;
+            font-size: 11px;
+            font-weight: bold;
+            text-align: center;
+            color: #c9cfd5;
+            height: 100%;position: relative;
+            display: flex;
+            align-items: center;transition: 500ms;
+            justify-content: center;
+
+            &:hover{
+              margin-top: 0px;
+              transition: 500ms;
+
+            }
+
+          }
+          &:before{display: none}
+          .active{
+            background-color: $orange;
+            color: white;
+          }
+
+
+        }
+
+      }
+
+    }
+  }
+
+  .Villa_detay-info{
+    margin-top: 20px!important;
+    padding-left: 20px;
+    padding-right: 20px;
+ul{
+  display: flex;
+  flex-wrap: wrap;
+}
+    li{
+      width: 50%;
+      margin-top: 15px;
+      &:before{
+        content: "" ;
+        display: inline-block;
+        transition: 500ms;
+        width: 4px;height: 4px;
+        background-color: $orange;
+        margin-right: 5px;
+        border-radius: 100%;
+      }
+    }
+  }
+
+  .Villa_detay-floor{
+    padding-top: 30px;
+    margin-top: 30px;
+
+    background-image: linear-gradient(to top,#fff, #f6f7f9);
+    .Villa_detay-header{padding-left: 20px;}
+    &-head{
+
+      margin-top: 15px;
+      display: flex;
+      height: auto;
+      background-color: transparent;
+      padding-left: 0%;
+      padding-right: 0%;
+      .nav-tabs{
+        margin-left: 10px;
+        .nav-item{
+          height: 40px;
+          .nav-link{
+            padding-left: 20px;
+            padding-right: 20px; opacity: 0.38;
+            font-size: 14px;font-weight: bold;
+            color: #102754;margin-right: 0px;
+            &:before{display: none;}
+            &:hover{transition: 500ms;color: $orange;}
+          }
+          .active{
+            background-color: $orange;
+            color: white; opacity: 1;
+          }
+        }
+      }
+    }
+    .tab_oda{
+      position: relative;
+         &:before{
+                content: "" ;
+               display: inline-block;
+              transition: 500ms;
+           height: 160px;
+           position: absolute;
+           top: 0;left: -20px;
+           right: -20px;width: calc(100% + 40px);
+           background-color: #102754;
+             }
+      border: none;
+      .nav-tabs{
+        margin-top: 15px;
+        padding-top: 20px;
+        padding-left: 0px;
+        border-bottom:none;
+        .nav-item{
+          height: auto;
+          .nav-link{
+            border: solid 1px transparent;
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-left: 20px;
+            color: white;
+            &:hover{color:$orange;transition: 500ms;}
+          }
+          .active{  border-color: #30446B;}
+        }
+      }
+
+
+
+    }
+    &-info{
+      padding-left: 20px;
+      padding-right: 20px;
+
+      p{
+       margin-bottom: 10px;
+        span{color: #78849c;}
+      }
+    }
+
+  }
+  &-whatsapp{
+ position: fixed;
+    right: 10px;bottom: 35px;
+    width: 40px;height: 40px;
+    font-size: 12px;z-index: 9999;
+    color: white;transition: 500ms;
+    &-active{bottom: 65px;transition: 500ms;}
+    .icon{width: 40px;height: 40px;}
+  }
+
+  .Villa_detay-map{
+    margin-top: 25px;
+.Villa_detay-header{padding-left: 20px}
+    &:before{
+      content: "";
+      width: 100%;display: block;
+      height: 360px;z-index: -1;
+      position: absolute;
+      left: 0;
+      right: 0;top:180px;
+      background-color: #465064;
+    }
+    &-in{flex-direction: column;}
+    .Villa_detay-header{margin-bottom: 20px;}
+    .Villa_detay-info-head{margin-top: 0px;padding-left: 20px}
+    &-info{
+      padding-top: 15px;
+      padding-left: 0;
+
+      h6{
+      text-align: center;
+        margin-top: 15px;
+        margin-bottom: 20px;
+      }
+    }
+    &-item{
+
+      width: 33.33%;
+      text-align: center;
+
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 25px;
+      .icon{opacity: 0.32;}
+      p{
+       margin-top: 3px;
+        margin-left: 0px;
+        span{color: $orange;font-weight: 500;}
+      }
+    }
+    &-Mheader{
+      margin-top: 25px;
+padding-top: 20px;
+      background-color: #f4f5f7;
+
+      .nav-tabs{
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: nowrap;
+        .nav-item{
+          width: 100%;
+          .nav-link{
+            opacity: 0.25;
+            font-size: 15px;
+            font-weight: bold;
+            color: #102754;
+            height: 55px;
+            width: 100%;
+          }
+          .active{opacity: 1;background-color: white;}
+        }
+      }
+    }
+    &-road{
+      margin-top: 20px;
+      flex-direction: column;
+
+      &-head{
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        .nav-tabs{
+          width: 100%;
+          display: flex;
+          flex-wrap: nowrap;
+          .nav-item{
+            margin-right: 20px;
+            .nav-link{
+              opacity: 0.3;font-size: 15px;
+              color: #102754;
+              padding-left: 0;
+              font-weight: 500;
+
+            }
+            .active{opacity: 1;color: $orange;}
+          }
+        }
+      }
+      &-item{
+        position: relative;
+        padding-left: 20px;
+        width: 100%;
+        &:first-child{margin-right: 0%;}
+        &:after{
+          position: absolute;
+          width: 100%;
+          left: 0;right: 0;
+          height: 60px;
+        bottom: 30px;
+          content: " " ;
+          display: inline-block;
+          transition: 500ms;
+
+          background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
+        }
+      }
+      p{
+        font-size: 12px;
+        color: #102754;
+        padding-right: 15px;
+      }
+    }
+    .Information-buton{
+      margin-top: 15px;
+
+
+    }
+
+
+  }
+  #map2{width: 100%;height: 200px;}
+  .Villa_detay-sss{
+    background-color: #f6f7f9;
+    padding: 30px 20px;
+    margin-top: 40px;
+    .icon-question{width: 50px;margin-right: 10px;}
+    .A_sorular-sss-item-content{padding-right: 0px;}
+    &-video{width: 180px;color: #102754;&-link{font-size: 12px;}}
+    &-bottom{
+    &-tum{
+      margin-right: 10px;
+      font-size: 13px;
+      color: $orange;margin-top: 0px;
+    }
+    }
+
+    .Villa_detay-header{margin-bottom: 20px}
+  }
+
+  .Villa_detay-extra{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    .icon-cycling{width: 50px;height: 50px;margin-right: 15px;}
+    &-in{margin-right: 0px;;margin-top: 30px;}
+    &-item{
+      width: 100%;
+      margin-right: 0px;
+      margin-bottom: 20px;
+      h6{
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #102754;
+      }
+      p{
+        margin-bottom: 10px;
+      }
+    }
+
+  }
+
+  &-rez_fix{
+    background-color: #36bb5a;
+    width: 100%;
+    overflow: hidden;
+    height: 55px;
+    font-size: 15px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;z-index: 9999;
+    position: fixed;bottom: 0;
+    &:hover,&:focus{color: white;}
+  }
+
+}
+
+.pswp{ z-index: 9999999!important;}
+
+

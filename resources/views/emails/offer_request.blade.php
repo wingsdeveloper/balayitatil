@@ -1,0 +1,1 @@
+{{ isset($customer) && !empty($customer) ? $customer->name : ''}} tarafından {{ date('d-m-Y H:i:s') }} tarihinde yeni bir teklif isteği oluşturulmuştur yönetim panelini kontrol ediniz.

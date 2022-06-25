@@ -1,0 +1,49 @@
+
+
+.Sss{
+  margin-bottom: 100px;
+  &-in{}
+  &-video{
+
+    margin-top: 30px;
+    background-color: #ebedf0;
+    position: relative;
+    width: 220px;height: 56px;
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 15px;
+    svg{
+      position: absolute;
+      left: 15px;
+    }
+    p{
+      font-size: 13px;
+      font-weight: 500;
+      color: #102754;
+    }
+  }
+
+.nav{
+  margin-top: 70px;
+  &-tabs{}
+  &-item{
+    .active{color: $orange;}
+  }
+  &-link{
+    font-size: 14px;
+    font-weight: bold;
+
+    color: #8992a4;
+  }
+}
+  .modal{
+    &-dialog{
+      transform: translate(0,50%)!important;
+    }
+    &-content{
+
+    }
+  }
+}
