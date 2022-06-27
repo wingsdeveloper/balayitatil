@@ -30,37 +30,22 @@ $response = curl_exec($curl);
 
 curl_close($curl);
 
-
-
 @endphp
 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" rel="preload" as="style">
+    <link rel="stylesheet" href="{{ asset('css/library/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/library/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/library/bootstrap-fullscreen-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/library/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/library/hover.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/library/intl-tel-input.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/library/library.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/library/lv_window.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/library/global.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/library/theme-old.css') }}">
+    
 
-
-{{--<link rel="stylesheet" href="{{ \App\Helpers\Helper::cdn_url('css/all.min.css') }}">--}}
-<link rel="stylesheet" href="{{ asset('css/theme.css?v=1.19vk') }}">
-<link rel="stylesheet" href="{{ asset('css/main-corporate.css?v=1.19vk') }}">
-<link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" rel="preload" as="style">
-{{--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.0/photoswipe.css">--}}
-{{--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.0/default-skin/default-skin.css">--}}
-
-{{--<link rel="stylesheet" href="{{ asset('css/library/bootstrap.min.css') }}">--}}
-{{--<link rel="stylesheet" href="{{ asset('css/library/swiper.css') }}">--}}
-{{--<link rel="stylesheet" href="{{ asset('css/main.css?v=' . ImageProcess::anti_cache('css/main.css')) }}124">--}}
-{{--<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,600,700,800" rel="stylesheet">--}}
-{{--<link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700" rel="stylesheet">--}}
-
-{{--<link rel="stylesheet" href="{{ asset('css/library/daterangepicker.min.css') }}">--}}
-{{--<link rel="stylesheet" href="{{ asset('css/library/default.css') }}">--}}
-{{--<link rel="stylesheet" href="{{ asset('css/library/default.date.css') }}">--}}
-{{--<link rel="stylesheet" href="{{ asset('css/library/bootstrap-select.css') }}">--}}
-{{--<link rel="stylesheet" href="{{ asset('css/library/photoswipe.css') }}">--}}
-{{--<link rel="stylesheet" href="{{ asset('css/library/bootstrap-fullscreen-select.css') }}">--}}
-{{--<link rel="stylesheet" href="{{ asset('css/library/slick.css') }}">--}}
-{{--<link rel="stylesheet" href="{{ asset('css/library/slick-theme.css') }}">--}}
-{{--<link rel="stylesheet" href="{{ asset('css/library/library.css') }}">--}}
-{{--<link rel="stylesheet" href="{{ asset('css/library/lightview.css') }}">--}}
-{{-- <link rel="stylesheet" href="{{ asset('font-awesome.min.css') }}" > --}}
 
 @stack('extrahead')
 <!-- Meta Pixel Code -->

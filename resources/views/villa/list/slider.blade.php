@@ -1,21 +1,40 @@
-<section  class="Banner Banner_md Banner-back"
-         style="z-index: 999;background-image: url({{ isset($kiralik) ? Agent::isDesktop() ? ImageProcess::getImageByPath($kiralik->static_banner_image_pc ): ImageProcess::getImageByPath($kiralik->static_banner_image_mobile) : '' }});">
+<!-- background-image: url({{ isset($kiralik) ? Agent::isDesktop() ? ImageProcess::getImageByPath($kiralik->static_banner_image_pc ): ImageProcess::getImageByPath($kiralik->static_banner_image_mobile) : '' }});-->
 
-    <div class="container">
-        <div class=" Banner_search-text   pos-ab-xy-center ">
-            <h1 class="animated fadeInDown ">{{ isset($kiralik) ? $kiralik->static_banner_title : '' }}</h1>
-            <p class="animated fadeInDown desktop flex-column ">
-                <span>{{ isset($kiralik) ? $kiralik->static_banner_subtitle : '' }}</span>
-                {{ isset($kiralik->static_banner_description) ? $kiralik->static_banner_description : '' }}
-            </p>
+<section class="Home-banner Home-banner-detail" style="background-image: url({{ asset('images/banner-detail.jpg') }});">
+        <div class="container">
+            <div class="Home-banner-in">
+                <div class="Home-banner-text">
+                    <div class="Home-banner-text-left">
+                        <h1 class="animated fadeInDown">{{ isset($kiralik) ? $kiralik->static_banner_title : '' }}</h1>
+                    </div>
+                    <div class="Home-banner-text-right">
+
+                        <p class="animated fadeInDown">
+                        <span>{{ isset($kiralik) ? $kiralik->static_banner_subtitle : '' }}</span>
+                        {{ isset($kiralik->static_banner_description) ? $kiralik->static_banner_description : '' }}
+                        </p>
+
+                    </div>
+                </div>
+
+                @include('layouts.searchMenu')
+
+                <div class="Home-banner-contact">
+                    <div class="Home-banner-contact-social">
+                        <a href=""><i class="fa fa-facebook"></i></a>
+                        <a href=""><i class="fa fa-instagram"></i></a>
+                        <a href=""><i class="fa fa-twitter"></i></a>
+                    </div>
+
+                    <div class="Contact-support Contact-support-white">
+                        <a href="">
+                            <p><span>Yardım & Destek</span>+90 252 606 0 876</p>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    @if(Agent::isDesktop())
-        @include('layouts.searchMenu')
-    @endif
-</section>
-
-@if(Agent::isMobile())
-    @include('layouts.searchMenuMobile')
-@endif
+    @include('layouts.homeInfo') 

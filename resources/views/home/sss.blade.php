@@ -14,7 +14,7 @@
                 <div class="item-text flex a-i-c w-100">
                     <h5>NASIL <strong>KİRALARIM?</strong></h5>
                     <svg class="icon icon-logo ml-auto">
-                        <use xlink:href="#logo_vk_w"></use>
+                        <use xlink:href="#logo_bt_w"></use>
                     </svg>
                 </div>
             </div>

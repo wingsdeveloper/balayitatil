@@ -5,12 +5,6 @@
         @endphp
         @if(!empty($category_prefix))
             <ul class="wra-nav" style="padding: 0;height: calc(93vh - 40px)">
-{{--                <li>--}}
-{{--                    <a href="https://www.lycianescapes.com"--}}
-{{--                       class="nav-link">--}}
-{{--                        <img height="40" src="{{ asset('images/uk-flag-mobile.png') }}" alt="">--}}
-{{--                    </a>--}}
-{{--                </li>--}}
                 @forelse($pages as $page)
                     @php
                         $placement=json_decode($page->placements);
@@ -20,11 +14,7 @@
                         @if($placement->header == 1)
                             @if($page->page_type == 'kategori_liste')
                                 <li>
-                                    <a id="secenek" data-toggle="collapse"> {{ $page->page_name }}
-                                    <!--<svg class="icon icon-angle-down">
-                                    <use xlink:href="#icon-angle-down"></use>
-                                </svg>-->
-                                    </a>
+                                    <a id="secenek" data-toggle="collapse"> {{ $page->page_name }}</a>
                                 </li>
                             @else
                                 <li class="nav-item">
@@ -48,13 +38,7 @@
                             Yaklaşan Fırsatlar
                         </a>
                     </li>
-                    {{--<li>--}}
-                    {{--<a href="">--}}
-                    {{--<svg class="icon icon-person"><use xlink:href="#icon-person"></use></svg>--}}
-                    {{--Müşteri Girişi--}}
-                    {{--</a>--}}
-                    {{--</li>--}}
-
+                    
                     <li>
                         <a onclick="gtag('event', 'whatsapp', {'event_category' : 'click'});" href="https://api.whatsapp.com/send?phone={{ isset($general->whatsapp_number) ? $general->whatsapp_number : '' }}&"
                            target="_blank" class="overlay-bottom-iletisim">
