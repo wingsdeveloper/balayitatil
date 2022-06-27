@@ -43,27 +43,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     @endif
     @include('layouts.plugin')
 </main>
-{{--<script src="{{ asset('js/bundle.min.js') }}"></script>--}}
+
 @stack('before_jquery')
 <script src="{{ asset('js/jquery.min.js') }}"></script>
 
 @stack('search_app_js')
 <script src="{{ asset('js/selectpicker.min.js') }}"></script>
-<script src="{{ asset('js/theme.min.js?v=1.09vk') }}"></script>
-{{--<script src="{{ asset('js/theme.js?v=1.09vk') }}"></script>--}}
+<script src="{{ asset('js/theme.min.js?v=1.11vk') }}"></script>
+<script src="{{ asset('js/main-new.js?v=1.11vk') }}" type="text/javascript"></script>
 @stack('after_theme')
-
-{{--<script src="{{ asset('js/library/jquery-3.2.1.slim.min.js') }}"></script>--}}
-{{--<script src="{{ asset('js/library/popper.min.js') }}"></script>--}}
-{{--<script src="{{ asset('js/library/bootstrap.min.js') }}"></script>--}}
-
-{{--<script src="{{ asset('js/library/swiper.js') }}"></script>--}}
-
-{{--<script src="{{ asset('js/library/picker.js') }}"></script>--}}
-{{--<script src="{{ asset('js/library/picker.date.js') }}"></script>--}}
-{{--<script src="{{ asset('js/picker.date.js') }}"></script>--}}
-
-{{--<script src="{{ asset('js/main.js?v=' . ImageProcess::anti_cache('css/main.js')) }}124"></script>--}}
 
 @if(($view_name == "villa-list-index") || $view_name == 'villa-search-no-price' || ($view_name == "villa-search-index") || ($view_name == "villa-search-index_new") || ($view_name == "villa-category-detail") || ($view_name == "area-detail-index") || ($view_name == "villa-detail-index") || ($view_name == "home-index") || ($view_name == "offer-offer"))
     @if(Agent::isDesktop())
@@ -73,30 +61,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     @endif
 @endif
 
-{{--<script src="{{ asset('js/library/lightview.js') }}"></script>--}}
-{{--<script src="{{ asset('js/library/slick.js') }}"></script>--}}
-
-{{--<script src="{{ asset('js/library/legacy.js') }}"></script>--}}
-
-
-{{--<script src="{{ asset('js/library/bootstrap-fullscreen-select.min.js') }}"></script>--}}
-{{--<script src="{{ asset('js/library/bootstrap-select.js') }}"></script>--}}
-
-
-{{--<script src="{{ asset('js/library/moment.js') }}"></script>--}}
-{{--<script src="{{ asset('js/library/jquery.daterangepicker.min.js') }}"></script>--}}
-{{--<script src="{{ asset('js/library/photoswipe.min.js') }}"></script>--}}
-{{--<script src="{{ asset('js/library/photoswipe-ui-default.min.js') }}"></script>--}}
-{{--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>--}}
-{{--<script type="text/javascript"--}}
-{{--        src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>--}}
 @stack('javascripts')
 @include('layouts.svg')
 
-<script>
+<script type="text/javascript">
     let selectedCategories = $(document).find('.Dropdown-menu-item').find('input.category_check:checked');
     let selectedValues = [];
-    $.each(selectedCategories, function() {
+    $.each(selectedCategories, function () {
         selectedValues.push($(this).val());
     });
     $(document).find('#selected-categories').val(selectedValues.join('_'));
@@ -104,7 +75,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var myArray = $(selectedCategories).map(function () {
         return $(this).data('id');
     }).get();
-    if(myArray.length >= 5) {
+    if (myArray.length >= 5) {
         $(".Dropdown-menu-in-warning").addClass('enabled');
         $(".Dropdown-menu-item input:not(:checked)").prop('disabled', true).parent('div').addClass('disabled-button');
     } else {
@@ -114,7 +85,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     $(document).on('click', '.Dropdown-menu-item input', function () {
         let selectedCategories = $(document).find('.Dropdown-menu-item').find('input.category_check:checked');
         let selectedValues = [];
-        $.each(selectedCategories, function() {
+        $.each(selectedCategories, function () {
             selectedValues.push($(this).val());
         });
         $(document).find('#selected-categories').val(selectedValues.join('_'));
@@ -122,7 +93,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         var myArray = $(selectedCategories).map(function () {
             return $(this).data('id');
         }).get();
-        if(myArray.length >= 5) {
+        if (myArray.length >= 5) {
             $(".Dropdown-menu-in-warning").addClass('enabled');
             $(".Dropdown-menu-item input:not(:checked)").prop('disabled', true).parent('div').addClass('disabled-button');
         } else {
@@ -133,44 +104,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     $(document).on('change', '#v_filter', function () {
         console.log($(this).val());
 
-        let route = "{{ route('search.get-districts', '#id#') }}";
+        let route = "https://villakalkan.com.tr/ajax-get/#id#/districts";
         route = route.replaceAll('#id#', $(this).val());
         $.ajax({
             url: route,
             dataType: 'json',
             type: 'post',
-            data: {_token: '{{ csrf_token() }}'},
-            success: function( data ){
+            data: {_token: 'Na3GRLSuTyYt7vcVzzg9CJReELadTbtVDi1jLzvK'},
+            success: function (data) {
                 var options = [];
                 options.push('<option value="0">Alt Bölge Seçiniz</option>')
                 $(data).each(function (index, value) {
-                    var option = '<option value="'+value.id+'">'+value.name+'</option>';
+                    var option = '<option value="' + value.id + '">' + value.name + '</option>';
                     options.push(option);
                 })
                 console.log(options);
                 $('#filter_area').html(options);
                 $("#filter_area").selectpicker('refresh');
             },
-            error: function( jqXhr, textStatus, errorThrown ){
+            error: function (jqXhr, textStatus, errorThrown) {
             }
         });
     })
 </script>
-<script>
+
+<script type="text/javascript">
     $('.lazy-load').Lazy();
+    $(document).mouseup(function (e) {
+        if ($(e.target).closest(".Dropdown-menu").attr('style', 'display: block').length ===
+            0) {
+            $(".Dropdown-menu").slideUp(400);
+            $(".Dropdown-buton").removeClass("pointernone");
+        }
+    });
+    $(document).ready(function () {
+
+        $(".Dropdown-buton ").click(function () {
+            $(".Dropdown-buton").toggleClass("pointernone");
+        })
+
+        $(".Navtop-discount-close ").click(function () {
+            $(".Navtop-discount").slideUp(400);
+        })
+
+
+    });
 </script>
-<script>
-$(document).mouseup(function (e) {
-    if ($(e.target).closest(".Dropdown-menu").attr('style','display: block').length
-        === 0) {
-        $(".Dropdown-menu").attr('style','display: none');
-    }
-});
- </script>
 <div id="async"></div>
 
 @stack('pro_js')
-
 
 </body>
 </html>

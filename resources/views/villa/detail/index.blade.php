@@ -36,7 +36,10 @@ window.criteo_q.push(
         }
     </style>
     <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
-
+    <script src="js/library/lazyload.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+          integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
  
 
 @endpush
@@ -200,6 +203,48 @@ window.criteo_q.push(
   $('#dhesap_toplam2').html(formatted+" ₺");
 
 });
+
+window.addEventListener('load', function () {
+        //
+
+        var galleryThumbs = new Swiper('.gallery-thumbs', {
+            slidesPerView: 9,
+            loop: true,
+            spaceBetween: 10,
+            centeredSlides: true,
+            grabCursor: true,
+            slideToClickedSlide: true,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+
+        });
+
+        var galleryTop = new Swiper('.gallery-top', {
+            slidesPerView: 1,
+            loop: true,
+            navigation: {
+                nextEl: '#detail_next_btn',
+                prevEl: '#detail_prev_btn',
+            },
+            thumbs: {
+                swiper: galleryThumbs,
+            },
+        });
+
+        galleryTop.on('slideChangeTransitionEnd', function() {
+            let index_currentSlide = galleryTop.realIndex;
+            let currentSlide = galleryTop.slides[index_currentSlide]
+            galleryThumbs.slideTo(index_currentSlide, 1000, false);
+        });
+
+        galleryThumbs.on('slideChangeTransitionEnd', function() {
+            let index_currentSlide = galleryThumbs.realIndex;
+            let currentSlide = galleryThumbs.slides[index_currentSlide]
+            galleryTop.slideTo(index_currentSlide, 1000, false);
+        });
+
+
+    });
 
     </script>
 
@@ -385,6 +430,31 @@ window.criteo_q.push(
                 type="text" autocomplete="off"
                 value="" data-value="">
         </div>
+      <div class="Villa_detay-menu ">
+        <div class="Villa_detay-menu-name">
+            <p>
+                <span>{{$villa->name}}</span>
+                {{ $website->prefix }}{{ $villa->code }}
+            </p>
+        </div>
+        <div class="Villa_detay-menu-links">
+            <ul>
+                <li><a class="nav-menuX" href="#foto">FOTOĞRAFLAR</a></li>
+                <li><a class="nav-menuX" href="#fiyat">FİYATLANDIRMALAR</a></li>
+                <li><a class="nav-menuX" href="#genel">GENEL BAKIŞ</a></li>
+                <li><a class="nav-menuX" href="#kat">KAT PLANI</a></li>
+                <li><a class="nav-menuX" href="#harita">ULAŞIM</a></li>
+                <li><a class="nav-menuX" href="#sss">MERAK EDİLENLER</a></li>
+                <li><a class="nav-menuX" href="#extra">EXTRA</a></li>
+            </ul>
+        </div>
+        <div id="UpTotop" class="flex-column a-i-c" style="display: none">
+            <svg class="icon icon-chevron-right" data-original-title="" title="">
+                <use xlink:href="#icon-chevron-right"></use>
+            </svg>
+            YUKARI ÇIK
+        </div>
+    </div>
         <section class="Villa_detay desktop">
             <div class="container">
                 <div class="flex a-i-fs">
@@ -399,84 +469,72 @@ window.criteo_q.push(
                                 $gune_ait_fiyat=floatval(str_replace(",",".",$pricesmin->daily_price_tl));
                             @endphp
                             <p>{{(isset($pricesmin->daily_price_tl)? number_format((float)$gune_ait_fiyat, 0, ',', '.') :'')}} ₺’DEN
-                                <span>Başlayan Fiyatlarla(Gecelik)
-            </span>
+                                <span>Başlayan Fiyatlarla(Gecelik)</span>
                             </p>
                         </div>
+                                    @php
+                                    $curl = curl_init();
+                                    $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                                    $event_id = random_int(1000000000000, 9999999999999);
+                                    $value_final = (isset($pricesmin->daily_price_tl)? ceil($gune_ait_fiyat):'');
 
-                        
-    
+                                    curl_setopt_array($curl, array(
+                                    CURLOPT_URL => 'https://graph.facebook.com/v13.0/1757769984530411/events',
+                                    CURLOPT_RETURNTRANSFER => true,
+                                    CURLOPT_ENCODING => '',
+                                    CURLOPT_MAXREDIRS => 10,
+                                    CURLOPT_TIMEOUT => 0,
+                                    CURLOPT_FOLLOWLOCATION => true,
+                                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                                    CURLOPT_CUSTOMREQUEST => 'POST',
+                                    CURLOPT_POSTFIELDS => array('data' => '[{
+                                        "event_name": "ViewContent",
+                                        "event_id": "' . $event_id . '",
+                                        "event_time": "' . time() .'",
+                                        "event_source_url": "'. $actual_link .'",
+                                        "action_source": "website",
+                                        "user_data": {
+                                            "client_ip_address": "' . $fb_ip . '",
+                                            "client_user_agent": "' . $_SERVER['HTTP_USER_AGENT'] . '"
+                                        },
+                                        "custom_data": {
+                                            "content_name": "' . $villa->name . '",
+                                            "content_type": "product",
+                                            "currency": "TRY",
+                                            "value": "' . $value_final . '",
+                                            "content_ids" : "' . $villa->id . '"
+                                        }
+                                    }]','access_token' => 'EAAHTPiGDALEBAEcNNXC1nNAXJDI4V2r1hnaSlKvSH0TgWcoFPBzKGtKGZABzUVuszLurTdQ9qZBSunk0PZCqzVI73s07w2s5ZA2YgVaFl6ZCREl8buwcpAwC3bgZAWiVVegefRultu8o3Bx5nEJe6WYZC0RyNpZCR1ZA7bZALHsF8SDMsAL6WQQVd9JEwVSRuhx58ZD','test_event_code' => 'TEST50377'),
+                                    ));
 
-@php
-$curl = curl_init();
-$actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-$event_id = random_int(1000000000000, 9999999999999);
-$value_final = (isset($pricesmin->daily_price_tl)? ceil($gune_ait_fiyat):'');
+                                    $response = curl_exec($curl);
 
-curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://graph.facebook.com/v13.0/1757769984530411/events',
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => '',
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 0,
-  CURLOPT_FOLLOWLOCATION => true,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => 'POST',
-  CURLOPT_POSTFIELDS => array('data' => '[{
-    "event_name": "ViewContent",
-    "event_id": "' . $event_id . '",
-    "event_time": "' . time() .'",
-    "event_source_url": "'. $actual_link .'",
-    "action_source": "website",
-    "user_data": {
-        "client_ip_address": "' . $fb_ip . '",
-        "client_user_agent": "' . $_SERVER['HTTP_USER_AGENT'] . '"
-    },
-    "custom_data": {
-        "content_name": "' . $villa->name . '",
-        "content_type": "product",
-        "currency": "TRY",
-        "value": "' . $value_final . '",
-        "content_ids" : "' . $villa->id . '"
-    }
-}]','access_token' => 'EAAHTPiGDALEBAEcNNXC1nNAXJDI4V2r1hnaSlKvSH0TgWcoFPBzKGtKGZABzUVuszLurTdQ9qZBSunk0PZCqzVI73s07w2s5ZA2YgVaFl6ZCREl8buwcpAwC3bgZAWiVVegefRultu8o3Bx5nEJe6WYZC0RyNpZCR1ZA7bZALHsF8SDMsAL6WQQVd9JEwVSRuhx58ZD','test_event_code' => 'TEST50377'),
-));
+                                    curl_close($curl);
 
-$response = curl_exec($curl);
-
-curl_close($curl);
+                                    @endphp
 
 
+                                <script>
+                                    fbq('track', 'ViewContent', {
+                                        value: {{(isset($pricesmin->daily_price_tl)? ceil($gune_ait_fiyat):'')}},
+                                        currency: 'TRY',
+                                        content_name:'{{$villa->name}}',
+                                        content_type:'product',
+                                        content_ids: ["{{ $villa->id }}"],
+                                    }, {eventID: '{{ $event_id }}'});
 
-@endphp
+                                    window.dataLayer = window.dataLayer || [];
+                                    dataLayer.push({
+                                    event: 'view_item',
+                                    event_id: '{{ $event_id }}',
+                                    value: {{(isset($pricesmin->daily_price_tl)? ceil($gune_ait_fiyat):'')}},
+                                    currency: 'TRY',
+                                    id: ["{{ $villa->id }}"],
+                                    name:'{{$villa->name}}',
+                                    type:'product',
 
-
-
-
-<script>
-fbq('track', 'ViewContent', {
-    value: {{(isset($pricesmin->daily_price_tl)? ceil($gune_ait_fiyat):'')}},
-    currency: 'TRY',
-    content_name:'{{$villa->name}}',
-    content_type:'product',
-    content_ids: ["{{ $villa->id }}"],
-}, {eventID: '{{ $event_id }}'});
-
-window.dataLayer = window.dataLayer || [];
-dataLayer.push({
- event: 'view_item',
- event_id: '{{ $event_id }}',
- value: {{(isset($pricesmin->daily_price_tl)? ceil($gune_ait_fiyat):'')}},
- currency: 'TRY',
- id: ["{{ $villa->id }}"],
- name:'{{$villa->name}}',
- type:'product',
-
-});
-</script>
-
-
-
+                                    });
+                                </script>
 
                         <div class="Rezervasyon-in">
                             <div class="Rezervasyon-availability">
@@ -528,15 +586,14 @@ dataLayer.push({
                                             <button class="Dropdown-buton" type="button">
                                                 <b id="dtotal_person">1
                                                 </b> Kişi
-                                                <span
-                                                    class="Dropdown-buton-person">(
-                    <b id="dtotal_adult">1
-                    </b> Yetişkin,
-                    <b id="dtotal_child">0
-                    </b> Çocuk,
-                    <b id="dtotal_baby">0
-                    </b> Bebek )
-                  </span>
+                                                <span class="Dropdown-buton-person">(
+                                                    <b id="dtotal_adult">1
+                                                    </b> Yetişkin,
+                                                    <b id="dtotal_child">0
+                                                    </b> Çocuk,
+                                                    <b id="dtotal_baby">0
+                                                    </b> Bebek )
+                                                </span>
                                             </button>
                                             <div class="Dropdown-menu  Rezervasyon-search-person ">
                                                 <div class="Dropdown-menu-item">
@@ -564,8 +621,7 @@ dataLayer.push({
                                                 </div>
                                                 <div class="Dropdown-menu-item">
                                                     <p>Çocuk
-                                                        <span>6-13 Yaş Arası
-                    </span>
+                                                        <span>6-13 Yaş Arası</span>
                                                     </p>
                                                     <div class="Dropdown-menu-item-spinner ">
                                                         <button type="button" onclick="eksilt(this,0,'d','child')">
@@ -588,8 +644,7 @@ dataLayer.push({
                                                 </div>
                                                 <div class="Dropdown-menu-item">
                                                     <p>Bebek
-                                                        <span>0-5 Yaş Arası
-                  </span>
+                                                        <span>0-5 Yaş Arası</span>
                                                     </p>
                                                     <div class="Dropdown-menu-item-spinner ">
                                                         <button type="button" onclick="eksilt(this,0,'d','baby')">
@@ -630,20 +685,19 @@ dataLayer.push({
                                     <h6 class="Rezervasyon-info-head">REZERVASYON DETAYLARI
                                     </h6>
                                     <div class="Rezervasyon-info-item">
-          <span>
-            <b id="dgecelik_fiyat">{{number_format((float)$gecelik_fiyat, 0, ',', '.')}} ₺
-            </b> x
-            <b id="dgece_sayisi">{{$gece_sayisi}}
-            </b> Gece
-          </span>
+                                            <span>
+                                                <b id="dgecelik_fiyat">{{number_format((float)$gecelik_fiyat, 0, ',', '.')}} ₺
+                                                </b> x
+                                                <b id="dgece_sayisi">{{$gece_sayisi}}
+                                                </b> Gece
+                                            </span>
                                         <svg class="icon icon-unlem" data-toggle="tooltip" data-html="true"
                                              id="dfiyat_tooltip" data-placement="top"
                                              title="{{$gun_ve_fiyat}}">
                                             <use xlink:href="#icon-unlem">
                                             </use>
                                         </svg>
-                                        <span id="dtoplam_fiyat">{{number_format((float)$toplam_fiyat, 0, ',', '.')}} ₺
-        </span>
+                                        <span id="dtoplam_fiyat">{{number_format((float)$toplam_fiyat, 0, ',', '.')}} ₺</span>
                                     </div>
                                     <div class="Rezervasyon-info-item">
                                         <span>Temizlik Ücreti</span>
@@ -658,36 +712,29 @@ dataLayer.push({
                                     <h6 class="Rezervasyon-info-head">Ödeme Planı
                                     </h6>
                                     <div class="Rezervasyon-info-item">
-      <span>Ön Ödeme
-      </span>
+                                            <span>Ön Ödeme</span>
                                         <svg class="icon icon-unlem" data-toggle="tooltip" data-html="true"
                                              data-placement="top"
                                              title="Yerinizi ayırtmak için ödemeniz gereken tutar">
                                             <use xlink:href="#icon-unlem">
                                             </use>
                                         </svg>
-                                        <span id="don_odeme">{{number_format((float)$on_odeme, 0, ',', '.')}} ₺
-    </span>
+                                        <span id="don_odeme">{{number_format((float)$on_odeme, 0, ',', '.')}} ₺</span>
                                     </div>
                                     <div class="Rezervasyon-info-item">
-    <span> Kalan Ödeme
-    </span>
+                                        <span> Kalan Ödeme</span>
                                         <svg class="icon icon-unlem" data-toggle="tooltip" data-html="true"
                                              data-placement="top"
                                              title="Villaya Girişte Ödenecek Tutar">
                                             <use xlink:href="#icon-unlem">
                                             </use>
                                         </svg>
-                                        <span id="dkalan_odeme">{{number_format((float)$kalan_odeme, 0, ',', '.')}} ₺
-  </span>
+                                        <span id="dkalan_odeme">{{number_format((float)$kalan_odeme, 0, ',', '.')}} ₺</span>
                                     </div>
                                     <div class="Rezervasyon-info-toplam">
-  <span>TOPLAM
-    
-  </span>      <p   id="dhesap_toplam">{{number_format((float)$hesap_toplam, 0, ',', '.')}} ₺</p>
+                                    <span>TOPLAM</span>     
+                                     <p   id="dhesap_toplam">{{number_format((float)$hesap_toplam, 0, ',', '.')}} ₺</p>
                                       
-                                 
-                             
                                     </div>
                                     <div id="kisi_uyari" class="text-danger" style="display: none">
                                         <small>Lütfen kişi sayısı seçiniz</small>
@@ -726,18 +773,53 @@ dataLayer.push({
                                     <h6>SORU SOR
                                     </h6>
                                     <p>
-    <span>MÜŞTERİ HİZMETLERİ
-    </span> 0242 252 0032
+                                        <span>MÜŞTERİ HİZMETLERİ
+                                        </span> 0242 252 0032
                                     </p>
                                 </div>
                         </div>
                         </form>
                     </div>
                     <div class="Villa_detay-in">
+
+                    <section class="Detail-slider">
+                        <div class="swiper-container gallery-top">
+                            <span class="bigSizeIcon fa-expand"></span>
+                            <button id="detail_prev_btn"><svg class="icon icon-chevron-right" data-original-title="" title=""><use xlink:href="#icon-chevron-right"></use></svg></button>
+                            <button id="detail_next_btn"><svg class="icon icon-chevron-right" data-original-title="" title=""><use xlink:href="#icon-chevron-right"></use></svg></button>
+
+                            <div class="swiper-wrapper">
+                            @forelse($villa->photos as $photo)
+                                <a href="{{ ImageProcess::getImageWatermarkedPath($photo) }}" data-fancybox data-title="{{$villa->name}}" class="swiper-slide " >
+                                    <img class="lazy " data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" alt="{{$villa->name}}" src="">
+                                </a>
+                                @empty
+                            &nbsp;
+                        @endforelse
+                            </div>
+
+                        </div>
+                        <div class="swiper-container gallery-thumbs "
+                             id="gallery-thumbs" style="display: block;">
+                            <div class="swiper-wrapper" style="">
+                            @forelse($villa->photos as $photo)
+                                <button class="swiper-slide">
+                                    <img class="lazy "
+                                         data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}"
+                                         alt="{{$villa->name}}" src=""
+                                         >
+                                </button>
+                                @empty
+                            &nbsp;
+                        @endforelse
+                                
+                            </div>
+                        </div>
+                    </section>
+
                         <div class="Villa_detay-property">
                             <div class=" Villa_detay-property-name">
-      <span>VİLLA KODU
-      </span>
+                                <span>VİLLA KODU</span>
                                 <h6 class="header-lg">{{$villa->code}}
                                 </h6>
                             </div>
@@ -748,8 +830,8 @@ dataLayer.push({
                                         </use>
                                     </svg>
                                     <p>
-          <span>KONUM
-          </span>{{ isset($villa->area->name) ? $villa->area->name : '' }}
+                                <span>KONUM
+                                </span>{{ isset($villa->area->name) ? $villa->area->name : '' }}  
                                     </p>
                                 </div>
                                 <div class="Villa_detay-property-item">
@@ -758,8 +840,8 @@ dataLayer.push({
                                         </use>
                                     </svg>
                                     <p>
-          <span>KİŞİ SAYISI
-          </span>{{$villa->number_person}} Kişilik
+                                    <span>KİŞİ SAYISI
+                                    </span>{{$villa->number_person}} Kişilik  
                                     </p>
                                 </div>
                                 <div class="Villa_detay-property-item">
@@ -768,8 +850,8 @@ dataLayer.push({
                                         </use>
                                     </svg>
                                     <p>
-          <span>YATAK ODASI
-          </span>{{$villa->number_bedroom}} Adet
+                                    <span>YATAK ODASI
+                                    </span>{{$villa->number_bedroom}} Adet
                                     </p>
                                 </div>
                                 <div class="Villa_detay-property-item">
@@ -778,8 +860,8 @@ dataLayer.push({
                                         </use>
                                     </svg>
                                     <p>
-          <span>BANYO
-          </span>{{$villa->number_bathroom}} Adet
+                                    <span>BANYO
+                                    </span>{{$villa->number_bathroom}} Adet
                                     </p>
                                 </div>
                             </div>
@@ -796,25 +878,25 @@ dataLayer.push({
                             <div class="Villa_detay-price-info">
                                 <div class="Villa_detay-price-info-head ">
                                     <p>
-          <span>DÖNEMSEL
-          </span>VİLLA FİYATLARI
+                                <span>DÖNEMSEL
+                                </span>VİLLA FİYATLARI
                                     </p>
                                     <!-- <ul class="nav nav-tabs "  >
-                      <li class="nav-item ">
-                      <a href="#tab1" class="nav-link active "  data-toggle="tab">2018</a>
-                      </li>
-                      <li class="nav-item ">
-                      <a href="#tab2" class="nav-link  "  data-toggle="tab">2019</a>
-                      </li>
-                      </ul>-->
+                                <li class="nav-item ">
+                                <a href="#tab1" class="nav-link active "  data-toggle="tab">2018</a>
+                                </li>
+                                <li class="nav-item ">
+                                <a href="#tab2" class="nav-link  "  data-toggle="tab">2019</a>
+                                </li>
+                                </ul>-->
                                 </div>
                                 <div class="Villa_detay-price-in flex">
                                     <div class="Villa_detay-price-left flex-column">
                                         <p class="thead">
-      <span>Gecelik
-      </span>
-                                            <span>Haftalık
-      </span>
+                                            <span>Gecelik
+                                            </span>
+                                                <span>Haftalık
+                                            </span>
                                         </p>
                                         <div class="tab-content">
                                             <div class="tab-pane fade active opa" id="tab1">
@@ -835,30 +917,30 @@ dataLayer.push({
                                                                 {{isset($price->end_date) ? iconv('latin5','utf-8',\Carbon\Carbon::parse($price->end_date)->formatLocalized('%d %B %Y')): 'Belirtilmedi'}}
                                                             </strong>
                                                             <span>
-                @php
-                    if(isset($price->min_accommodation)){
-                    $min_acc=$price->min_accommodation;
-                    }else{
-                    $min_acc=$villa_min_accommodation;
-                    }
-                    if(isset($price->short_stay)){
-                    $cleaning_price=$price->short_stay;
-                    }else{
-                    $cleaning_price=$villa->default_cleaning_price;
-                    }
-                    $price_if_min_stay_cleaning = $price->min_stay_cleaning_price ?? 7;
-                @endphp
-              Minimum Kiralama : {{$min_acc}} Gece
-              @if(!empty($cleaning_price) && $cleaning_price!=0 && ($price_if_min_stay_cleaning > $min_acc))
+                                                                @php
+                                                                    if(isset($price->min_accommodation)){
+                                                                    $min_acc=$price->min_accommodation;
+                                                                    }else{
+                                                                    $min_acc=$villa_min_accommodation;
+                                                                    }
+                                                                    if(isset($price->short_stay)){
+                                                                    $cleaning_price=$price->short_stay;
+                                                                    }else{
+                                                                    $cleaning_price=$villa->default_cleaning_price;
+                                                                    }
+                                                                    $price_if_min_stay_cleaning = $price->min_stay_cleaning_price ?? 7;
+                                                                @endphp
+                                                            Minimum Kiralama : {{$min_acc}} Gece
+                                                            @if(!empty($cleaning_price) && $cleaning_price!=0 && ($price_if_min_stay_cleaning > $min_acc))
                                                                     <svg class="icon icon-unlem" data-toggle="tooltip"
                                                                          data-html="true"
                                                                          data-placement="top"
                                                                          title="{{ $price->min_stay_cleaning_price ?? 7 }} gece altındaki konaklamalardan {{$cleaning_price}} ₺  Temizlik ücreti alınır">
-              <use xlink:href="#icon-unlem">
-              </use>
-              @endif
-            </svg>
-          </span>
+                                                                            <use xlink:href="#icon-unlem">
+                                                                            </use>
+                                                                            @endif
+                                                                            </svg>
+                                                                        </span>
                                                         </p>
 
                                                         @php
@@ -867,10 +949,10 @@ dataLayer.push({
                                                         @endphp
                                                         <span
                                                             class="Villa_detay-price-item-cash">{{ isset($price->daily_price_tl) ? number_format((float)$gune_ait_fiyat, 0, ',', '.'). ' ₺' : 'Belirtilmedi' }}
-      </span>
-                                                        <span
-                                                            class="Villa_detay-price-item-cash">{{ isset($price->daily_price_tl) ? number_format((float)$haftalik_fiyat, 0, ',', '.') . ' ₺' : 'Belirtilmedi' }}
-    </span>
+                                                                </span>
+                                                                                                                    <span
+                                                                                                                        class="Villa_detay-price-item-cash">{{ isset($price->daily_price_tl) ? number_format((float)$haftalik_fiyat, 0, ',', '.') . ' ₺' : 'Belirtilmedi' }}
+                                                                </span>
                                                     </div>
                                                 @empty
                                                     &nbsp;
@@ -979,7 +1061,7 @@ dataLayer.push({
                                         @endforeach
                                     </ul>
                                     <span class="header-sm">{{$villa->name}}
-   </span>
+                                        </span>
                                 </div>
                                 <div class="tab-content tab_oda">
 
@@ -1071,8 +1153,8 @@ dataLayer.push({
                                                                 <h6 class="Villa_detay-floor-info-head">{{$partic->name}}
                                                                 </h6>
                                                                 <p>
-            <span>İçindekiler
-            </span>:&nbsp;&nbsp;
+                                                                <span>İçindekiler
+                                                                </span>:&nbsp;&nbsp;
 
                                                                     @foreach($materials as $material)&nbsp;-
                                                                     &nbsp;{{$material->material->name}}&nbsp;
@@ -1080,8 +1162,8 @@ dataLayer.push({
                                                                 </p>
                                                                 @if(isset($havuzbilgileri->special_info))
                                                                     <p>
-            <span>Ek Bilgi
-            </span>:&nbsp;&nbsp;{{$havuzbilgileri->special_info}}
+                                                                    <span>Ek Bilgi
+                                                                    </span>:&nbsp;&nbsp;{{$havuzbilgileri->special_info}}
                                                                     </p>
                                                                 @endif
                                                             </div>
@@ -1119,7 +1201,7 @@ dataLayer.push({
                                             </svg>
                                             <p>Havaalanı Mesafesi
                                                 <span>{{$villa->airport_distance}}
-            </span>
+                                                    </span>
                                             </p>
                                         </div>
                                         <div class="Villa_detay-map-item">
@@ -1128,8 +1210,7 @@ dataLayer.push({
                                                 </use>
                                             </svg>
                                             <p>Deniz Mesafesi
-                                                <span>{{$villa->sea_distance}}
-          </span>
+                                                <span>{{$villa->sea_distance}}</span>
                                             </p>
                                         </div>
                                         <div class="Villa_detay-map-item">
@@ -1138,8 +1219,7 @@ dataLayer.push({
                                                 </use>
                                             </svg>
                                             <p>Market Mesafesi
-                                                <span>{{$villa->shop_distance}}
-          </span>
+                                                <span>{{$villa->shop_distance}}</span>
                                             </p>
                                         </div>
                                         <div class="Villa_detay-map-item">
@@ -1148,8 +1228,7 @@ dataLayer.push({
                                                 </use>
                                             </svg>
                                             <p>Hastane Mesafesi
-                                                <span>{{$villa->hospital_distance}}
-          </span>
+                                                <span>{{$villa->hospital_distance}}</span>
                                             </p>
                                         </div>
                                         <div class="Villa_detay-map-item">
@@ -1158,8 +1237,7 @@ dataLayer.push({
                                                 </use>
                                             </svg>
                                             <p>Restaurant Mesafesi
-                                                <span>{{$villa->restaurant_distance}}
-          </span>
+                                                <span>{{$villa->restaurant_distance}}</span>
                                             </p>
                                         </div>
                                         <div class="Villa_detay-map-item">
@@ -1168,8 +1246,7 @@ dataLayer.push({
                                                 </use>
                                             </svg>
                                             <p>Merkez Mesafesi
-                                                <span>{{$villa->center_distance}}
-          </span>
+                                                <span>{{$villa->center_distance}}</span>
                                             </p>
                                         </div>
                                     </div>
@@ -1339,66 +1416,7 @@ dataLayer.push({
                                                 $sayac++;
                                             @endphp
                                         @endforeach
-{{--                                        <div class="tab-pane fade active opa" id="fly_dalaman">--}}
-{{--                                            <div class="accordion flex-column a-i-c " id="accordionExample">--}}
-{{--                                                @php--}}
-{{--                                                    if(!empty($villa->area->fly_dalaman)){--}}
-{{--                                                    $fly_dalamankisa=App\Helpers\Helper::bolumle($villa->area->fly_dalaman,25);--}}
-{{--                                                    $fly_dalamandevam=explode($fly_dalamankisa,$villa->area->fly_dalaman);--}}
-{{--                                                  }--}}
-{{--                                                @endphp--}}
-{{--                                                <p>{!! isset($villa->area->fly_dalaman) ? $fly_dalamankisa : '' !!}--}}
-{{--                                                </p>--}}
-{{--                                                @if(isset($fly_dalamandevam[1]) && !empty($fly_dalamandevam[1]))--}}
-{{--                                                    <div id="fly_dalamanaciklama" class="Information-content collapse "--}}
-{{--                                                         data-parent="#accordionExample">--}}
-{{--                                                        <p>{!! isset($villa->area->fly_dalaman) ? $fly_dalamandevam[1] : '' !!}--}}
-{{--                                                            <br>--}}
-{{--                                                        </p>--}}
-{{--                                                    </div>--}}
-{{--                                                    <button class=" Information-buton" type="button"--}}
-{{--                                                            data-toggle="collapse"--}}
-{{--                                                            data-target="#fly_dalamanaciklama" aria-expanded="true"--}}
-{{--                                                            aria-controls="collapseOne">--}}
-{{--                                                        Devamını Oku--}}
-{{--                                                        <svg class="icon icon-angle-down">--}}
-{{--                                                            <use xlink:href="#icon-angle-down">--}}
-{{--                                                            </use>--}}
-{{--                                                        </svg>--}}
-{{--                                                    </button>--}}
-{{--                                                @endif--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="tab-pane fade " id="fly_antalya">--}}
-{{--                                            <div class="accordion flex-column a-i-c " id="accordionExample">--}}
-{{--                                                @php--}}
-{{--                                                    if(!empty($villa->area->fly_antalya)){--}}
-{{--                                                        $fly_antalyakisa=App\Helpers\Helper::bolumle($villa->area->fly_antalya,25);--}}
-{{--                                                        $fly_antalyadevam=explode($fly_antalyakisa,$villa->area->fly_antalya);--}}
-{{--                                                      }--}}
-{{--                                                @endphp--}}
-{{--                                                <p>{!! isset($villa->area->fly_antalya) ? $fly_antalyakisa : '' !!}--}}
-{{--                                                </p>--}}
-{{--                                                @if(isset($fly_antalyadevam[1]) && !empty($fly_antalyadevam[1]))--}}
-{{--                                                    <div id="fly_antalyaaciklama" class="Information-content collapse "--}}
-{{--                                                         data-parent="#accordionExample">--}}
-{{--                                                        <p>{!! isset($villa->area->fly_antalya) ? $fly_antalyadevam[1] : '' !!}--}}
-{{--                                                            <br>--}}
-{{--                                                        </p>--}}
-{{--                                                    </div>--}}
-{{--                                                    <button class=" Information-buton" type="button"--}}
-{{--                                                            data-toggle="collapse"--}}
-{{--                                                            data-target="#fly_antalyaaciklama" aria-expanded="true"--}}
-{{--                                                            aria-controls="collapseOne">--}}
-{{--                                                        Devamını Oku--}}
-{{--                                                        <svg class="icon icon-angle-down">--}}
-{{--                                                            <use xlink:href="#icon-angle-down">--}}
-{{--                                                            </use>--}}
-{{--                                                        </svg>--}}
-{{--                                                    </button>--}}
-{{--                                                @endif--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
+
                                     </div>
                                 </div>
                             </div>
@@ -1514,6 +1532,40 @@ dataLayer.push({
             <input autocomplete="off" type="text" data-page="detail" id="dcikis_tarih" class="villa_date-input"
                    name="cikis_tarih" data-datepicker="separateRange"/>
         </div>
+        <section class="Detail-slider">
+                        <div class="swiper-container gallery-top">
+                            <span class="bigSizeIcon fa-expand"></span>
+                            <button id="detail_prev_btn"><svg class="icon icon-chevron-right" data-original-title="" title=""><use xlink:href="#icon-chevron-right"></use></svg></button>
+                            <button id="detail_next_btn"><svg class="icon icon-chevron-right" data-original-title="" title=""><use xlink:href="#icon-chevron-right"></use></svg></button>
+
+                            <div class="swiper-wrapper">
+                            @forelse($villa->photos as $photo)
+                                <a href="{{ ImageProcess::getImageWatermarkedPath($photo) }}" data-fancybox data-title="{{$villa->name}}" class="swiper-slide " >
+                                    <img class="lazy " data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" alt="{{$villa->name}}" src="">
+                                </a>
+                                @empty
+                            &nbsp;
+                        @endforelse
+                            </div>
+
+                        </div>
+                        <div class="swiper-container gallery-thumbs "
+                             id="gallery-thumbs" style="display: block;">
+                            <div class="swiper-wrapper" style="">
+                            @forelse($villa->photos as $photo)
+                                <button class="swiper-slide">
+                                    <img class="lazy "
+                                         data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}"
+                                         alt="{{$villa->name}}" src=""
+                                         >
+                                </button>
+                                @empty
+                            &nbsp;
+                        @endforelse
+                                
+                            </div>
+                        </div>
+                    </section>
         <section class="Villa_detayM mobile">
             <div id="rez" class="RezervasyonM">
                 <div class="RezervasyonM-head flex a-i-c justify-content-between ">
@@ -1583,14 +1635,14 @@ dataLayer.push({
                                 <b id="mtotal_person">1
                                 </b> Kişi
                                 <span class="Dropdown-buton-person">
-              (
-              <b id="mtotal_adult">1
-              </b> Yetişkin,
-              <b id="mtotal_child">0
-              </b> Çocuk,
-              <b id="mtotal_baby">0
-              </b> Bebek )
-            </span>
+                                        (
+                                        <b id="mtotal_adult">1
+                                        </b> Yetişkin,
+                                        <b id="mtotal_child">0
+                                        </b> Çocuk,
+                                        <b id="mtotal_baby">0
+                                        </b> Bebek )
+                                        </span>
                             </button>
                             <div class="Dropdown-menu  Rezervasyon-search-person ">
                                 <div class="Dropdown-menu-item">
@@ -1617,8 +1669,7 @@ dataLayer.push({
                                 </div>
                                 <div class="Dropdown-menu-item">
                                     <p>Çocuk
-                                        <span>6-13 Yaş Arası
-                </span>
+                                        <span>6-13 Yaş Arası</span>
                                     </p>
                                     <div class="Dropdown-menu-item-spinner ">
                                         <button type="button" onclick="eksilt(this,0,'m','child')">
@@ -1640,8 +1691,7 @@ dataLayer.push({
                                 </div>
                                 <div class="Dropdown-menu-item">
                                     <p>Bebek
-                                        <span>0-5 Yaş Arası
-                </span>
+                                        <span>0-5 Yaş Arası</span>
                                     </p>
                                     <div class="Dropdown-menu-item-spinner ">
                                         <button type="button" onclick="eksilt(this,0,'m','baby')">
@@ -1681,59 +1731,55 @@ dataLayer.push({
                         <h6 class="Rezervasyon-info-head">REZERVASYON DETAYLARI
                         </h6>
                         <div class="Rezervasyon-info-item">
-          <span>
-            <b id="mgecelik_fiyat">{{$gecelik_fiyat}}
-            </b> x
-            <b id="mgece_sayisi">{{$gece_sayisi}}
-            </b> Gece
-          </span>
+                                <span>
+                                    <b id="mgecelik_fiyat">{{$gecelik_fiyat}}
+                                    </b> x
+                                    <b id="mgece_sayisi">{{$gece_sayisi}}
+                                    </b> Gece
+                                </span>
                             <svg class="icon icon-unlem" data-toggle="tooltip" data-html="true" id="mfiyat_tooltip"
                                  data-placement="top"
                                  title="{{$gun_ve_fiyat}}">
                                 <use xlink:href="#icon-unlem">
                                 </use>
                             </svg>
-                            <span id="mtoplam_fiyat">{{$toplam_fiyat}}
-        </span>
+                            <span id="mtoplam_fiyat">{{$toplam_fiyat}}</span>
                         </div>
                         <div class="Rezervasyon-info-item">
-        <span>Temizlik Ücreti
-        </span>
+                            <span>Temizlik Ücreti
+                            </span>
                             <svg class="icon icon-unlem" data-toggle="tooltip" data-html="true" data-placement="top"
                                  title="{{ $price->min_stay_cleaning_price ?? 7 }} geceden az konaklamalardan temizlik ücreti alınır">
                                 <use xlink:href="#icon-unlem">
                                 </use>
                             </svg>
-                            <span id="mtemizlik_ucreti">{{$temizlik_ucreti}}
-      </span>
+                            <span id="mtemizlik_ucreti">{{$temizlik_ucreti}}</span>
                         </div>
                         <h6 class="Rezervasyon-info-head">Ödeme Planı
                         </h6>
                         <div class="Rezervasyon-info-item">
-      <span>Ön Ödeme
-      </span>
+                                <span>Ön Ödeme
+                                </span>
                             <svg class="icon icon-unlem" data-toggle="tooltip" data-html="true" data-placement="top"
                                  title="Yerinizi ayırtmak için ödemeniz gereken tutar">
                                 <use xlink:href="#icon-unlem">
                                 </use>
                             </svg>
-                            <span id="mon_odeme">{{$on_odeme}}
-    </span>
+                            <span id="mon_odeme">{{$on_odeme}}</span>
                         </div>
                         <div class="Rezervasyon-info-item">
-    <span> Kalan Ödeme
-    </span>
+                                <span> Kalan Ödeme
+                                </span>
                             <svg class="icon icon-unlem" data-toggle="tooltip" data-html="true" data-placement="top"
                                  title="Villaya Girişte Ödenecek Tutar">
                                 <use xlink:href="#icon-unlem">
                                 </use>
                             </svg>
-                            <span id="mkalan_odeme">{{$kalan_odeme}}
-  </span>
+                            <span id="mkalan_odeme">{{$kalan_odeme}}</span>
                         </div>
                         <div class="Rezervasyon-info-toplam">
-    <span>TOPLAM
-    </span>
+                            <span>TOPLAM
+                            </span>
                             <p id="mhesap_toplam">{{$hesap_toplam}}
                             </p>
                         </div>
@@ -1764,8 +1810,8 @@ dataLayer.push({
             </div>
             <div class="Villa_detay-property">
                 <div class=" Villa_detay-property-name">
-      <span>VİLLA KODU
-      </span>
+                        <span>VİLLA KODU
+                        </span>
                     <h6 class="header-lg">{{$villa->code}}
                     </h6>
                 </div>
@@ -1776,8 +1822,8 @@ dataLayer.push({
                             </use>
                         </svg>
                         <p>
-          <span>KONUM
-          </span>{{ isset($villa->area->name) ? $villa->area->name : '' }}
+                    <span>KONUM
+                    </span>{{ isset($villa->area->name) ? $villa->area->name : '' }}
                         </p>
                     </div>
                     <div class="Villa_detay-property-item">
@@ -1786,8 +1832,8 @@ dataLayer.push({
                             </use>
                         </svg>
                         <p>
-          <span>KİŞİ SAYISI
-          </span>{{$villa->number_person}} Kişilik
+                        <span>KİŞİ SAYISI
+                        </span>{{$villa->number_person}} Kişilik
                         </p>
                     </div>
                     <div class="Villa_detay-property-item">
@@ -1796,8 +1842,8 @@ dataLayer.push({
                             </use>
                         </svg>
                         <p>
-          <span>YATAK ODASI
-          </span>{{$villa->number_bedroom}} Adet
+                            <span>YATAK ODASI
+                            </span>{{$villa->number_bedroom}} Adet
                         </p>
                     </div>
                     <div class="Villa_detay-property-item">
@@ -1806,8 +1852,8 @@ dataLayer.push({
                             </use>
                         </svg>
                         <p>
-          <span>BANYO
-          </span>{{$villa->number_bathroom}} Adet
+                        <span>BANYO
+                        </span>{{$villa->number_bathroom}} Adet
                         </p>
                     </div>
                 </div>
@@ -1827,14 +1873,7 @@ dataLayer.push({
           <span>{{$villa->name}}
           </span>VİLLA FİYATLARI
                         </p>
-                        <!-- <ul class="nav nav-tabs "  >
-                <li class="nav-item ">
-                <a href="#mtab1" class="nav-link active "  data-toggle="tab">2018</a>
-                </li>
-                <li class="nav-item ">
-                <a href="#mtab2" class="nav-link  "  data-toggle="tab">2019</a>
-                </li>
-                </ul>-->
+                      
                     </div>
                     <div class="Villa_detay-price-in ">
                         <div class="Villa_detay-price-left flex-column">
@@ -1864,31 +1903,31 @@ dataLayer.push({
                                                 </strong>
                                                 <span>
 
-                @php
-                    if(isset($price->min_accommodation)){
-                    $min_acc=$price->min_accommodation;
-                    }else{
-                    $min_acc=$villa_min_accommodation;
-                    }
+                                            @php
+                                                if(isset($price->min_accommodation)){
+                                                $min_acc=$price->min_accommodation;
+                                                }else{
+                                                $min_acc=$villa_min_accommodation;
+                                                }
 
-                    if(isset($price->short_stay)){
-                    $cleaning_price=$price->short_stay;
-                    }else{
-                    $cleaning_price=$villa->default_cleaning_price;
-                    }
-                    $price_if_min_stay_cleaning = $price->min_stay_cleaning_price ?? 7;
-                @endphp
-                Minimum Kiralama : {{$min_acc}} Gece
-               @if(!empty($cleaning_price) && $cleaning_price!=0 && ($price_if_min_stay_cleaning > $min_acc))
+                                                if(isset($price->short_stay)){
+                                                $cleaning_price=$price->short_stay;
+                                                }else{
+                                                $cleaning_price=$villa->default_cleaning_price;
+                                                }
+                                                $price_if_min_stay_cleaning = $price->min_stay_cleaning_price ?? 7;
+                                            @endphp
+                                            Minimum Kiralama : {{$min_acc}} Gece
+                                        @if(!empty($cleaning_price) && $cleaning_price!=0 && ($price_if_min_stay_cleaning > $min_acc))
                                                         <svg class="icon icon-unlem temizlik-tooltip" data-toggle="tooltip"
                                                              data-html="true"
                                                              data-placement="top"
                                                              title="7 gece altındaki konaklamalardan {{$cleaning_price}} ₺  Temizlik ücreti alınır">
-                <use xlink:href="#icon-unlem">
-                </use>
-                @endif
-              </svg>
-            </span>
+                                                        <use xlink:href="#icon-unlem">
+                                                        </use>
+                                                        @endif
+                                                    </svg>
+                                                    </span>
                                             </p>
 
                                             @php
@@ -1896,11 +1935,9 @@ dataLayer.push({
                                                 $haftalik_fiyat=ceil($gune_ait_fiyat*7);
                                             @endphp
                                             <span
-                                                class="Villa_detay-price-item-cash">{{ isset($price->daily_price_tl) ? number_format($gune_ait_fiyat, 0, ',', '.'). ' ₺' : 'Belirtilmedi' }} 
-        </span>
+                                                class="Villa_detay-price-item-cash">{{ isset($price->daily_price_tl) ? number_format($gune_ait_fiyat, 0, ',', '.'). ' ₺' : 'Belirtilmedi' }} </span>
                                             <span
-                                                class="Villa_detay-price-item-cash">{{ isset($price->daily_price_tl) ? number_format($haftalik_fiyat, 0, ',', '.') . ' ₺' : 'Belirtilmedi' }}
-      </span>
+                                                class="Villa_detay-price-item-cash">{{ isset($price->daily_price_tl) ? number_format($haftalik_fiyat, 0, ',', '.') . ' ₺' : 'Belirtilmedi' }}</span>
                                         </div>
                                     @empty
                                         &nbsp;
@@ -2092,8 +2129,8 @@ dataLayer.push({
                                                 </p>
                                                 @if(isset($havuzbilgileri->special_info))
                                                     <p>
-            <span>Ek Bilgi
-            </span>:&nbsp;&nbsp;{{$havuzbilgileri->special_info}}
+                                                        <span>Ek Bilgi
+                                                        </span>:&nbsp;&nbsp;{{$havuzbilgileri->special_info}}
                                                     </p>
                                                 @endif
                                             </div>

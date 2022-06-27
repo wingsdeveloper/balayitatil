@@ -1,100 +1,4 @@
-<style>
-    #gallery figure:first-child {
-        height: 50%;
-    }
 
-    #gallery figure:not(:first-child) {
-        display: none;
-    }
-</style>
-<section id="foto" class="Banner Banner_lg Banner-back-dark">
-
-    <div class="Banner_blur" style="background-image:url(
-        @if(Agent::isDesktop())
-    @if(!empty($villa->panel_villa) && !empty($villa->panel_villa->banner_image))
-    {{ImageProcess::getImageByPath( $villa->panel_villa->banner_image) }}
-    @elseif(!empty($villa->banner_image))
-    {{ImageProcess::getImageByPath( $villa->banner_image) }}
-    @else
-    {{ ImageProcess::getImageByPath('images/slider.jpg') }}
-    @endif
-    @else
-    @if(!empty($villa->panel_villa) && !empty($villa->panel_villa->banner_image_mobile))
-    {{ImageProcess::getImageByPath( $villa->panel_villa->banner_image_mobile) }}
-    @elseif(!empty($villa->banner_image_mobile))
-    {{ImageProcess::getImageByPath( $villa->banner_image_mobile) }}
-    @else
-    {{ ImageProcess::getImageByPath('images/slider.jpg') }}
-    @endif
-    @endif">
-
-    </div>
-    <div class="container">
-        <div class=" Banner_lg-text   pos-ab-xy-center ">
-            <h6 class="animated fadeInDown desktop">{{$villa->name}}</h6>
-            <h1 class="animated fadeInDown desktop">{{ $website->prefix }}{{ $villa->code }}</h1>
-            <div class="Villa_detay-images flex"
-                 @if(empty($video) || ($video == '')) style="justify-content: center!important" @endif>
-                <div class="Villa_detay-images-item pl-4">
-                    <div id="gallery" class="gallery">
-                        @forelse($villa->photos as $photo)
-                            <figure itemprop="associatedMedia" itemscope itemtype="">
-                                <!-- Büyük Resim linki -->
-
-                                @if(Agent::isMobile() || Agent::isTablet())
-                                    <a href="{{ ImageProcess::getImageWatermarkedPath($photo, true) }}"
-                                       data-caption="{{$villa->name}}"
-                                       data-width="1920" data-height="1080"
-                                       itemprop="contentUrl">
-                                        <!-- Küçük Resim -->
-
-                                        <img data-src="{{ ImageProcess::getImageWatermarkedPath($photo, true) }}"
-                                             itemprop="thumbnail" alt="{{$villa->name}}">
-                                    </a>
-                                @else
-                                    <a style="display: block; width: 100%; height: 100%"
-                                       href="{{ ImageProcess::getImageWatermarkedPath($photo) }}"
-                                       data-caption="{{$villa->name}}"
-                                       data-width="1920" data-height="1080"
-                                       itemprop="contentUrl">
-                                        <!-- Küçük Resim -->
-
-                                        <img data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}"
-                                             itemprop="thumbnail" alt="{{$villa->name}}">
-                                    </a>
-
-                                @endif
-                            </figure>
-                        @empty
-                            &nbsp;
-                        @endforelse
-                    </div>
-                    <svg class="icon icon-image">
-                        <use xlink:href="#icon-image"></use>
-                    </svg>
-                    <p class="desktop" style="z-index: 9999; cursor: pointer"
-                       onclick="$('#gallery').find('figure a:first').click();">Fotoğrafları Gör <span>({{count($villa->photos)}})</span>
-                    </p>
-                    <p class="mobile" style="z-index: 9999" onclick="$('#gallery').find('figure a:first').click();">
-                        FOTOĞRAFLARI <br> GÖRÜNTÜLE<span>({{count($villa->photos)}})</span></p>
-                </div>
-
-                <div class="Villa_detay-images-item {{ empty($video) ? 'hidden' : '' }}"
-                     style="display: {{ empty($video) ? 'none' : '' }}">
-                    <a class="global_link  video-btn"
-                       data-toggle="modal" data-src="{{$video}}" data-target="#myModal">
-                    </a>
-                    <svg class="icon icon-play-button-2">
-                        <use xlink:href="#icon-play-button-2"></use>
-                    </svg>
-                    <p>Videoyu İzle</p>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-    <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -108,7 +12,7 @@
                     </button>
 
 
-                    <!-- 16:9 aspect ratio -->
+
                     <div class="embed-responsive embed-responsive-16by9">
                         @if(empty($video))
                             {{(!empty($villa->panel_villa->video_url) ? $villa->panel_villa->video_url : 'Villamızın videosu hazırlanmaktadır')}}
@@ -126,7 +30,7 @@
         </div>
     </div>
 
-    <!-- Modal SSS -->
+
     <div class="modal fade" id="myModalSSS" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -140,7 +44,7 @@
                     </button>
 
 
-                    <!-- 16:9 aspect ratio -->
+
                     <div class="embed-responsive embed-responsive-16by9">
 
                         @if(empty($nasil_kiralarim_video))
@@ -160,40 +64,7 @@
     </div>
 
 
-    <div class="Villa_detay-menu ">
-        <div class="Villa_detay-menu-name">
-            <p>
-                <span>{{$villa->name}}</span>
-                {{ $website->prefix }}{{ $villa->code }}
-            </p>
-        </div>
-        <div class="Villa_detay-menu-links">
-            <ul>
-                <li><a class="nav-menuX" href="#foto">FOTOĞRAFLAR</a></li>
-                <li><a class="nav-menuX" href="#fiyat">FİYATLANDIRMALAR</a></li>
-                <li><a class="nav-menuX" href="#genel">GENEL BAKIŞ</a></li>
-
-                @if(isset($vfloors) && !empty($vfloors))
-                    <li><a class="nav-menuX" href="#kat">KAT PLANI</a></li>
-                @endif
-                <li><a class="nav-menuX" href="#harita">ULAŞIM</a></li>
-                <li><a class="nav-menuX" href="#sss">MERAK EDİLENLER</a></li>
-                <li><a class="nav-menuX" href="#extra">EXTRA</a></li>
-            </ul>
-        </div>
-
-        <div id='UpTotop' class="flex-column a-i-c">
-            <svg class="icon icon-chevron-right">
-                <use xlink:href="#icon-chevron-right"></use>
-            </svg>
-            YUKARI ÇIK
-        </div>
-
-    </div>
-
-
-</section>
-
+    
 
 <!-- Modal -->
 <div class="modal modal_date fade" id="doluluk-takvimi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
