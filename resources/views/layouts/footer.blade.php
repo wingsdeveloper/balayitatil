@@ -10,7 +10,11 @@
                 </a>
                 <div class="Navbottom-top-text">
                     @php
+<<<<<<< HEAD
                         $defaultContact = \App\Website::with(['contacts' => function($q){
+=======
+                        $defaultContact = App\Website::with(['contacts' => function($q){
+>>>>>>> 3a4ae6ca4df3ec61d8cc23a47e5fb4d5474923d1
                             $q->orderBy('id','ASC');
                             $q->first();
                         }])->where('id',15/*APP_WEBSITE_ID*/)->select('id')->firstOrFail();
