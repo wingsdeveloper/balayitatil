@@ -187,7 +187,7 @@
         <div class="Navbottom-banks-in">
             <img src="{{ asset('images/banks.svg') }}" alt="Çalıştığımız Bankalar" class="bank">
             <img src="{{ asset('images/banks-mobile.svg') }}" alt="Çalıştığımız Bankalar" class="bank-m">
-            <img src="i{{ asset('images/guvenli-odeme.svg') }}" alt="Güvenli Ödeme" class="guvenli-odeme">
+            <img src="{{ asset('images/guvenli-odeme.svg') }}" alt="Güvenli Ödeme" class="guvenli-odeme">
         </div>
     </div>
 </div>
