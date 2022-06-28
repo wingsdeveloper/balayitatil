@@ -210,8 +210,10 @@ window.addEventListener('load', function () {
         var galleryThumbs = new Swiper('.gallery-thumbs', {
             slidesPerView: 9,
             loop: true,
+            lazy: true,
             spaceBetween: 10,
             centeredSlides: true,
+            preloadImages: !1,
             grabCursor: true,
             slideToClickedSlide: true,
             watchSlidesVisibility: true,
@@ -222,6 +224,8 @@ window.addEventListener('load', function () {
         var galleryTop = new Swiper('.gallery-top', {
             slidesPerView: 1,
             loop: true,
+            lazy: true,
+            preloadImages: !1,
             navigation: {
                 nextEl: '#detail_next_btn',
                 prevEl: '#detail_prev_btn',
