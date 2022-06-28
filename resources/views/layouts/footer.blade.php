@@ -9,7 +9,7 @@
                     </svg>
                 </a>
                 <div class="Navbottom-top-text">
-                    TEST
+
                     @php
 
                         $defaultContact = \App\Website::with(['contacts' => function($q){
