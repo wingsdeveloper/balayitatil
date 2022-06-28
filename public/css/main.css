@@ -4,9 +4,6 @@
   width: 100%;
   transition: 600ms;
   padding: 20px 0; }
-  .Navtop-ic {
-    background-color: #4A0184;
-    position: static; }
   .Navtop-back {
     position: fixed;
     transition: 600ms;
@@ -14,6 +11,9 @@
     top: 0; }
     .Navtop-back .Navtop-top-search input {
       border-color: #264477 !important; }
+  .Navtop-ic {
+    background-color: #4A0184;
+    position: static; }
   .Navtop-top-search {
     width: 0;
     opacity: 0;
