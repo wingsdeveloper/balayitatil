@@ -1583,11 +1583,12 @@
 }
 
 .Villa_detay-map-info-link svg {
-    margin-bottom: 5px
+    margin-bottom: 5px;
+    color:#ffca0f;
 }
 
 .Villa_detay-map-info-link:hover {
-    color: #490181;
+    color: #ffca0f;
     -webkit-transition: 500ms;
     transition: 500ms
 }
@@ -1622,7 +1623,7 @@
 }
 
 .Villa_detay-map-item p span {
-    color: #490181;
+    color: #ffca0f;
     font-weight: 500
 }
 
