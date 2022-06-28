@@ -2915,6 +2915,9 @@
     padding-top: 8px !important;
     padding-bottom: 5px !important; } }
 
+.modal {
+  z-index: 9999999999; }
+
 .fancybox-container {
   z-index: 99999999999 !important; }
 
