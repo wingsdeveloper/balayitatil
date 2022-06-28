@@ -1,11 +1,12 @@
-<section class="Banner Banner_md Banner-back Banner-kurumsal"
-             style="background-image: url({{Agent::isDesktop() ? ImageProcess::getImageByPath( $about->banner) : ImageProcess::getImageByPath($about->banner_mobile) }});">
+    <section class="Home-banner Home-banner-kurumsal" style="background-image: url({{ asset('images/hakkimizda-banner.jpg') }});">
         <div class="container">
-            <div class=" Banner_search-text   pos-ab-xy-center ">
-                <p class="animated fadeInDown  flex-column">
-                    <span>Sektörde tecrübeli ve dinamik ekibimizle, aileniz ve sevdiklerinizle konforlu bir tatil geçirebilmeniz için yanınızdayız... </span>
-                </p>
-
+            <div class="Home-banner-in">
+                <div class="Home-banner-text">
+                    <div class="Home-banner-text-left">
+                        <h2 class="animated fadeInDown  ">Sektörde tecrübeli ve dinamik ekibimizle,</h2>
+                        <p class="animated fadeInDown ">aileniz ve sevdiklerinizle konforlu bir tatil geçirebilmeniz için yanınızdayız...</p>
+                    </div>
+                </div>
 
             </div>
         </div>

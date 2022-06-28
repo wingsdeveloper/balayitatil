@@ -15,7 +15,7 @@
     @else
         <meta property="og:url" content="{{ route('static', $seo->seo_url) }}"/>
     @endif
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
    <!-- Criteo Product Tag -->
 <script type="text/javascript">
 window.criteo_q = window.criteo_q || [];
@@ -794,7 +794,7 @@ window.addEventListener('load', function () {
 
                             <div class="swiper-wrapper">
                             @forelse($villa->photos as $photo)
-                                <a href="{{ ImageProcess::getImageWatermarkedPath($photo) }}" data-fancybox data-title="{{$villa->name}}" class="swiper-slide " >
+                                <a href="{{ ImageProcess::getImageWatermarkedPath($photo) }}" data-fancybox="group-ofis" data-title="{{$villa->name}}" class="swiper-slide " >
                                     <img class="swiper-lazy " data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" alt="" src="">
                                     <div class="swiper-lazy-preloader"></div>
                                 </a>

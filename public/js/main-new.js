@@ -470,7 +470,7 @@ $(".arttir").click(function () {
 
                 230 < $(document).scrollTop() ? ($(".Rezervasyon").addClass("Rezervasyon-fixed"),
                     $(".Rezervasyon-slogan").slideUp(),
-                e < 500 && $(".Rezervasyon").removeClass("Rezervasyon-fixed")) : ($(".Rezervasyon").removeClass("Rezervasyon-fixed"),
+                e < 750 && $(".Rezervasyon").removeClass("Rezervasyon-fixed")) : ($(".Rezervasyon").removeClass("Rezervasyon-fixed"),
                     $(".Rezervasyon-slogan").slideDown()),
                     (e = $(document).height() - $(window).height() - $(window).scrollTop()) < 580 ? $(".Favoriler-right").addClass("Favoriler-right-absu") : $(".Favoriler-right").removeClass("Favoriler-right-absu"),
 

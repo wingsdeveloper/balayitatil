@@ -10,7 +10,7 @@
     <section class="Content">
         <div class="container">
             <div class="Content-in">
-                <h3>Hakkımızda</h3>
+                <h3 class="Content-title">Hakkımızda</h3>
                 <p>2015 yılında Villa Kalkan(villakalkan.com.tr) markası ile faaliyetlerimize başladığımız firmamız 2018
                     yılı itibariyle Wings Seyahat Turizm Sanayi ve Ticaret Limited Şirketi çatısı altında Villa/Apart
                     konaklamasından otel rezervasyonları,günübirlik tur ve aktivite organizasyonlarına kadar 10’un
