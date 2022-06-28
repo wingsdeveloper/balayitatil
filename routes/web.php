@@ -203,8 +203,7 @@ Route::get('/villa_status/{villa_id}/{yil}', 'VillaController@getStatus');
 Route::get('/getPrices/{villa_id}/{giris_tarih}/{cikis_tarih}', 'VillaController@getPrices');
 
 Route::get('crawl-villa-links', 'VillaBotController@updateVillaLinks');
-Route::match(['GET', 'POST'], 'crawl-all-urls', 'VillaBotController@crawlVillaUri');
-Route::match(['GET', 'POST'], 'crawl-all-urls-desktop', 'VillaBotController@crawlVillaUriDesktop');
+Route::get('crawl-all-urls', 'VillaBotController@crawlVillaUri');
 Route::get('set-villa-real-urls', 'VillaBotController@setVillaUrl');
 
 Route::get('villa-bulunamadi', 'PageController@villaNotFound');
