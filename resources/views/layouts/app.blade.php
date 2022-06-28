@@ -49,8 +49,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 @stack('search_app_js')
 <script src="{{ asset('js/selectpicker.min.js') }}"></script>
-<script src="{{ asset('js/theme.min.js?v=1.15vk') }}"></script>
-<script src="{{ asset('js/main-new.js?v=1.15vk') }}" type="text/javascript"></script>
+<script src="{{ asset('js/theme.min.js?v=1.16vk') }}"></script>
+<script src="{{ asset('js/main-new.js?v=1.16vk') }}" type="text/javascript"></script>
 
 @stack('after_theme')
 
