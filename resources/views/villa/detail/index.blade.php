@@ -1541,7 +1541,7 @@ window.addEventListener('load', function () {
 
                             <div class="swiper-wrapper">
                             @forelse($villa->photos as $photo)
-                                <a href="{{ ImageProcess::getImageWatermarkedPath($photo) }}" data-fancybox data-title="{{$villa->name}}" class="swiper-slide " >
+                                <a href="{{ ImageProcess::getImageWatermarkedPath($photo) }}" data-fancybox="images" data-title="{{$villa->name}}" class="swiper-slide " >
                                     <img class="lazy " data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" alt="{{$villa->name}}" src="">
                                 </a>
                                 @empty
