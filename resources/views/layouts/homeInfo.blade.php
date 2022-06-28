@@ -6,7 +6,7 @@
                         <img src="{{ asset('images/tursab-logo.png') }}" alt="">
                     </div>
                     <div class="Home-info-item-text">
-                        <h5>balayitatil.com 42552’nolu <b>Türsab Acentesidir.</b></h5>
+                        <h5>balayisepeti.com.tr 42552’nolu <b>Türsab Acentesidir.</b></h5>
                         <div class="Home-info-item-text-link">
                             <a href="">Belge Görüntüle</a>
                         </div>
@@ -28,7 +28,7 @@
 
                     </div>
                     <div class="Home-info-item-text">
-                        <h5>Balayitatil.com’u <b>Keşfet</b></h5>
+                        <h5>balayisepeti.com.tr’yi <b>Keşfet</b></h5>
                         <div class="Home-info-item-text-link">
                             <a href="">Hakkımızda</a>
                             <a href="https://www.youtube.com/embed/abWhzr3Y2Ow" data-fancybox class="video-link"><i
