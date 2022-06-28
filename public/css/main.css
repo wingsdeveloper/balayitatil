@@ -3259,10 +3259,10 @@
         border-top: 1px solid #F3F4F7;
         transition: all 500ms; }
       .Info-right-item:hover .Info-right-item-text {
-        background-color: #172751; }
+        background-color: #61189A; }
       .Info-right-item:hover .Info-right-item-link {
-        background-color: #d64e3f;
-        border-color: #d64e3f; }
+        background-color: #D6385E;
+        border-color: #D6385E; }
       .Info-right-item:hover h5 {
         color: #fff; }
         .Info-right-item:hover h5:before {

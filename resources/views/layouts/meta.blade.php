@@ -94,28 +94,15 @@
 @endif
 <meta name="apple-mobile-web-app-title" content="">
 
-<link rel="icon" href="{{ asset("favicon.ico") }}">
 
-<link rel="shortcut icon" type="image/x-icon" href="">
-<link rel="apple-touch-icon" sizes="57x57" href="">
-<link rel="apple-touch-icon" sizes="114x114" href="">
-<link rel="apple-touch-icon" sizes="72x72" href="">
-<link rel="apple-touch-icon" sizes="144x144" href="">
-<link rel="apple-touch-icon" sizes="60x60" href="">
-<link rel="apple-touch-icon" sizes="120x120" href="">
-<link rel="apple-touch-icon" sizes="76x76" href="">
-<link rel="apple-touch-icon" sizes="152x152" href="">
-<link rel="apple-touch-icon" sizes="180x180" href="">
-<link rel="shortcut icon" href="">
-<link rel="icon" type="image/x-icon" href="">
-<link rel="icon" type="image/png" href="" sizes="192x192">
-<link rel="icon" type="image/png" href="" sizes="160x160">
-<link rel="icon" type="image/png" href="" sizes="96x96">
-<link rel="icon" type="image/png" href="" sizes="16x16">
-<link rel="icon" type="image/png" href="" sizes="32x32">
-<meta name="msapplication-TileColor" content="">
-<meta name="msapplication-TileImage" content="">
-<meta name="msapplication-config" content="">
+
+<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicon180x180.png') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon32x32.png') }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon16x16.png') }}">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="{{ asset('images/favicon.svg') }}" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
 
 <title>{{ isset($meta_seo->site_title) && !empty($meta_seo->site_title) ? $meta_seo->site_title : '' }}</title>
 <meta name="base_url" content="{{ URL::to('/') }}">
