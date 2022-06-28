@@ -49,8 +49,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 @stack('search_app_js')
 <script src="{{ asset('js/selectpicker.min.js') }}"></script>
-<script src="{{ asset('js/theme.min.js?v=1.13vk') }}"></script>
-<script src="{{ asset('js/main-new.js?v=1.14vk') }}" type="text/javascript"></script>
+<script src="{{ asset('js/theme.min.js?v=1.15vk') }}"></script>
+<script src="{{ asset('js/main-new.js?v=1.15vk') }}" type="text/javascript"></script>
 @stack('after_theme')
 
 @if(($view_name == "villa-list-index") || $view_name == 'villa-search-no-price' || ($view_name == "villa-search-index") || ($view_name == "villa-search-index_new") || ($view_name == "villa-category-detail") || ($view_name == "area-detail-index") || ($view_name == "villa-detail-index") || ($view_name == "home-index") || ($view_name == "offer-offer"))
