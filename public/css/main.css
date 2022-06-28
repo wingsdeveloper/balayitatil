@@ -951,7 +951,8 @@
 @media (max-width: 991px) {
   .Navtop {
     padding: 20px 0;
-    height: 85px; }
+    height: 85px;
+    background-color: #fff; }
     .Navtop .navbar {
       padding: 0; }
       .Navtop .navbar-brand svg {
