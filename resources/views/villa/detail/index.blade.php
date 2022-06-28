@@ -37,9 +37,6 @@ window.criteo_q.push(
     </style>
     <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
     <script src="js/library/lazyload.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
-          integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
  
 
 @endpush
@@ -257,6 +254,25 @@ window.addEventListener('load', function () {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/js/utils.min.js"></script>
 <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+    <script>
+        $(".fancybox").fancybox({
+            afterShow: function(){
+                // fancybox is open, run myFunct()
+                $('.Navtop ').css({opacity: 0, "z-index": 0});
+                $('.Navbottom ').css({opacity: 0, "z-index": 0});
+            },
+            afterClose: function(){
+                // fancybox is closed, run myOtherFunct()
+                $('.Navtop ').css({opacity: 1,"z-index": 99999999});
+                $('.Navbottom ').css({opacity: 1, "z-index": 99999999});
+            }
+        });
+
+    </script>
 
 <script>
 
