@@ -1,3 +1,4 @@
+<!--
 <section class="Banner desktop Banner_md guttert"
          style="background-image: url({{ Agent::isDesktop() ? ImageProcess::getImageByPath($sss->static_banner_image_pc) : ImageProcess::getImageByPath($sss->static_banner_image_mobile) }})" >
   <div class="container">
@@ -10,3 +11,4 @@
     </div>
   </div>
 </section>
+-->

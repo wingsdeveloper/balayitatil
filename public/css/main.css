@@ -2777,7 +2777,7 @@
         margin-right: 0; }
         .Home-banner-text-left h1 {
           max-width: clamp(250px, 60.55vw, 600px);
-          font-size: clamp(16px, 3.54vw, 35px);
+          font-size: clamp(24px, 3.54vw, 35px);
           text-align: center; }
       .Home-banner-text-right {
         display: none; }
@@ -3681,6 +3681,9 @@
     margin-right: 10px; }
     .Filtre-form .Villas-filter-item:last-child {
       margin-right: 0; }
+
+.Global_header {
+  margin-top: 40px; }
 
 @media (max-width: 991px) {
   .Filtre-form {
