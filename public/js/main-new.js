@@ -464,7 +464,7 @@ $(".arttir").click(function () {
                     $(".Villa_detayM-whatsapp").addClass("Villa_detayM-whatsapp-active")) : ($(".Villa_detayM-rez_fix").removeClass("flex"),
                     $(".Villa_detayM-whatsapp").removeClass("Villa_detayM-whatsapp-active")),
 
-                    50 < $(document).scrollTop() ? $(".Navtop").addClass("Navtop-back") : $(".Navtop").removeClass("Navtop-back");
+                    50 < $(document).scrollTop() ? ($(".Navtop").addClass("Navtop-back"),$(".Villa_Search").addClass("Villa_Search-z")) : ($(".Navtop").removeClass("Navtop-back"),$(".Navtop").removeClass("Villa_Search-z"));
 
                 var e = $(document).height() - $(window).height() - $(window).scrollTop();
 

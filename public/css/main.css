@@ -1644,6 +1644,8 @@
   box-shadow: 0 4px 74px 0 rgba(142, 130, 161, 0.1);
   background-color: #fff;
   margin-bottom: 100px; }
+  .Villa_Search-z {
+    z-index: 9; }
   .Villa_Search-in {
     display: flex;
     justify-content: space-between;
