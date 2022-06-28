@@ -86,7 +86,7 @@ class VillaBotController extends Controller
         $villas = Villa::whereHas('panel_villa')->with(['seo','panel_villa'])->get();
         foreach($villas as $key => $row):
             try {
-                DB::table('website_panel_villas')->where('id', $row->panel_villa->id)->where('website_id',5/*APP_WEBSITE_ID*/)->update(['real_url' => route('static', $row->seo->seo_url)]);
+                DB::table('website_panel_villas')->where('id', $row->panel_villa->id)->where('website_id',15/*APP_WEBSITE_ID*/)->update(['real_url' => route('static', $row->seo->seo_url)]);
             } catch (\Exception $e) {
 
             }
