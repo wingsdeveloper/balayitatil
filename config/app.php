@@ -3,9 +3,9 @@
 return [
 
     'website' => [
-        'id' => 2
+        'id' => env('APP_WEBSITE_ID')
     ],
-    'server_ip' => 'yonetim.villakalkan.com.tr',
+    'server_ip' => env('APP_SERVER_IP'),
 
     'mail_username' => 'villakalkanrezervasyon@gmail.com',
     'mail_password' => '444arda775',
@@ -21,7 +21,7 @@ return [
     'APP_FOOTER_MENU_ID' => env('APP_FOOTER_MENU_ID'),
     'APP_BOTTOM_MENU_ID' => env('APP_BOTTOM_MENU_ID'),
 
-    'api_base_url' => ['local' => 'http://wings.backend.v8.laragon/api', 'production' => "https://yonetim.villakalkan.com.tr/api"],
+    'api_base_url' => ['local' => 'http://wings.backend.v8.laragon/api', 'production' => "https://office.wings.com.tr/api"],
     'api_user_token' => "df6f0cb8ec543c7bae42b88f06158619677446da34c5182819b831f1d4a1",
 
     'name' => env('APP_NAME', 'Laravel'),
