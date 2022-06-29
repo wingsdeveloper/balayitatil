@@ -37,15 +37,13 @@
                 <div class="Navbottom-top-social">
                     <h6>Temasta Kal</h6>
                     <div class="Navbottom-top-social-links">
-                        @if(!empty($general->facebook ))
-                            <a href="{{ $general->facebook }}"><i class="fa fa-facebook-official"></i></a>
-                        @endif
-                        @if(!empty($general->instagram ))
-                        <a href="{{ $general->instagram }}"><i class="fa fa-instagram"></i></a>
-                        @endif
-                        @if(!empty($general->twitter ))
-                        <a href="{{ $general->twitter }}"><i class="fa fa-twitter"></i></a>
-                        @endif
+                   
+                            <a href="https://facebook.com/balayisepeticomtr"><i class="fa fa-facebook-official"></i></a>
+               
+            
+                        <a href="https://instagram.com/balayisepeticomtr"><i class="fa fa-instagram"></i></a>
+              
+                 
                     </div>
                 </div>
             </div>
@@ -216,7 +214,7 @@
                 @endforelse
             </div>
             <div class="Navbottom-copy-right">
-                <p>Balayı Villası bir <a href="https://wings.com.tr/" target="_blank">Wings</a> iştirakidir.</p>
+                <p>Balayı Sepeti bir <a href="https://wings.com.tr/" target="_blank">Wings</a> iştirakidir.</p>
             </div>
         </div>
     </div>

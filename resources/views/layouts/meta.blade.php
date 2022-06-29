@@ -1,5 +1,6 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="facebook-domain-verification" content="07ir5h4mhnnlk1ncyug0xlrrvwvqju" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
 <meta name="title"
       content="{{ isset($meta_seo->seo_title) && !empty($meta_seo->seo_title) ? $meta_seo->seo_title : '' }}">
