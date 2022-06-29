@@ -79,4 +79,3 @@ fbq('track', 'PageView',{}, {eventID : '{{ $event_id_pageview }}' });
         }
     }
 </style>
-{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/lazyload/2.0.3/lazyload-min.js"></script>--}}
