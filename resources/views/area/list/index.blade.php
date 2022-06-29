@@ -11,7 +11,7 @@
         @php
             $villa = App\Villa::join('website_panel_villas', function ($join) {
                 $join->on('villas.id', '=', 'website_panel_villas.villa_id')
-                    ->where('website_panel_villas.website_id', '=', 15/*APP_WEBSITE_ID*/)
+                    ->where('website_panel_villas.website_id', '=', 2/*APP_WEBSITE_ID*/)
                     ->where('website_panel_villas.status', '=', 1);
             })->where("villas.area_id",$area->id)->whereNotNull('list_price')->where('villas.status', 1)->get();
             if(count($villa) == 0):

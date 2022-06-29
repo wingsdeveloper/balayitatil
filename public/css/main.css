@@ -2362,6 +2362,67 @@
     font-weight: 700;
     background-color: #eec9b0; }
 
+.Villas-filter {
+  margin-top: 50px;
+  margin-bottom: 20px; }
+
+.Villas-filter .Dropdown-buton:hover, .Villas-filter .Dropdown-buton:active, .Villas-filter .Dropdown-buton:focus {
+  color: #102754; }
+
+.Villas-filter .bootstrap-select {
+  width: 230px !important; }
+
+.Villas-filter .bootstrap-select .dropdown-menu {
+  background-color: #e8e9f0; }
+
+.Villas-filter .bootstrap-select .dropdown-item {
+  font-size: 13px;
+  color: #102754; }
+
+.Villas-filter .bootstrap-select .dropdown-item:focus {
+  background-color: transparent; }
+
+.Villas-filter .bootstrap-select .dropdown-item:hover {
+  background-color: #fff !important; }
+
+.Villas-filter .bootstrap-select .dropdown-item.active {
+  background-color: transparent; }
+
+.Villas-filter .bootstrap-select .dropdown-toggle {
+  font-size: 13px;
+  cursor: pointer;
+  border: none !important;
+  background-color: #102754;
+  padding-top: 15px;
+  padding-bottom: 15px; }
+
+.Villas-filter .bootstrap-select .dropdown-toggle .filter-option {
+  font-size: 13px;
+  color: #fff; }
+
+.Villas-filter .bootstrap-select .dropdown-toggle:after {
+  opacity: 0; }
+
+.Villas-filter-item {
+  position: relative;
+  min-height: 50px; }
+
+.Villas-filter-item .btn {
+  border-radius: 4px;
+  padding-left: 10%; }
+
+.Villas-filter-item .addon:nth-of-type(1) {
+  margin-top: -23px;
+  -webkit-transform: rotate(180deg) translateY(-50%);
+  transform: rotate(180deg) translateY(-50%); }
+
+.Villas-filter-item .addon:nth-of-type(2) {
+  margin-top: 5px; }
+
+.Villas-filter p {
+  font-size: 13px;
+  color: #102754; }
+
 .Rezervasyon {
   position: absolute;
   top: 0;
@@ -2737,6 +2798,14 @@
     width: 30%; }
     .P_villas-info-in .info.takvim {
       display: none; } }
+
+@media (max-width: 1024px) {
+  .Villas-filter {
+    flex-direction: column-reverse;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+  .Villas-filter p {
+    margin-top: 20px; } }
 
 @media (min-width: 1024px) and (max-width: 1250px) {
   .Villa_detay-menu-links li a {

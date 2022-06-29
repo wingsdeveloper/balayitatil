@@ -29,7 +29,7 @@
                 // Properties.
                 properties: {
                     // The placemark content.
-                    iconContent: 'Villa Kalkan',
+                    iconContent: 'Balayı Sepeti',
 
                 }
             }, {

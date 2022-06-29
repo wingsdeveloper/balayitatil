@@ -24,6 +24,8 @@ window.criteo_q.push(
     @include('home.temporary')
     @include('home.description')
     @push('javascripts')
+
+    
     	{{-- <script>
     		$('title').text('Kiralık Villa - Kiralık Yazlık | Villa Kalkan');
     		$('meta[name=description]').remove();

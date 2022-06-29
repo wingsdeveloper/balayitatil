@@ -1,9 +1,14 @@
-<section  class="Banner Banner_xmd Banner-back " style="background-image: url({{(isset($content->banner_image))? ImageProcess::getImageByPath($content->banner_image):''}});">
+<!-- background-image: url({{ isset($kiralik) ? Agent::isDesktop() ? ImageProcess::getImageByPath($kiralik->static_banner_image_pc ): ImageProcess::getImageByPath($kiralik->static_banner_image_mobile) : '' }});-->
 
-    <div class="container">
-        <div class=" Banner_md-text   pos-ab-x-center ">
-            <h1 class="animated fadeInDown flex-column ">{{ isset($area->name) ? $area->name : '' }}</h1>
-            <div class="Bolgeler-icons">
+<section class="Home-banner Home-banner-detail" style="background-image: url({{ asset('images/banner-detail.jpg') }});">
+        <div class="container">
+            <div class="Home-banner-in">
+                <div class="Home-banner-text">
+                    <div class="Home-banner-text-left">
+                        <h1 class="animated fadeInDown">{{ isset($area->name) ? $area->name : '' }}</h1>
+                    </div>
+                </div>
+                <div class="Bolgeler-icons">
                 <div class="Bolgeler-icons-item">
                     <svg class="icon icon-bplane"><use xlink:href="#icon-house4"></use></svg>
                     <span>VİLLA SAYISI <strong>{{$villas->total()}}</strong></span>
@@ -17,15 +22,14 @@
                     <span>HAVA LİMANI<strong>{{(isset($content->airport_distance))? $content->airport_distance:''}}</strong></span>
                 </div>
             </div>
+
+                @include('layouts.searchMenu')
+
+            </div>
         </div>
-    </div>
-    {{--test--}}
+    </section>
 
-    @include('layouts.searchMenu')
 
-</section>
-
-@include('layouts.searchMenuMobile')
 
 <section class="Information">
     <div class="container">

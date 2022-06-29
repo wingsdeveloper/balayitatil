@@ -750,82 +750,7 @@
     margin-right: -30px
 }
 
-.Villas-filter {
-    margin-top: 50px;
-    margin-bottom: 20px
-}
 
-.Villas-filter .Dropdown-buton:hover, .Villas-filter .Dropdown-buton:active, .Villas-filter .Dropdown-buton:focus {
-    color: #102754
-}
-
-.Villas-filter .bootstrap-select {
-    width: 230px !important
-}
-
-.Villas-filter .bootstrap-select .dropdown-menu {
-    background-color: #e8e9f0
-}
-
-.Villas-filter .bootstrap-select .dropdown-item {
-    font-size: 13px;
-    color: #102754
-}
-
-.Villas-filter .bootstrap-select .dropdown-item:focus {
-    background-color: transparent
-}
-
-.Villas-filter .bootstrap-select .dropdown-item:hover {
-    background-color: #fff !important
-}
-
-.Villas-filter .bootstrap-select .dropdown-item.active {
-    background-color: transparent
-}
-
-.Villas-filter .bootstrap-select .dropdown-toggle {
-    font-size: 13px;
-    cursor: pointer;
-    border: none !important;
-    background-color: #102754;
-    padding-top: 15px;
-    padding-bottom: 15px
-}
-
-.Villas-filter .bootstrap-select .dropdown-toggle .filter-option {
-    font-size: 13px;
-    color: #fff
-}
-
-.Villas-filter .bootstrap-select .dropdown-toggle:after {
-    opacity: 0
-}
-
-.Villas-filter-item {
-    position: relative;
-    min-height: 50px
-}
-
-.Villas-filter-item .btn {
-    border-radius: 4px;
-    padding-left: 10%
-}
-
-.Villas-filter-item .addon:nth-of-type(1) {
-    margin-top: -23px;
-    -webkit-transform: rotate(180deg) translateY(-50%);
-    transform: rotate(180deg) translateY(-50%)
-}
-
-.Villas-filter-item .addon:nth-of-type(2) {
-    margin-top: 5px
-}
-
-.Villas-filter p {
-    font-size: 13px;
-    color: #102754
-}
 
 .Villas .f_item {
     margin-bottom: 30px
@@ -4240,7 +4165,7 @@
 
 .Blog-links-head {
     height: 65px;
-    background-color: #102754;
+    background-color: #490181;
     font-size: 18px;
     font-weight: 700;
     color: #fff;
@@ -6050,11 +5975,11 @@
     -ms-flex-pack: center;
     justify-content: center;
     height: 100px;
-    background-color: #102754
+    background-color: #490181;
 }
 
 .Bolge_list-link .icon {
-    color: #490181;
+    color: #FFCA0F;
     height: 20px;
     width: 20px;
     -webkit-transition: 500ms;
@@ -6070,7 +5995,7 @@
 }
 
 .Bolge_list-link p span {
-    color: #490181
+    color: #FFCA0F
 }
 
 .Bolge_list-acti {
@@ -8470,18 +8395,6 @@
         margin-right: 0
     }
 
-    .Villas-filter {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-        flex-direction: column-reverse;
-        margin-top: 10px;
-        margin-bottom: 10px
-    }
-
-    .Villas-filter p {
-        margin-top: 20px
-    }
 
     .Villas-filter-item {
         margin-right: auto;
@@ -12555,3 +12468,5 @@ button.swiper-pagination-bullet {
 .flex {
     display: flex
 }
+.Bolge_list{
+    margin-bottom: 40px;}

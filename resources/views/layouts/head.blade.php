@@ -35,15 +35,17 @@ curl_close($curl);
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" rel="preload" as="style">
     <link rel="stylesheet" href="{{ asset('css/library/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('css/library/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/library/bootstrap-select.css') }}">
     <link rel="stylesheet" href="{{ asset('css/library/bootstrap-fullscreen-select.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="{{ asset('css/library/font-awesome.css') }}">
     <link rel="stylesheet" href="{{ asset('css/library/hover.css') }}">
     <link rel="stylesheet" href="{{ asset('css/library/intl-tel-input.css') }}">
     <link rel="stylesheet" href="{{ asset('css/library/library.css') }}">
     <link rel="stylesheet" href="{{ asset('css/library/lv_window.css') }}">
     <link rel="stylesheet" href="{{ asset('css/library/global.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/main.css?v=1.16vk') }}">
-    <link rel="stylesheet" href="{{ asset('css/library/theme-old.css?v=1.16vk') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css?v=1.17vk') }}">
+    <link rel="stylesheet" href="{{ asset('css/library/theme-old.css?v=1.17vk') }}">
     
 
 
