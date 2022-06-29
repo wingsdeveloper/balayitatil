@@ -260,20 +260,20 @@
                     </div>
                     <div class="Ofis-content-item Ofis-content-item-video">
                     <a href="https://www.youtube.com/watch?v=abWhzr3Y2Ow" data-fancybox>
-                            <img src="images/fethiye-ofis/ofis1.jpg" alt="Balayı Villası - Fethiye Ofis Tanıtım Videosu">
+                            <img src="images/fethiye-ofis/ofis1.jpg" alt="Balayı Sepeti - Fethiye Ofis Tanıtım Videosu">
                             <span class="Ofis-content-item-play"><i class="icon-play"></i></span>
                         </a>
                     </div>
                 </div>
                 <div class="Ofis-bottom">
                     <div class="Contact-support Contact-support-pink">
-                    <a href="te:+902422520032">
-                            <p><span>Yardım & Destek</span>+90 242 252 00 32</p>
+                    <a href="te:+902526060669">
+                            <p><span>Yardım & Destek</span>+90 252 606 06 69</p>
                         </a>
                     </div>
                     <div class="Ofis-bottom-text">
                     <p>MERKEZ: Taşyaka Mah. Baha Şıkman Cad. N:201/A Fethiye-MUĞLA</p>
-                        <a href="mailto:info@villakalkan.com.tr">info@villakalkan.com.tr</a>
+                        <a href="mailto:info@balayisepeti.com.tr">info@balayisepeti.com.tr</a>
                     </div>
                     <a target="_blank" href="https://www.google.com/maps/dir//Patlang%C4%B1%C3%A7,+Wings+Seyahat+Turizm+Limited+%C5%9Eirketi,+Baha+%C5%9E%C4%B1kman+Cd.+no:201%2FA,+48300+Fethiye%2FMu%C4%9Fla/@36.6179479,29.1427447,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x14c0436e28536a4b:0x88ef25d63cafd7f6!2m2!1d29.1452536!2d36.6179504" class="Ofis-konum-buton">
                         <i class="icon-marker"></i>Ofise Konum Al
