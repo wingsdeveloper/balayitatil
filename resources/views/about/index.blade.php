@@ -24,7 +24,7 @@
                     bir tatil yaptırmayı amaçlıyor. Antalya başta olmak üzere Muğla’da da aktif olarak kiralık villa
                     çeşitlerini sizlere sunan balayivillasi.com.tr, hayalinizdeki tatil için çok daha uygun fiyatlar
                     ödemenizi ise kolaylaştırmak istiyor. Tatilinizi mükemmel kılmak için tüm talep ve isteklerinizi
-                    değerlendiren balayivillasi.com.tr, siz değerli misafirlerimizin memnuniyetlerini arttırmak için
+                    değerlendiren balayisepeti.com.tr, siz değerli misafirlerimizin memnuniyetlerini arttırmak için
                     “özel ricalarınızı” mümkün olduğu mertebede gerçekleştirmekten onur duyuyor. Siz de başta Antalya ve
                     Muğla olmak üzere tatiliniz için size en uygun kiralık villa seçeneklerini görmek ve hemen
                     rezervasyon yapmak istiyorsanız web sayfamızda yer alan özel konseptlere ayrılmış villalara göz
@@ -163,9 +163,9 @@
                     <div class="Basin-content-item">
                         <a href="https://www.lycianescapes.com/"><img src="images/lyc-logo.png" alt="Diğer Markalarımız - Lycian Escapes"></a>
                     </div>
-                    <div class="Basin-content-item">
-                        <a href="https://villapusulasi.com/"><img src="images/villa-pusulasi-logo-renkli.png" alt="Diğer Markalarımız - Villa Pusulası"></a>
-                    </div>
+                    <div class="swiper-slide">
+                        <div class="Basin-slider-item"><a target="_blank" href="https://villakalkan.com.tr/"><img src="images/villa-kalkan-logo.png"
+                                                                       alt=""></a></div>
                     <div class="Basin-content-item">
                         <a href="https://villadukkani.com/"><img src="images/villadukkani-logo.png" alt="Diğer Markalarımız - Villa Dükkanı"></a>
                     </div>
