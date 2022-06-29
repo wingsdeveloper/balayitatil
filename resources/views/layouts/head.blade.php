@@ -44,7 +44,7 @@ curl_close($curl);
     <link rel="stylesheet" href="{{ asset('css/library/library.css') }}">
     <link rel="stylesheet" href="{{ asset('css/library/lv_window.css') }}">
     <link rel="stylesheet" href="{{ asset('css/library/global.css?v=1.25vk') }}">
-    <link rel="stylesheet" href="{{ asset('css/main.css?v=1.26vk') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css?v=1.27vk') }}">
     <link rel="stylesheet" href="{{ asset('css/library/theme-old.css?v=1.25vk') }}">
     
 
