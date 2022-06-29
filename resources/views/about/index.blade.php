@@ -163,8 +163,8 @@
                     <div class="Basin-content-item">
                         <a href="https://www.lycianescapes.com/"><img src="images/lyc-logo.png" alt="Diğer Markalarımız - Lycian Escapes"></a>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="Basin-slider-item"><a target="_blank" href="https://villakalkan.com.tr/"><img src="images/villa-kalkan-logo.png"
+                    <div class="Basin-content-item">
+                     <a target="_blank" href="https://villakalkan.com.tr/"><img src="images/villa-kalkan-logo.png"
                                                                        alt=""></a></div>
                     <div class="Basin-content-item">
                         <a href="https://villadukkani.com/"><img src="images/villadukkani-logo.png" alt="Diğer Markalarımız - Villa Dükkanı"></a>
