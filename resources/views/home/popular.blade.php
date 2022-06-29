@@ -182,7 +182,7 @@
             </div>
             <div class="flex mobile">
                 <a href="{{url('/kiralik-villa')}}" class="buton mx-auto">
-                    Tümünü Görüntüle TEST
+                    Tümünü Görüntüle 
                 </a>
             </div>
         </div>

@@ -5580,7 +5580,7 @@
 }
 
 .Iletisim-right-header .nav .active {
-    color: #490181
+    color: #fff;
 }
 
 .Iletisim-right-header .nav .active:before {
@@ -9166,7 +9166,6 @@
     }
 
     .Iletisim {
-        padding-top: 76px;
         margin-top: 0;
         overflow: hidden
     }
@@ -9227,7 +9226,7 @@
     }
 
     .Iletisim-right-header .nav {
-        background-color: #324261
+        background-color: #2F005E;
     }
 
     .Iletisim-right-header .nav-item {
@@ -9238,7 +9237,7 @@
         bottom: -10px !important;
         -webkit-transform: translateX(-50%) rotate(180deg);
         transform: translateX(-50%) rotate(180deg);
-        border-color: transparent transparent #324261 transparent
+        border-color: transparent transparent #2F005E transparent
     }
 
     .Iletisim-right-in {

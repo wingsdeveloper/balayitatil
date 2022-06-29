@@ -1,98 +1,211 @@
-var takvimvarmi = !1;
-
+var takvimvarmi = false;
 function getTodayString() {
-    var e = "It is now: " + new Date().toLocaleDateString() + ", ";
-    return (e += new Date().toLocaleTimeString());
+    var strNow = "It is now: " + new Date().toLocaleDateString() + ", ";
+    strNow += new Date().toLocaleTimeString();
+    return strNow;
 }
-
-var arrWeekdays = new Array("PZT", "SAL", "ÇAR", "PER", "CUM", "CMT", "PAZ"),
-    arrMonths = new Array(["Ocak", 31], ["Şubat", 28], ["Mart", 31], ["Nisan", 30], ["Mayıs", 31], ["Haziran", 30], ["Temmuz", 31], ["Ağustos", 31], ["Eylül", 30], ["Ekim", 31], ["Kasım", 30], ["Aralık", 31]);
-
-function isLeapYear(e) {
-    return (endvalue = !1), isNaN(e) || (e % 4 == 0 && (endvalue = e % 100 != 0 || e % 400 == 0)), endvalue;
+var arrWeekdays = new Array("PZT", "SAL", "ÇAR", "PER", "CUM", "CMT", "PAZ");
+var arrMonths = new Array(["Ocak", 31], ["Şubat", 28], ["Mart", 31], ["Nisan", 30], ["Mayıs", 31], ["Haziran", 30], ["Temmuz", 31], ["Ağustos", 31], ["Eylül", 30], ["Ekim", 31], ["Kasım", 30], ["Aralık", 31]);
+function isLeapYear(year) {
+    endvalue = false;
+    if (!isNaN(year)) {
+        if (year % 4 === 0) {
+            endvalue = true;
+            if (year % 100 === 0) {
+                endvalue = false;
+                if (year % 400 === 0) {
+                    endvalue = true;
+                }
+            }
+        }
+    }
+    return endvalue;
 }
-
-function makeMonthTable(e, t) {
-    if (isNaN(e) || 4 != e.toString().length) return "bad year number";
-    if (isNaN(t) || t < 0 || 11 < t) return "bad month number";
-    var i = new Date(e, t, 0).getDay(),
-        n = arrMonths[t][1];
-    1 == t && isLeapYear(e) && (n = 29), (strMonthTable = "<div class='is_fulltable-item'>\n"), (strMonthTable += "<h5 class='is_fulltable-header'>" + arrMonths[t][0].toUpperCase() + " " + e + "</h5> "), (strMonthTable += "<table class='table'><thead><tr>");
-    for (var s = 0; s < 7; s++) strMonthTable += "<th scope='col'><span>" + arrWeekdays[s].toUpperCase() + "</span></th>";
+function makeMonthTable(calendarYear, monthIndex) {
+    if (isNaN(calendarYear) || calendarYear.toString().length != 4) {
+        return "bad year number";
+    }
+    if (isNaN(monthIndex) || monthIndex < 0 || monthIndex > 11) {
+        return "bad month number";
+    }
+    var start_date = new Date(calendarYear, monthIndex, 0);
+    var start_weekday = start_date.getDay();
+    var endDay = arrMonths[monthIndex][1];
+    if (monthIndex == 1 && isLeapYear(calendarYear)) {
+        endDay = 29;
+    }
+    strMonthTable = "<div class='is_fulltable-item'>\n";
+    strMonthTable += "<h5 class='is_fulltable-header'>" + arrMonths[monthIndex][0].toUpperCase() + " " + calendarYear + "</h5> ";
+    strMonthTable += "<table class='table'><thead><tr>";
+    for (var i = 0; i < 7; i++) {
+        strMonthTable += "<th scope='col'><span>" + arrWeekdays[i].toUpperCase() + "</span></th>";
+    }
     strMonthTable += "</tr></thead><tbody>\n";
-    for (var a = 1, o = 0; a <= n;) {
+    var day = 1;
+    var count = 0;
+    while (day <= endDay) {
         strMonthTable += "<tr>";
-        for (s = 0; s < 7; s++) {
-            var r, l = "",
-                d = "",
-                c = "";
-            i <= o && a <= n && (console.log(new Date().getFullYear() + "/" + new Date().getMonth() + "/" + new Date().getDate()), Date.parse(new Date().getFullYear() + "/" + parseInt(new Date().getMonth() + 1) + "/" + new Date().getDate()) > Date.parse(e + "/" + (parseInt(t) + 1) + "/" + a) && (c = " class='is_fulltable-d'"), (r = ""), (r = (d = a) < 10 ? "0" + a : a), (l = " id='" + e + "-" + (parseInt(t + 1) < 10 ? "0" + parseInt(t + 1) : parseInt(t + 1)) + "-" + r + "'"), a++), (strMonthTable += "<td " + l + " " + c + "><span>" + d + "</span></td>"), o++;
+        for (var i = 0; i < 7; i++) {
+            var strId = "";
+            var strDayNumber = "";
+            var strClass = "";
+            if (count >= start_weekday && day <= endDay) {
+                console.log(new Date().getFullYear() + "/" + new Date().getMonth() + "/" + new Date().getDate());
+                if (Date.parse(new Date().getFullYear() + "/" + parseInt(new Date().getMonth() + 1) + "/" + new Date().getDate()) > Date.parse(calendarYear + "/" + (parseInt(monthIndex) + 1) + "/" + day)) {
+                    strClass = " class='is_fulltable-d'";
+                }
+                strDayNumber = day;
+                var monthnumber = "";
+                var daynumber = "";
+                if (day < 10) {
+                    daynumber = "0" + day;
+                } else {
+                    daynumber = day;
+                }
+                if (parseInt(monthIndex + 1) < 10) {
+                    monthnumber = "0" + parseInt(monthIndex + 1);
+                } else {
+                    monthnumber = parseInt(monthIndex + 1);
+                }
+                strId = " id='" + calendarYear + "-" + monthnumber + "-" + daynumber + "'";
+                day++;
+            }
+            strMonthTable += "<td " + strId + " " + strClass + "><span>" + strDayNumber + "</span></td>";
+            count++;
         }
         strMonthTable += "</tr>\n";
     }
-    return (strMonthTable += "</tbody></table></div>\n"), strMonthTable;
+    strMonthTable += "</tbody></table></div>\n";
+    return strMonthTable;
 }
-
-function highlightDay(e, t) {
-    var i = e.getDate(),
-        n = e.getMonth(),
-        i = e.getFullYear() + "_" + n + "_" + i,
-        i = document.getElementById(i);
-    i && (i.className = t);
+function highlightDay(oDate, CSS_Class) {
+    var dDay = oDate.getDate();
+    var dMonth = oDate.getMonth();
+    var dYear = oDate.getFullYear();
+    var strId = dYear + "_" + dMonth + "_" + dDay;
+    var dCel = document.getElementById(strId);
+    if (dCel) {
+        dCel.className = CSS_Class;
+    }
 }
-
-function makeYearCalendar(e) {
+function makeYearCalendar(calendarYear) {
     strYearCalendar = "";
-    for (var t = 0; t < 12; t++) strYearCalendar += makeMonthTable(e, t);
+    for (var i = 0; i < 12; i++) {
+        strYearCalendar += makeMonthTable(calendarYear, i);
+    }
     return strYearCalendar;
 }
-
-function takvimGetirPriority(e) {
-    var t, i, n, s, a, o, r, l, d, c;
-    "detail" == $("#dgiris_tarih").attr("data-page") && ((0 != takvimvarmi && !1 !== takvimvarmi) || ((t = new Date()).getDate(), t.getDay(), t.getMonth(), (i = (o = new Date()).getMonth()), (n = o.getFullYear()), (a = "" === e || isNaN(e) || 4 != e.toString().length ? ((s = t.getFullYear()), !0) : ((s = e), !1)), (o = parseInt(s - 1)), (e = parseInt(parseInt(s) + 1)), 0 < t.getFullYear() - o && (o = parseInt(t.getFullYear())), 2 <= e - t.getFullYear() && (e = parseInt(parseInt(t.getFullYear()) + 2)), $("#gecmistarih").attr("onclick", "takvimGetirPriority('" + o + "')"), $("#gelecektarih").attr("onclick", "takvimGetirPriority('" + e + "')"), (o = new Date(s, 3, 2)), ((e = document.getElementById("calendar")).innerHTML = '<div style="position: absolute;color:#fff;background: rgba(0,0,0,0.7);font-weight:bold;font-size:1.2em;width: 100%;height: 100%;padding: 10%;z-index: 99;" class="doluluk_loading"><center>Lütfen Bekleyiniz...</center></div>'), (e.innerHTML += makeYearCalendar(s)), n == s && (($nextYear = $(makeYearCalendar(s + 1))), $(e).append($nextYear)), highlightDay(t, "today"), highlightDay(o, "birthday"), (o = parseInt($("#data_villa").text())), (l = []), (d = $("#mgiris_tarih").pickadate().pickadate("picker")), (c = $("#mcikis_tarih").pickadate().pickadate("picker")), $.ajax({
-        type: "GET",
-        url: url + "/villa_status/" + o + "/" + s + "?priority=true",
-        success: function (e) {
-            $(".doluluk_loading").remove();
-            e = $.parseJSON(e);
-            "" != e && e.forEach(function (e) {
-                var t;
-                "2" == e.status && 1 != e.start && 1 != e.end && ((o = e.tarih.split("-")), (t = parseInt(parseInt(o[1]) - 1)), l.push([o[0], t, o[2]]));
-                var i, n, s, a, o = $("#" + e.tarih);
-                o.hasClass("is_fulltable-d") || ("3" == e.status ? ((r = "is_fulltable-o"), (i = "is_fulltable-left-o"), (n = "is_fulltable-right-o")) : "2" == e.status && ((r = "is_fulltable-f"), (s = "is_fulltable-left-f"), (a = "is_fulltable-right-f")), o.addClass(r), 1 == e.start && (o.addClass("is_fulltable-left"), o.hasClass("is_fulltable-right") && o.hasClass("is_fulltable-f") && o.addClass(a), o.hasClass("is_fulltable-right") && o.hasClass("is_fulltable-o") && o.addClass(n)), 1 == e.end && (o.addClass("is_fulltable-right"), o.hasClass("is_fulltable-left") && o.hasClass("is_fulltable-f") && o.addClass(s), o.hasClass("is_fulltable-left") && o.hasClass("is_fulltable-o") && o.addClass(i)));
-            }), d.set("disable", l), c.set("disable", l);
-        },
-    }), n == s && 1 == a && ($(document)
-        .find("#doluluk-takvimi")
-        .find(".is_fulltable-item:lt(" + i + ")")
-        .remove(), $(document)
-        .find("#doluluk-takvimi")
-        .find(".is_fulltable-item:gt(" + -(12 - i + 1) + " )")
-        .remove())));
-}
-
-function takvimGetir(e) {
-    var t, i, n, s, a, o, r, l, d, c;
-    "detail" == $("#dgiris_tarih").attr("data-page") && ((0 != takvimvarmi && !1 !== takvimvarmi) || ((t = new Date()).getDate(), t.getDay(), t.getMonth(), (i = (o = new Date()).getMonth()), (n = o.getFullYear()), (a = "" === e || isNaN(e) || 4 != e.toString().length ? ((s = t.getFullYear()), !0) : ((s = e), !1)), (o = parseInt(s - 1)), (e = parseInt(parseInt(s) + 1)), 0 < t.getFullYear() - o && (o = parseInt(t.getFullYear())), 2 <= e - t.getFullYear() && (e = parseInt(parseInt(t.getFullYear()) + 2)), $("#gecmistarih").attr("onclick", "takvimGetirPriority('" + o + "')"), $("#gelecektarih").attr("onclick", "takvimGetirPriority('" + e + "')"), (o = new Date(s, 3, 2)), ((e = document.getElementById("calendar")).innerHTML = '<div style="position: absolute;color:#fff;background: rgba(0,0,0,0.7);font-weight:bold;font-size:1.2em;width: 100%;height: 100%;padding: 10%;z-index: 99;" class="doluluk_loading"><center>Lütfen Bekleyiniz...</center></div>'), (e.innerHTML += makeYearCalendar(s)), n == s && (($nextYear = $(makeYearCalendar(s + 1))), $(e).append($nextYear)), highlightDay(t, "today"), highlightDay(o, "birthday"), (o = parseInt($("#data_villa").text())), (l = []), (d = $("#mgiris_tarih").pickadate().pickadate("picker")), (c = $("#mcikis_tarih").pickadate().pickadate("picker")), $.ajax({
-        type: "GET",
-        url: url + "/villa_status/" + o + "/" + s,
-        success: function (e) {
-            $(".doluluk_loading").remove();
-            e = $.parseJSON(e);
-            "" != e && e.forEach(function (e) {
-                var t;
-                "2" == e.status && 1 != e.start && 1 != e.end && ((o = e.tarih.split("-")), (t = parseInt(parseInt(o[1]) - 1)), l.push([o[0], t, o[2]]));
-                var i, n, s, a, o = $("#" + e.tarih);
-                o.hasClass("is_fulltable-d") || ("3" == e.status ? ((r = "is_fulltable-o"), (i = "is_fulltable-left-o"), (n = "is_fulltable-right-o")) : "2" == e.status && ((r = "is_fulltable-f"), (s = "is_fulltable-left-f"), (a = "is_fulltable-right-f")), o.addClass(r), 1 == e.start && (o.addClass("is_fulltable-left"), o.hasClass("is_fulltable-right") && o.hasClass("is_fulltable-f") && o.addClass(a), o.hasClass("is_fulltable-right") && o.hasClass("is_fulltable-o") && o.addClass(n)), 1 == e.end && (o.addClass("is_fulltable-right"), o.hasClass("is_fulltable-left") && o.hasClass("is_fulltable-f") && o.addClass(s), o.hasClass("is_fulltable-left") && o.hasClass("is_fulltable-o") && o.addClass(i)));
-            }), d.set("disable", l), c.set("disable", l);
-        },
-    }), n == s && 1 == a && ($(document)
-        .find("#doluluk-takvimi")
-        .find(".is_fulltable-item:lt(" + i + ")")
-        .remove(), $(document)
-        .find("#doluluk-takvimi")
-        .find(".is_fulltable-item:gt(" + -(12 - i + 1) + " )")
-        .remove())));
+function takvimGetir(yil) {
+    if ($("#dgiris_tarih").attr("data-page") == "detail") {
+        if (takvimvarmi == false || takvimvarmi === false) {
+            var today = new Date();
+            var currentDay = today.getDate();
+            var currentWeekDay = today.getDay();
+            var currentMonth = today.getMonth();
+            var d = new Date();
+            var monthCount = d.getMonth();
+            var currentYearFull = d.getFullYear();
+            if (yil === "" || isNaN(yil) || yil.toString().length != 4) {
+                var currentYear = today.getFullYear();
+                var ilkTiklama = true;
+            } else {
+                var currentYear = yil;
+                var ilkTiklama = false;
+            }
+            var eksiyil = parseInt(currentYear - 1);
+            var yeniyil = parseInt(parseInt(currentYear) + 1);
+            if (today.getFullYear() - eksiyil > 0) {
+                eksiyil = parseInt(today.getFullYear());
+            }
+            if (yeniyil - today.getFullYear() >= 2) {
+                yeniyil = parseInt(parseInt(today.getFullYear()) + 2);
+            }
+            $("#gecmistarih").attr("onclick", "('" + eksiyil + "')");
+            $("#gelecektarih").attr("onclick", "takvimGetir('" + yeniyil + "')");
+            var birthday = new Date(currentYear, 3, 2);
+            var divCalendar = document.getElementById("calendar");
+            divCalendar.innerHTML =
+                '<div style="position: absolute;color:#fff;background: rgba(0,0,0,0.7);font-weight:bold;font-size:1.2em;width: 100%;height: 100%;padding: 10%;z-index: 99;" class="doluluk_loading"><center>Lütfen Bekleyiniz...</center></div>';
+            divCalendar.innerHTML += makeYearCalendar(currentYear);
+            if (currentYearFull == currentYear) {
+                $nextYear = $(makeYearCalendar(currentYear + 1));
+                $(divCalendar).append($nextYear);
+            }
+            highlightDay(today, "today");
+            highlightDay(birthday, "birthday");
+            var villa_id = parseInt($("#data_villa").text());
+            var status;
+            var tarihler = [];
+            var from_$input = $("#mgiris_tarih").pickadate(),
+                from_picker = from_$input.pickadate("picker");
+            var to_$input = $("#mcikis_tarih").pickadate(),
+                to_picker = to_$input.pickadate("picker");
+            $.ajax({
+                type: "GET",
+                url: url + "/villa_status/" + villa_id + "/" + currentYear,
+                success: function (sonc) {
+                    $(".doluluk_loading").remove();
+                    var data = $.parseJSON(sonc);
+                    if (data != "") {
+                        data.forEach(function (date) {
+                            if (date.status == "2") {
+                                if (date.start != true && date.end != true) {
+                                    var res = date.tarih.split("-");
+                                    var ay = parseInt(parseInt(res[1]) - 1);
+                                    tarihler.push([res[0], ay, res[2]]);
+                                }
+                            }
+                            var item = $("#" + date.tarih);
+                            if (!item.hasClass("is_fulltable-d")) {
+                                if (date.status == "3") {
+                                    status = "is_fulltable-o";
+                                    var yazilacakstartbeklemede = "is_fulltable-left-o";
+                                    var yazilacakendbeklemede = "is_fulltable-right-o";
+                                } else if (date.status == "2") {
+                                    status = "is_fulltable-f";
+                                    var yazilacakstartdolu = "is_fulltable-left-f";
+                                    var yazilacakenddolu = "is_fulltable-right-f";
+                                }
+                                item.addClass(status);
+                                if (date.start == true) {
+                                    item.addClass("is_fulltable-left");
+                                    if (item.hasClass("is_fulltable-right") && item.hasClass("is_fulltable-f")) {
+                                        item.addClass(yazilacakenddolu);
+                                    }
+                                    if (item.hasClass("is_fulltable-right") && item.hasClass("is_fulltable-o")) {
+                                        item.addClass(yazilacakendbeklemede);
+                                    }
+                                }
+                                if (date.end == true) {
+                                    item.addClass("is_fulltable-right");
+                                    if (item.hasClass("is_fulltable-left") && item.hasClass("is_fulltable-f")) {
+                                        item.addClass(yazilacakstartdolu);
+                                    }
+                                    if (item.hasClass("is_fulltable-left") && item.hasClass("is_fulltable-o")) {
+                                        item.addClass(yazilacakstartbeklemede);
+                                    }
+                                }
+                            }
+                        });
+                    }
+                    from_picker.set("disable", tarihler);
+                    to_picker.set("disable", tarihler);
+                },
+            });
+            if (currentYearFull == currentYear) {
+                if (ilkTiklama == true) {
+                    $(document)
+                        .find("#doluluk-takvimi")
+                        .find(".is_fulltable-item:lt(" + monthCount + ")")
+                        .remove();
+                    $(document)
+                        .find("#doluluk-takvimi")
+                        .find(".is_fulltable-item:gt(" + -(12 - monthCount + 1) + " )")
+                        .remove();
+                }
+            }
+        }
+    }
 }
 
 function initSwiper(e, t) {

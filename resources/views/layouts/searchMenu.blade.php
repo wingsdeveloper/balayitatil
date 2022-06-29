@@ -44,6 +44,7 @@
                     </div>
                 </div>
 
+                @if(Agent::isDesktop())
                 <div class="Villa_Search-item Villa_Search-item-date">
                     <div class=" villa_date " id="two-inputs">
                         <label for="dgiris_tarih" class="Villa_Search-item-info desktop_takvim_label">Giriş Tarihi</label>
@@ -64,6 +65,28 @@
                         </svg>
                     </div>
                 </div>
+                @elseif(Agent::isMobile())
+                <div class="Villa_Search-item Villa_Search-item-date">
+                    <div class=" villa_date " id="two-inputs">
+                        <label for="mgiris_tarih" class="Villa_Search-item-info desktop_takvim_label">Giriş Tarihi</label>
+                        <input type="text" id="mgiris_tarih" class="villa_date-input" placeholder="Giriş Tarihi"
+                           @if(isset($req) AND !empty($req->giris_tarih)) value="{{$req->giris_tarih}}"
+                           @endif  name="giris_tarih"
+                           data-datepicker="separateRange"/>
+                        <i class="icon-form-change"></i>
+                    </div>
+                    <div class=" villa_date">
+                        <label for="mcikis_tarih" class="Villa_Search-item-info desktop_takvim_label">Çıkış Tarihi</label>
+                        <input type="text" id="mcikis_tarih" class="villa_date-input" placeholder="Çıkış Tarihi"
+                           @if(isset($req) AND !empty($req->cikis_tarih)) value="{{$req->cikis_tarih}}"
+                           @endif name="cikis_tarih"
+                           data-datepicker="separateRange"/>
+                        <svg class="icon icon-form-calendar addon" data-original-title="" title="">
+                            <use xlink:href="#icon-form-calendar"></use>
+                        </svg>
+                    </div>
+                </div>
+                @endif
 
                 <div class="Villa_Search-item Villa_Search-item-kisi">
                     <label class="Villa_Search-item-info" for="">Kişi Sayısı Seçiniz</label>
