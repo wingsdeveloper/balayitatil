@@ -20,7 +20,7 @@
                     acentası belgesine sahip olup Kumluca Sanayi ve Ticaret Odası ile Fethiye Ticaret ve Sanayi Odasına
                     kayıtlıdır.</p>
                 <p>Türkiye’nin doğal güzellikleri ve tarihi yapısıyla harmanlanmış “bölgelerde” sizlere villa tatili
-                    şansı sunan balayivillasi.com.tr, ister balayı tatili ister aile tatiliniz olsun sizlere unutulmaz
+                    şansı sunan balayisepeti.com.tr, ister balayı tatili ister aile tatiliniz olsun sizlere unutulmaz
                     bir tatil yaptırmayı amaçlıyor. Antalya başta olmak üzere Muğla’da da aktif olarak kiralık villa
                     çeşitlerini sizlere sunan balayivillasi.com.tr, hayalinizdeki tatil için çok daha uygun fiyatlar
                     ödemenizi ise kolaylaştırmak istiyor. Tatilinizi mükemmel kılmak için tüm talep ve isteklerinizi
