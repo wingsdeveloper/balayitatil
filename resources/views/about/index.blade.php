@@ -158,23 +158,25 @@
                 </div>
                 <div class="Basin-content">
                     <div class="Basin-content-item">
-                        <a href="https://www.balayivillasi.com.tr/"><img src="images/balayi-villasi-logo.svg" alt="Diğer Markalarımız - Balayı Villası"></a>
-                    </div>
+                        <a target="_blank" href="https://villakalkan.com.tr/"><img src="images/villa-kalkan-logo.png"
+                                                                          alt=""></a></div>
+                 
                     <div class="Basin-content-item">
                         <a href="https://www.lycianescapes.com/"><img src="images/lyc-logo.png" alt="Diğer Markalarımız - Lycian Escapes"></a>
                     </div>
                     <div class="Basin-content-item">
-                     <a target="_blank" href="https://villakalkan.com.tr/"><img src="images/villa-kalkan-logo.png"
-                                                                       alt=""></a></div>
+                        <a href="https://otelbnb.com/"><img src="images/otelbnb-logo.png" alt="Diğer Markalarımız - Otel Bnb"></a>
+                    </div>
                     <div class="Basin-content-item">
                         <a href="https://villadukkani.com/"><img src="images/villadukkani-logo.png" alt="Diğer Markalarımız - Villa Dükkanı"></a>
                     </div>
                     <div class="Basin-content-item">
-                        <a href="https://kalkanaktivite.com/"><img src="images/kalkan-aktivite-logo.svg" alt="Diğer Markalarımız - Kalkan Aktivite"></a>
+                        <a href="https://www.balayivillasi.com.tr/"><img src="images/balayi-villasi-logo.svg" alt="Diğer Markalarımız - Balayı Villası"></a>
                     </div>
                     <div class="Basin-content-item">
-                        <a href="https://otelbnb.com/"><img src="images/otelbnb-logo.png" alt="Diğer Markalarımız - Otel Bnb"></a>
+                        <a href="https://kalkanaktivite.com/"><img src="images/kalkan-aktivite-logo.svg" alt="Diğer Markalarımız - Kalkan Aktivite"></a>
                     </div>
+               
                 </div>
             </div>
         </div>
