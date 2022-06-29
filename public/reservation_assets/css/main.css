@@ -18,21 +18,23 @@ body {
 
 .Navbar {
   padding-left: calc((100vw - 1800px) / 2);
-  background-color: #172c57; }
+  background-color: #2F005E; }
   .Navbar-inner {
     height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-between; }
   .Navbar-logo {
+    display: flex;
+    padding-top: 8px;
     padding-left: 30px; }
     .Navbar-logo:before {
       content: "";
       display: inline-block;
       transition: 500ms;
-      width: 134px;
-      height: 48px;
-      background-size: 134px 48px;
+      width: 236px;
+      height: 46px;
+      background-size: 100% 100%;
       background-image: url(../images/logo.svg); }
   .Navbar-info {
     display: flex;
@@ -273,15 +275,15 @@ body {
       width: 160px;
       height: 46px;
       border-radius: 23px;
-      border: 2px solid #172c57;
-      background-color: #172c57;
+      border: 2px solid #2F005E;
+      background-color: #2F005E;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-left: 50px;
       transition: 500ms; }
       .Rez_detail-right-get_road:hover {
-        color: #172c57;
+        color: #2F005E;
         background-color: transparent;
         transition: 500ms; }
 
@@ -493,11 +495,11 @@ body {
       height: 45px;
       border-radius: 6px; }
       .Form-item .bootstrap-select input:focus {
-        border-color: #172c57; }
+        border-color: #2F005E; }
     .Form-item .bootstrap-select .dropdown-item:focus {
       background-color: transparent; }
     .Form-item .bootstrap-select .active {
-      background-color: #172c57; }
+      background-color: #2F005E; }
       .Form-item .bootstrap-select .active span {
         color: white; }
 
@@ -588,7 +590,7 @@ body {
       padding-left: 0px; }
       .Rez_detail-right-header {
         height: 73px;
-        background-color: #172c57;
+        background-color: #2F005E;
         padding-left: 30px;
         margin-bottom: 20px;
         display: flex;

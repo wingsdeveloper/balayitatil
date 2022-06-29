@@ -91,7 +91,7 @@ $fark= $interval->format('%a');
             </div>
             <div class="Navbar-info">
                 <p class="Navbar-info-name">SN.  {{ Transliterator::create('tr-title')->transliterate($reservation->customer->name) }}</p>
-                <p class="Navbar-info-day">TATİLNİZE <br>
+                <p class="Navbar-info-day">TATİLİNİZE <br>
                     SON {{$fark}} GÜN
          </p>
 
