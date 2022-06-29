@@ -22,7 +22,6 @@ window.criteo_q.push(
     @include('home.sss')
     @include('home.opportunity')
     @include('home.temporary')
-    @include('home.description')
     @push('javascripts')
 
     
