@@ -206,10 +206,8 @@ window.addEventListener('load', function () {
 
         var galleryThumbs = new Swiper('.gallery-thumbs', {
             slidesPerView: 9,
-            loop: true,
             lazy: true,
             spaceBetween: 10,
-            centeredSlides: true,
             preloadImages: !1,
             grabCursor: true,
             slideToClickedSlide: true,
@@ -812,7 +810,6 @@ window.addEventListener('load', function () {
                             @forelse($villa->photos as $photo)
                                 <a href="{{ ImageProcess::getImageWatermarkedPath($photo) }}" data-fancybox="group-ofis" data-title="{{$villa->name}}" class="swiper-slide " >
                                     <img class="swiper-lazy " data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" alt="" src="">
-                                    <div class="swiper-lazy-preloader"></div>
                                 </a>
                                 @empty
                             &nbsp;
@@ -1060,7 +1057,7 @@ window.addEventListener('load', function () {
                                     </svg>
                                     <h4 class="header-lg">VİLLA KAT PLANI
                                     </h4>
-                                    <a class="ml-auto galleryxyz">VİLLANIN TÜM FOTOĞRAFLARI
+                                    <a class="ml-auto galleryxyz" href="" data-fancybox="group-ofis">VİLLANIN TÜM FOTOĞRAFLARI
                                     </a>
                                 </div>
                                 <div class="Villa_detay-floor-head">

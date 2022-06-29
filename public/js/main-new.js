@@ -284,14 +284,17 @@ $(".arttir").click(function () {
         var i, n = $(window).width();
         $(window).height();
 
+        var w = $(window).width(), h = $(window).height();
+         $('.selectpicke').selectpicker();
+    if (w < 769) {
+    } else {
+        $('.selectpicke').selectpicker();
+    }
+
         $(window).resize(function () {
             $(window).width(), $(window).height();
         }),
-        $('.selectpicke').selectpicker();
-        if (w < 769) {
-        } else {
-            $('.selectpicke').selectpicker();
-        }
+        
 
             $(".video-btn").click(function () {
                 i = $(this).data("src");

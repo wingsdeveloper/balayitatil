@@ -12,7 +12,7 @@
     z-index: 1;
     position: absolute;
     bottom: 0;
-    background-image: url(../images/slider_back.png);
+    background-image: url(../../images/slider_back.png);
     height: 150px
 }
 
@@ -96,11 +96,11 @@
 }
 
 .Slider .slick-prev:before {
-    content: "" url(../images/icon-right_w.svg)
+    content: "" url(../../images/icon-right_w.svg)
 }
 
 .Slider .slick-next:before {
-    content: "" url(../images/icon-right_w.svg)
+    content: "" url(../../images/icon-right_w.svg)
 }
 
 .Slider .slick-next {
@@ -426,7 +426,7 @@
     background-size: 75px 75px;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url(../images/gece_back.svg);
+    background-image: url(../../images/gece_back.svg);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -723,7 +723,7 @@
 .dropdown-toggle::after {
     border: none !important;
     margin-right: 3px;
-    content: "" url(../images/icon-down.svg) !important;
+    content: "" url(../../images/icon-down.svg) !important;
     -webkit-transition: 500ms;
     transition: 500ms
 }
@@ -3354,7 +3354,7 @@
 
 .Teklif-bilgi-item .bootstrap-select .dropdown-toggle::after {
     margin-right: 10px;
-    content: "" url(../images/icon-down_o.svg) !important
+    content: "" url(../../images/icon-down_o.svg) !important
 }
 
 .Teklif-bilgi-item .bootstrap-select .filter-option {
@@ -4421,7 +4421,7 @@
 }
 
 .Blog-slider:before {
-    content: "" url(../images/slider_back.png);
+    content: "" url(../../images/slider_back.png);
     display: inline-block;
     -webkit-transition: 500ms;
     transition: 500ms;
@@ -5110,7 +5110,7 @@
     bottom: 0;
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
-    background-image: url(../images/slider_back.png);
+    background-image: url(../../images/slider_back.png);
     height: 160px
 }
 
@@ -5518,7 +5518,7 @@
     z-index: -1;
     position: absolute;
     top: -100px;
-    background-image: url(../images/slider_back.png);
+    background-image: url(../../images/slider_back.png);
     height: 200px
 }
 
@@ -7158,7 +7158,7 @@
 }
 
 .date-picker-wrapper .month-wrapper table .caption .prev:before {
-    content: "" url(../images/date-arrow.svg);
+    content: "" url(../../../images/date-arrow.svg);
     display: inline-block;
     -webkit-transition: 500ms;
     transition: 500ms;
@@ -7184,7 +7184,7 @@
 }
 
 .date-picker-wrapper .month-wrapper table .caption .next:before {
-    content: "" url(../images/date-arrow.svg);
+    content: "" url(../../../images/date-arrow.svg);
     display: inline-block;
     -webkit-transition: 500ms;
     transition: 500ms;
@@ -8665,7 +8665,7 @@
         top: -60px;
         bottom: auto;
         background-color: transparent;
-        background-image: url(../images/slider_back.png);
+        background-image: url(../../images/slider_back.png);
         height: 60px !important;
         background-size: 100% 60px
     }
@@ -9213,7 +9213,7 @@
         z-index: 1;
         position: absolute;
         bottom: -30px;
-        background-image: url(../images/slider_back.png);
+        background-image: url(../../images/slider_back.png);
         height: 50px;
         background-position: center;
         background-size: cover
@@ -10648,7 +10648,7 @@
 
     .Teklif-bilgi-item .bootstrap-select .dropdown-toggle::after {
         margin-right: 10px;
-        content: "" url(../images/icon-down_o.svg) !important
+        content: "" url(../../images/icon-down_o.svg) !important
     }
 
     .Teklif-bilgi-item .bootstrap-select .filter-option {

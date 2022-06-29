@@ -49,9 +49,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 @stack('search_app_js')
 <script src="{{ asset('js/selectpicker.min.js') }}"></script>
-<script src="{{ asset('js/theme.min.js?v=1.17vk') }}"></script>
+<script src="{{ asset('js/theme.min.js?v=1.18vk') }}"></script>
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script src="{{ asset('js/main-new.js?v=1.17vk') }}" type="text/javascript"></script>
+<script src="{{ asset('js/main-new.js?v=1.18vk') }}" type="text/javascript"></script>
 
 @stack('after_theme')
 
