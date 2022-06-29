@@ -1929,7 +1929,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-right: 26px; }
+      margin-right: 26px;
+      background-size: cover;
+      background-position: right; }
       .Home-info-item-img img {
         max-width: 87px;
         max-height: 46px;
