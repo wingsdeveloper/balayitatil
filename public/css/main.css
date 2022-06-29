@@ -1692,8 +1692,8 @@
         position: absolute;
         left: 50%;
         top: 50%;
-        -webkit-transform: translateX(-50px);
-                transform: translateX(-50px); }
+        -webkit-transform: translateX(-40px);
+                transform: translateX(-40px); }
       .Villa_Search-item-date .icon-form-calendar {
         width: 32px;
         height: 32px;
