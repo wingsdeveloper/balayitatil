@@ -749,7 +749,7 @@ curl_close($ch);
                     <div class="Rez-left-danger1-right">
                         <h6>
                             <span>Rezervasyon Danışmanı</span>
-                            <a href="tel:+902422520032">+90 242 252 00 32</a>
+                            <a href="tel:+902526060669">+90 252 606 06 69</a>
                         </h6>
                     </div>
                 </div>
@@ -773,7 +773,7 @@ curl_close($ch);
                     <div class="Rez-left-danger1-right">
                         <h6>
                             <span>Rezervasyon Danışmanı</span>
-                      <a href="tel:+902422520032">+90 242 252 00 32</a>
+                      <a href="tel:+902526060669">+90 252 606 06 69</a>
                         </h6>
                     </div>
                 </div>
@@ -1048,15 +1048,15 @@ curl_close($ch);
                             <div class="Rez-right-contact-in">
                                 <a href="tel:02422520032" class="Rez-right-contact-item">
                                     <img src="{{ asset('images/n_icon-phone.svg')}}" alt="">
-                                    <p>0 242
-                                        <span>252 00 32</span>
+                                    <p>0 252
+                                        <span>606 06 69</span>
                                     </p>
                                 </a>
-                                <a href="https://api.whatsapp.com/send?phone=902426061036 &"
+                                <a href="https://api.whatsapp.com/send?phone=902526060669 &"
                                    class="Rez-right-contact-item">
                                     <img src="{{asset('images/n_icon-whatsapp.svg')}}" alt="">
-                                    <p>0 242
-                                        <span>606 10 36</span>
+                                    <p>0 252
+                                        <span>606 06 69</span>
                                     </p>
                                 </a>
                             </div>

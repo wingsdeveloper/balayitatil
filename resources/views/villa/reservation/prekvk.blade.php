@@ -323,15 +323,15 @@
 <li><strong>HANGİ KİŞİSEL VERİLERİNİZ İŞLENMEKTEDİR?</strong></li>
 </ul>
 <p><strong>&nbsp;</strong></p>
-<p>Villa Kalkan tarafından oluşturulan www.villkalkan.com.tr adresi &uuml;zerinden yayınlanan tatil konutlarının tarafınızca kiralanmak istenmesi ve/veya rezervasyon yaptırmanız halinde aşağıda yer alan kişisel verileriniz işlenebilmektedir.</p>
+<p>Balayi Sepeti tarafından oluşturulan www.villkalkan.com.tr adresi &uuml;zerinden yayınlanan tatil konutlarının tarafınızca kiralanmak istenmesi ve/veya rezervasyon yaptırmanız halinde aşağıda yer alan kişisel verileriniz işlenebilmektedir.</p>
 <ul>
 <li>Kimlik Bilgileriniz (Adınız, soyadınız, TC kimlik numaranız)</li>
 <li>İletişim Bilgileriniz (Telefon numaranız, e-posta adresiniz, iletişim adresiniz)</li>
 <li>Lokasyon (Tarafınıza daha iyi hizmet sunabilmek adına belirlediğiniz tarihler arasında kiralayarak bulunduğunuz tatil konutuna ilişkin lokasyon bilgileri)</li>
 <li>M&uuml;şteri İşlem Bilgileriniz (Kiralanan tatil konutuna ilişkin rezervasyon &ouml;zetiniz, fatura bilgileriniz, giriş &ccedil;ıkış tarihleriniz, talep ve şikayet bilgileriniz, IBAN ve hesap numaralarınız, &ouml;deme bilgileriniz.)</li>
 <li>Fiziksel Mekan G&uuml;venliği (Tatil konutuna giriş-&ccedil;ıkış tarihleri kayıtlarınız, tatil konutunda bulunduğunuz s&uuml;re i&ccedil;erisindeki g&uuml;venlik ama&ccedil;lı bulunan kamera kayıtları)</li>
-<li>İşlem G&uuml;venliği (IP bilgileriniz, villakalkan.com.tr adresindeki &uuml;yelik giriş-&ccedil;ıkış bilgileriniz, &ccedil;erez bilgileriniz)</li>
-<li>Pazarlama (villakalkan.com.tr adresindeki alışveriş ge&ccedil;mişi bilgileriniz, &ccedil;erez kayıtlarınız, anket ve faaliyet konumuza ilişkin kampanya &ccedil;alışmaları)</li>
+<li>İşlem G&uuml;venliği (IP bilgileriniz, balayisepeti.com.tr adresindeki &uuml;yelik giriş-&ccedil;ıkış bilgileriniz, &ccedil;erez bilgileriniz)</li>
+<li>Pazarlama (balayisepeti.com.tr adresindeki alışveriş ge&ccedil;mişi bilgileriniz, &ccedil;erez kayıtlarınız, anket ve faaliyet konumuza ilişkin kampanya &ccedil;alışmaları)</li>
 </ul>
 <p><strong>&nbsp;</strong></p>
 <ul>
@@ -391,7 +391,7 @@
 <li>Ticari y&ouml;netim ve işletme esaslarının belirlenebilmesi i&ccedil;in hissedarlarımızla</li>
 </ul>
 <p>&nbsp;</p>
-<p>Tarafınıza ait olan Villa Kalkan tarafından işlenen hi&ccedil;bir kişisel veriniz yurtdışına aktarılmamaktadır.</p>
+<p>Tarafınıza ait olan Balayi Sepeti tarafından işlenen hi&ccedil;bir kişisel veriniz yurtdışına aktarılmamaktadır.</p>
 <p><strong>&nbsp;</strong></p>
 <ul>
 <li><strong>KİŞİSEL VERİLERİNİZE İLİŞKİN HAKLARINIZ NELERDİR?</strong></li>
@@ -414,11 +414,11 @@
 <li><strong>KİŞİSEL VERİLERİNİZE İLİŞKİN HAK VE TALEPLERİNİZ İ&Ccedil;İN VİLLA KALKAN&rsquo;A NASIL BAŞVURABİLİRSİNİZ?</strong></li>
 </ul>
 <p><strong>&nbsp;</strong></p>
-<p>Kişisel verilerinizin elde edilmesi, işlenmesi, aktarılması, silinmesi, d&uuml;zeltilmesi gibi t&uuml;m hususlara ilişkin sorularınız ve taleplerinizi Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ'de belirtilen şartlara uygun şekilde yazılı olarak &ldquo;Wings Seyahat Turizm Sanayi ve Ticaret Limited Şirketi (Villa Kalkan)&rdquo;ne aşağıda belirtilen &ccedil;eşitli y&ouml;ntemlerden biri ile yazılı olarak iletebilirsiniz.</p>
+<p>Kişisel verilerinizin elde edilmesi, işlenmesi, aktarılması, silinmesi, d&uuml;zeltilmesi gibi t&uuml;m hususlara ilişkin sorularınız ve taleplerinizi Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ'de belirtilen şartlara uygun şekilde yazılı olarak &ldquo;Wings Seyahat Turizm Sanayi ve Ticaret Limited Şirketi (Balayi Sepeti)&rdquo;ne aşağıda belirtilen &ccedil;eşitli y&ouml;ntemlerden biri ile yazılı olarak iletebilirsiniz.</p>
 <p>Islak imzalı dilek&ccedil;e ile yapılacak başvurular i&ccedil;in şirket adresi : Kalkan Mahallesi Kalkan Cumhuriyet Caddesi No: 48/2 Kaş/Antalya</p>
 <p>G&uuml;venli Elektronik İmza ile yapılacak başvurularda Kayıtlı Elektronik Posta (KEP) adresi: wingsseyhtursan@hs01.kep.tr</p>
 <p>Yapılacak başvurularda ilgili kişinin kimliğine ilişkin belgeleri eklemesi zorunludur.</p>
-<p>Villa Kalkan tarafından işbu Kişisel Verilerin Korunması Hakkında Aydınlatma Metni&rsquo;nin y&uuml;r&uuml;rl&uuml;kteki mevzuat h&uuml;k&uuml;mlerine uygun şekilde hazırlandığı taahh&uuml;t edilmekle, mevzuat değişikliği halinde değişiklik ve d&uuml;zeltme hakkı saklı tutulmaktadır.</p>
+<p>Balayi Sepeti tarafından işbu Kişisel Verilerin Korunması Hakkında Aydınlatma Metni&rsquo;nin y&uuml;r&uuml;rl&uuml;kteki mevzuat h&uuml;k&uuml;mlerine uygun şekilde hazırlandığı taahh&uuml;t edilmekle, mevzuat değişikliği halinde değişiklik ve d&uuml;zeltme hakkı saklı tutulmaktadır.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

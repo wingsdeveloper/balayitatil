@@ -174,7 +174,7 @@ class ReservationController extends Controller
                 $preReservation->child_count = $req->child;
                 $preReservation->baby_count = $req->baby;
                 $preReservation->operation = 3;
-                $preReservation->payment_method = 'iyzico';
+                $preReservation->payment_method = 'teb';
                 $preReservation->payment_type = 0;
                 $preReservation->start_date = $giris_tarih;
                 $preReservation->end_date = $cikis_tarih;
