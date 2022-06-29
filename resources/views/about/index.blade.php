@@ -22,7 +22,7 @@
                 <p>Türkiye’nin doğal güzellikleri ve tarihi yapısıyla harmanlanmış “bölgelerde” sizlere villa tatili
                     şansı sunan balayisepeti.com.tr, ister balayı tatili ister aile tatiliniz olsun sizlere unutulmaz
                     bir tatil yaptırmayı amaçlıyor. Antalya başta olmak üzere Muğla’da da aktif olarak kiralık villa
-                    çeşitlerini sizlere sunan balayivillasi.com.tr, hayalinizdeki tatil için çok daha uygun fiyatlar
+                    çeşitlerini sizlere sunan balayisepeti.com.tr, hayalinizdeki tatil için çok daha uygun fiyatlar
                     ödemenizi ise kolaylaştırmak istiyor. Tatilinizi mükemmel kılmak için tüm talep ve isteklerinizi
                     değerlendiren balayisepeti.com.tr, siz değerli misafirlerimizin memnuniyetlerini arttırmak için
                     “özel ricalarınızı” mümkün olduğu mertebede gerçekleştirmekten onur duyuyor. Siz de başta Antalya ve
