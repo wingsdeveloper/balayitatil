@@ -1,4 +1,4 @@
-<b>Villakalkan.com.tr</b> üzerinden yeni bir rezervasyon gerceklestirilmistir.<br>
+<b>Balayisepeti.com.tr</b> üzerinden yeni bir rezervasyon gerceklestirilmistir.<br>
 Ad: {{ isset($customer) && ! empty($customer) ? $customer->name : ''}}<br>
 Email: {{ isset($customer) && !empty($customer) ? $customer->email : '' }}<br>
 Phone: {{ isset($customer) && !empty($customer) ? $customer->phone :'' }}<br>
