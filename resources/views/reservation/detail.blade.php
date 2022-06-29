@@ -47,7 +47,7 @@ function getMonthName($month_number)
     <link rel="stylesheet" href="/reservation_assets/css/library/slick.css">
     <link rel="stylesheet" href="/reservation_assets/css/library/slick-theme.css">
     <link rel="stylesheet" href="/reservation_assets/css/library/bootstrap-select.min.css">
-    <link rel="stylesheet" href="/reservation_assets/css/main.css">
+    <link rel="stylesheet" href="/reservation_assets/css/main.css?v=1.21vk">
 
 </head>
 
