@@ -1909,8 +1909,7 @@
           transform: translateY(3px); }
 
 .Home-info {
-  background-color: #f8f2fb;
-  margin-bottom: -60px; }
+  background-color: #f8f2fb; }
   .Home-info-in {
     -webkit-transform: translateY(-80px);
             transform: translateY(-80px);
@@ -2934,61 +2933,63 @@
   .Dropdown .addon {
     -webkit-transform: translateY(-8px);
             transform: translateY(-8px); }
-  .Home-info-in {
-    -webkit-transform: translateY(-100px);
-            transform: translateY(-100px);
-    grid-template-columns: 1fr 1fr 1fr;
-    overflow-x: scroll;
-    grid-gap: 11px; }
-  .Home-info-item {
-    border-radius: 4px;
-    background-color: #fff;
-    padding: 15px;
-    display: flex;
-    flex-direction: column; }
-    .Home-info-item-img {
-      width: 200px;
-      height: 99px;
-      margin-right: 0;
-      padding: 30px;
-      background-size: 200px 99px;
-      background-repeat: no-repeat;
-      background-position: center; }
-    .Home-info-item-text {
-      padding-top: 13px;
-      padding-bottom: 20px;
-      height: auto;
-      align-items: center;
-      justify-content: center;
-      text-align: center; }
-      .Home-info-item-text-link {
-        flex-direction: column; }
-      .Home-info-item-text h5 {
-        max-width: 210px;
-        font-size: 15px;
-        font-weight: 500;
-        line-height: 1.53;
-        color: #3d0083; }
-      .Home-info-item-text a {
-        font-size: 13px;
-        font-weight: 500;
-        color: #b7a9c7;
-        text-decoration: underline;
-        transition: all 500ms;
-        display: flex;
+  .Home-info {
+    margin-bottom: -60px; }
+    .Home-info-in {
+      -webkit-transform: translateY(-100px);
+              transform: translateY(-100px);
+      grid-template-columns: 1fr 1fr 1fr;
+      overflow-x: scroll;
+      grid-gap: 11px; }
+    .Home-info-item {
+      border-radius: 4px;
+      background-color: #fff;
+      padding: 15px;
+      display: flex;
+      flex-direction: column; }
+      .Home-info-item-img {
+        width: 200px;
+        height: 99px;
+        margin-right: 0;
+        padding: 30px;
+        background-size: 200px 99px;
+        background-repeat: no-repeat;
+        background-position: center; }
+      .Home-info-item-text {
+        padding-top: 13px;
+        padding-bottom: 20px;
+        height: auto;
         align-items: center;
-        margin-top: 10px; }
-        .Home-info-item-text a:hover {
-          letter-spacing: 1px; }
-        .Home-info-item-text a.video-link {
-          margin-left: 0;
-          margin-right: 10px; }
-        .Home-info-item-text a .icon-kesfet-play {
-          width: 22px;
-          height: 22px;
-          background-image: url(../images/icon-kesfet-play.svg);
-          background-size: 100% 100%;
-          margin-right: 10px; } }
+        justify-content: center;
+        text-align: center; }
+        .Home-info-item-text-link {
+          flex-direction: column; }
+        .Home-info-item-text h5 {
+          max-width: 210px;
+          font-size: 15px;
+          font-weight: 500;
+          line-height: 1.53;
+          color: #3d0083; }
+        .Home-info-item-text a {
+          font-size: 13px;
+          font-weight: 500;
+          color: #b7a9c7;
+          text-decoration: underline;
+          transition: all 500ms;
+          display: flex;
+          align-items: center;
+          margin-top: 10px; }
+          .Home-info-item-text a:hover {
+            letter-spacing: 1px; }
+          .Home-info-item-text a.video-link {
+            margin-left: 0;
+            margin-right: 10px; }
+          .Home-info-item-text a .icon-kesfet-play {
+            width: 22px;
+            height: 22px;
+            background-image: url(../images/icon-kesfet-play.svg);
+            background-size: 100% 100%;
+            margin-right: 10px; } }
 
 @media (max-height: 768px) {
   .Rezervasyon-Question {
