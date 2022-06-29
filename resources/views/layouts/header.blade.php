@@ -15,7 +15,8 @@
 <div class="Navtop-discount" style="display: block">
         <div class="container">
             <div class="Navtop-discount-in">
-                <p>Villa bahar’da <span>%20 indirim</span> kısa süreli</p>
+                <p>
+                <a href="https://balayisepeti.com.tr/kiralik-villa-ara/tum-villalarimiz/08-07-2022/12-07-2022?area=0&district=0&price=0&siralama=artan&kisi_sayisi=0"><p>Bayramda  <span>Musait</span> Tesisleri görmek için <b>tıklayınız.</b></p></a></p>
                 <button type="button" class="Navtop-discount-close"><i class="icon-navtop-close"></i></button>
             </div>
         </div>

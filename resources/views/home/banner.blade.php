@@ -19,14 +19,13 @@
 
                 <div class="Home-banner-contact">
                     <div class="Home-banner-contact-social">
-                        <a href=""><i class="fa fa-facebook"></i></a>
-                        <a href=""><i class="fa fa-instagram"></i></a>
-                        <a href=""><i class="fa fa-twitter"></i></a>
-                    </div>
+                        <a href="https://facebook.com/balayisepeticomtr"><i class="fa fa-facebook"></i></a>
+                        <a href="https://instagram.com/balayisepeticomtr"><i class="fa fa-instagram"></i></a>
+-                    </div>
 
                     <div class="Contact-support Contact-support-white">
                         <a href="">
-                            <p><span>Yardım & Destek</span>+90 252 606 0 876</p>
+                            <p><span>Yardım & Destek</span>+90 252 606 06 69</p>
                         </a>
                     </div>
 
