@@ -1,7 +1,7 @@
 <?= '<?xml version="1.0" encoding="UTF-8"?>' ?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:g="http://base.google.com/ns/1.0">
 <title>Villa Kalkan </title>
-<link rel="self" href="https://www.villakalkan.com.tr"/>
+<link rel="self" href="https://www.balayisepeti.com.tr"/>
 
 
    @foreach($products as $row)
@@ -36,9 +36,10 @@
 		@if(empty($pricesmin->daily_price_tl) || ($pricesmin->daily_price_tl==0))
 		@continue;
 		@endif
+
 	   <entry>
 	  	  <g:id>{{ $row->id }}</g:id>
-	 	  <g:link>https://kampanya.villakalkan.com.tr/{{ $row->id }}</g:link>
+	 	  <g:link>{{ route('static', $row->seo->seo_url) }}</g:link>
 		  <g:title>{{ Transliterator::create('tr-title')->transliterate($row->name) }}</g:title>
 		  <g:image_link>{{ asset($resim) }}</g:image_link>
 	     
@@ -47,7 +48,7 @@
 	      @endphp
 		  <g:price>{{ ceil(number_format($gune_ait_fiyat, 2, '.', '') ) }}</g:price>
 	      <g:description>{{ Transliterator::create('tr-title')->transliterate($row->name) }} - {{$row->number_person}} Kişilik tesistir. </g:description>
-		  <g:brand>Villa Kalkan</g:brand>
+		  <g:brand>Balayisepeti</g:brand>
 		  <g:condition>new</g:condition>
 		  <g:availability>in stock</g:availability>
 		  <g:google_product_category> {{ isset($row->area->name) ? Transliterator::create('tr-title')->transliterate($row->area->name) : '' }} &gt; {{$row->number_person}} Kişilik</g:google_product_category> 
