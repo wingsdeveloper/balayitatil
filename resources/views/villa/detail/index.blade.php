@@ -270,6 +270,8 @@ window.addEventListener('load', function () {
             }
         });
 
+        
+
     </script>
 
 <script>
@@ -1057,7 +1059,7 @@ window.addEventListener('load', function () {
                                     </svg>
                                     <h4 class="header-lg">VİLLA KAT PLANI
                                     </h4>
-                                    <a class="ml-auto galleryxyz" href="" data-fancybox="group-ofis">VİLLANIN TÜM FOTOĞRAFLARI
+                                    <a class="ml-auto galleryxyz" href="javascript:;" data-fancybox-trigger="group-ofis" data-fancybox-index="1">VİLLANIN TÜM FOTOĞRAFLARI
                                     </a>
                                 </div>
                                 <div class="Villa_detay-floor-head">

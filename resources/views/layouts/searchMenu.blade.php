@@ -97,7 +97,12 @@
                     @php
 
                     @endphp
-
+                    <div class="Dropdown-menu-item  {{ isset($view_name) && ($view_name != 'villa-category-detail') && ($category->show != 1) ? 'hidden' : '' }} " style="display:none">
+                            <input data-id="291" autocomplete="off" type="checkbox"
+                                   class="category_check" name=""
+                                    value="tum-villalarimiz"  id="291"  checked="checked">
+                            <label for="291">TÜM VİLLALARIMIZ</label>
+                        </div>
                     @forelse($website->categories as $category)
                         <div class="Dropdown-menu-item {{ isset($view_name) && ($view_name != 'villa-category-detail') && ($category->show != 1) ? 'hidden' : '' }}">
                             <input data-id="{{ $category->id }}" autocomplete="off" type="checkbox"
@@ -111,6 +116,8 @@
                             <label for="{{$category->id}}">{{$category->name}}</label>
                         </div>
                     @empty
+
+                   
 
                     @endforelse
                     <div class="Dropdown-menu-in-warning">

@@ -200,7 +200,7 @@ body select:active {
     height: 32px;
     -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
-    color: #102754;
+    color: #490181;
 }
 
 .notransform {
@@ -513,7 +513,7 @@ body select:active {
 .Global_header h2 {
     font-size: 32px;
     font-weight: 700;
-    color: #102754;
+    color: #490181;
 }
 
 .Global_header h3 {
@@ -542,7 +542,7 @@ body select:active {
 .header-sm {
     font-size: 14px;
     font-weight: 700;
-    color: #102754;
+    color: #490181;
 }
 
 .header {
@@ -555,14 +555,14 @@ body select:active {
 .header-md {
     font-size: 30px;
     font-weight: 700;
-    color: #102754;
+    color: #490181;
     line-height: 1.2;
 }
 
 .header-lg {
     font-size: 36px;
     font-weight: 700;
-    color: #102754;
+    color: #490181;
 }
 
 .text-lg {
@@ -573,7 +573,7 @@ body select:active {
 
 .text {
     font-size: 12px;
-    color: #102754;
+    color: #490181;
 }
 
 .text-gri {
@@ -588,7 +588,7 @@ body select:active {
 
 .text-laci {
     font-size: 13px;
-    color: #102754;
+    color: #490181;
 }
 
 .guttert {
@@ -681,7 +681,7 @@ body select:active {
 .icon-man {
     width: 51px;
     height: 51px;
-    color: #102754;
+    color: #490181;
 }
 
 .icon-right-long-arrow {
@@ -704,7 +704,7 @@ body select:active {
 .icon-lock {
     width: 41px;
     height: 41px;
-    color: #102754;
+    color: #490181;
 }
 
 .icon-lock_o {
@@ -1138,7 +1138,7 @@ body select:active {
 .icon-spy {
     width: 52px;
     height: 60px;
-    color: #102754;
+    color: #490181;
 }
 
 .icon-facebook {
@@ -1186,13 +1186,13 @@ body select:active {
 .icon-minus {
     width: 24px;
     height: 24px;
-    color: #102754;
+    color: #490181;
 }
 
 .icon-plus {
     width: 24px;
     height: 24px;
-    color: #102754;
+    color: #490181;
 }
 
 .icon-i_email {

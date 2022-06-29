@@ -774,7 +774,7 @@
     height: 45px;
     font-size: 13px;
     font-weight: 600;
-    color: #102754;
+    color: #490181;
     margin-left: 6px;
     margin-right: 6px;
     -webkit-transition: 500ms;
@@ -830,7 +830,7 @@
 .Villa_detay-images-item p {
     font-size: 13px;
     font-weight: 500;
-    color: #102754
+    color: #490181
 }
 
 .Villa_detay-images-item p span {
@@ -868,7 +868,7 @@
 .Villa_detay-property-name span {
     font-size: 11px;
     letter-spacing: 5px;
-    color: #102754
+    color: #490181
 }
 
 .Villa_detay-property-name h6 {
@@ -975,7 +975,7 @@
 .Villa_detay-price-info-head p span {
     font-size: 12px;
     letter-spacing: 5px;
-    color: #102754
+    color: #490181
 }
 
 .Villa_detay-price-info-head .nav-tabs {
@@ -993,7 +993,7 @@
     padding-right: 5px;
     border-radius: 0;
     font-size: 13px;
-    color: #102754;
+    color: #490181;
     height: 100%;
     position: relative;
     display: -webkit-box;
@@ -1060,7 +1060,7 @@
 
 .Villa_detay-price-left .thead span {
     font-size: 12px;
-    color: #102754
+    color: #490181
 }
 
 .Villa_detay-price-item {
@@ -1164,7 +1164,7 @@
 .Villa_detay-price-right-head span {
     font-size: 12px;
     letter-spacing: 5px;
-    color: #102754;
+    color: #490181;
     font-weight: 400
 }
 
@@ -1180,7 +1180,7 @@
 .Villa_detay-price-right li {
     width: 50%;
     font-size: 12px;
-    color: #102754;
+    color: #490181;
     margin-bottom: 15px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1298,7 +1298,7 @@
 .Villa_detay-floor .Villa_detay-header a {
     font-size: 14px;
     font-weight: 700;
-    color: #102754;
+    color: #490181;
     background-color: #ebedf0;
     padding: 20px 30px;
     border-radius: 32px;
@@ -1332,7 +1332,7 @@
     padding-right: 20px;
     font-size: 14px;
     font-weight: 700;
-    color: #102754;
+    color: #490181;
     margin-right: 20px
 }
 
@@ -1385,7 +1385,7 @@
     padding-left: 0;
     margin-right: 20px;
     font-size: 13px;
-    color: #102754
+    color: #490181
 }
 
 .Villa_detay-floor .tab_oda .nav-tabs .nav-item .nav-link:hover {
@@ -1416,7 +1416,7 @@
 .Villa_detay-floor-info p {
     margin-bottom: 15px;
     font-size: 13px;
-    color: #102754
+    color: #490181
 }
 
 .Villa_detay-floor-info p span {
@@ -1424,7 +1424,7 @@
     font-weight: 700;
     width: 80px;
     display: inline-block;
-    color: #102754
+    color: #490181
 }
 
 .Villa_detay-floor:before {
@@ -1457,7 +1457,7 @@
 .Villa_detay-map-info {
     position: relative;
     z-index: 2;
-    background-color: #465064;
+    background-color: #490181;
     padding: 30px 0 20px 40px
 }
 
@@ -1473,7 +1473,7 @@
     display: inline-block;
     -webkit-transition: 500ms;
     transition: 500ms;
-    background-color: #434954;
+    background-color: #D6385E;
     width: 30%;
     height: 100%;
     position: absolute;
@@ -1530,7 +1530,7 @@
 }
 
 .Villa_detay-map-item .icon {
-    opacity: .32;
+    opacity: .7;
     height: 32px !important
 }
 
@@ -1577,7 +1577,7 @@
 .Villa_detay-map-road-head .nav-tabs .nav-item .nav-link {
     opacity: .3;
     font-size: 13px;
-    color: #102754;
+    color: #490181;
     padding-left: 0
 }
 
@@ -1596,7 +1596,7 @@
 
 .Villa_detay-map-road p {
     font-size: 12px;
-    color: #102754;
+    color: #490181;
     padding-right: 15px
 }
 
@@ -1637,7 +1637,7 @@
     margin-top: 0 !important;
     height: 100%;
     font-size: 14px;
-    color: #102754;
+    color: #490181;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1661,7 +1661,7 @@
     font-size: 14px;
     font-weight: 500;
     text-decoration: underline;
-    color: #102754;
+    color: #490181;
     margin-top: 30px
 }
 
@@ -1686,7 +1686,7 @@
     margin-bottom: 15px;
     font-size: 16px;
     font-weight: 700;
-    color: #102754
+    color: #490181
 }
 
 .Villa_detay-extra-item p {
@@ -1828,7 +1828,7 @@
 }
 
 .Villa_detayM .Rezervasyon-info-item span {
-    color: #102754
+    color: #490181
 }
 
 .Villa_detayM .Rezervasyon-info-toplam {
@@ -1843,11 +1843,11 @@
 }
 
 .Villa_detayM .Rezervasyon-info-toplam span {
-    color: #102754
+    color: #490181
 }
 
 .Villa_detayM .Rezervasyon-info-toplam p {
-    color: #102754
+    color: #490181
 }
 
 .Villa_detayM .Villa_detay-price {
@@ -2055,7 +2055,7 @@
     opacity: .38;
     font-size: 14px;
     font-weight: 700;
-    color: #102754;
+    color: #490181;
     margin-right: 0
 }
 
@@ -2095,7 +2095,7 @@
     left: -20px;
     right: -20px;
     width: calc(100% + 40px);
-    background-color: #102754
+    background-color: #490181
 }
 
 .Villa_detayM .Villa_detay-floor .tab_oda .nav-tabs {
@@ -2275,7 +2275,7 @@
     opacity: .25;
     font-size: 15px;
     font-weight: 700;
-    color: #102754;
+    color: #490181;
     height: 55px;
     width: 100%
 }
@@ -2319,7 +2319,7 @@
 .Villa_detayM .Villa_detay-map-road-head .nav-tabs .nav-item .nav-link {
     opacity: .3;
     font-size: 15px;
-    color: #102754;
+    color: #490181;
     padding-left: 0;
     font-weight: 500
 }
@@ -2356,7 +2356,7 @@
 
 .Villa_detayM .Villa_detay-map-road p {
     font-size: 12px;
-    color: #102754;
+    color: #490181;
     padding-right: 15px
 }
 
@@ -2387,7 +2387,7 @@
 
 .Villa_detayM .Villa_detay-sss-video {
     width: 180px;
-    color: #102754
+    color: #490181
 }
 
 .Villa_detayM .Villa_detay-sss-video-link {
@@ -2436,7 +2436,7 @@
     margin-bottom: 15px;
     font-size: 16px;
     font-weight: 700;
-    color: #102754
+    color: #490181
 }
 
 .Villa_detayM .Villa_detay-extra-item p {
@@ -2823,7 +2823,7 @@
     justify-content: center;
     font-size: 14px;
     font-weight: 500;
-    color: #102754
+    color: #490181
 }
 
 .Teklif-item-in {
@@ -2860,7 +2860,7 @@
     font-size: 18px;
     font-weight: 700;
     text-align: center;
-    color: #102754;
+    color: #490181;
     white-space: normal;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2876,7 +2876,7 @@
     white-space: normal;
     font-size: 13px;
     text-align: center;
-    color: #102754;
+    color: #490181;
     font-weight: 500
 }
 
@@ -2914,7 +2914,7 @@
     width: 220px;
     padding-left: 15px;
     font-size: 13px;
-    color: #102754;
+    color: #490181;
     background-color: transparent !important
 }
 
@@ -2947,7 +2947,7 @@
     margin-top: 20px;
     font-size: 18px;
     font-weight: 700;
-    color: #102754
+    color: #490181
 }
 
 .Teklif-item-type p {
@@ -2967,7 +2967,7 @@
 .Teklif-item-type p span {
     font-weight: 400;
     font-size: 11px;
-    color: #102754
+    color: #490181
 }
 
 .Teklif-item-why {
@@ -2992,7 +2992,7 @@
 
 .Teklif-item-why span {
     font-size: 13px;
-    color: #102754
+    color: #490181
 }
 
 .Teklif-item-why p {
@@ -3001,7 +3001,7 @@
     text-align: center;
     font-size: 18px;
     font-weight: 700;
-    color: #102754
+    color: #490181
 }
 
 .Teklif-item-property {
@@ -3026,7 +3026,7 @@
 
 .Teklif-item-property-in span {
     font-size: 16px;
-    color: #102754;
+    color: #490181;
     font-weight: 600;
     padding-left: 25px
 }
@@ -3086,7 +3086,7 @@
     -ms-flex-align: center;
     align-items: center;
     font-size: 13px;
-    color: #102754
+    color: #490181
 }
 
 .Teklif-item-property .check-label:before {
@@ -3206,7 +3206,7 @@
 
 .Teklif .step-back {
     cursor: pointer;
-    background-color: #102754;
+    background-color: #490181;
     width: 120px;
     height: 45px;
     color: #fff;
@@ -3543,7 +3543,7 @@
 .Tekliflerim-no {
     font-size: 12px;
     font-weight: 700;
-    color: #102754;
+    color: #490181;
     margin-left: auto
 }
 
@@ -3945,7 +3945,7 @@
 .TekliflerimM-header h2 {
     font-size: 21px;
     font-weight: 700;
-    color: #102754
+    color: #490181
 }
 
 .TekliflerimM-header h2 strong {
@@ -4192,7 +4192,7 @@
     padding-top: 20px;
     font-size: 17px;
     font-weight: 700;
-    color: #102754
+    color: #490181
 }
 
 .Blog-links ul {
@@ -4202,7 +4202,7 @@
 .Blog-links li {
     font-size: 13px;
     font-weight: 500;
-    color: #102754;
+    color: #490181;
     -webkit-transition: 500ms;
     transition: 500ms;
     margin-top: 15px;
@@ -4314,7 +4314,7 @@
     font-size: 13px;
     font-weight: 700;
     line-height: 1;
-    color: #102754
+    color: #490181
 }
 
 .Blog-item-date strong {
@@ -4328,7 +4328,7 @@
     margin-top: 10px;
     font-size: 36px;
     font-weight: 700;
-    color: #102754;
+    color: #490181;
     line-height: 1
 }
 
@@ -4364,14 +4364,14 @@
     text-align: left;
     font-size: 16px;
     letter-spacing: 6px;
-    color: #102754
+    color: #490181
 }
 
 .Blog-slider .slide_text h1 {
     font-size: 70px;
     font-weight: 700;
     text-align: left;
-    color: #102754;
+    color: #490181;
     line-height: 1;
     letter-spacing: 0;
     position: relative
@@ -4514,7 +4514,7 @@
     margin-bottom: 15px;
     font-size: 16px;
     letter-spacing: 6px;
-    color: #102754
+    color: #490181
 }
 
 .Blog-detay-inner-header:before {
@@ -4552,7 +4552,7 @@
 .Blog-detay-like-header {
     font-size: 25px;
     font-weight: 700;
-    color: #102754;
+    color: #490181;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -4584,7 +4584,7 @@
     font-size: 15px;
     font-weight: 500;
     text-align: center;
-    color: #102754
+    color: #490181
 }
 
 .Blog-detay-like-item:hover {
@@ -4641,7 +4641,7 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    background-color: #102754;
+    background-color: #490181;
     font-size: 15px;
     font-weight: 700;
     color: #fff;
@@ -4705,7 +4705,7 @@
 .Extralar-inner-text p {
     opacity: .59;
     font-size: 13px;
-    color: #102754
+    color: #490181
 }
 
 .Extralar-galeri {
@@ -4748,7 +4748,7 @@
 
 .Hakkimizda-text h6 {
     font-size: 12px;
-    color: #102754;
+    color: #490181;
     letter-spacing: 8px
 }
 
@@ -4756,12 +4756,12 @@
     margin-bottom: 15px;
     font-size: 30px;
     font-weight: 700;
-    color: #102754
+    color: #490181
 }
 
 .Hakkimizda-text p {
     font-size: 13px;
-    color: #102754;
+    color: #490181;
     margin-bottom: 10px;
     padding-right: 5%;
     padding-left: 5%
@@ -4786,19 +4786,19 @@
 .Hakkimizda-person-head span {
     font-size: 13px;
     letter-spacing: 7px;
-    color: #102754
+    color: #490181
 }
 
 .Hakkimizda-person-head h6 {
     font-size: 30px;
     font-weight: 700;
-    color: #102754
+    color: #490181
 }
 
 .Hakkimizda-person-head p {
     opacity: .57;
     font-size: 13px;
-    color: #102754
+    color: #490181
 }
 
 .Hakkimizda-person-info {
@@ -4872,7 +4872,7 @@
     font-size: 14px;
     font-weight: 700;
     text-align: center;
-    color: #102754;
+    color: #490181;
     padding-left: 4px;
     padding-right: 4px
 }
@@ -4973,7 +4973,7 @@
     font-size: 20px;
     font-weight: 700;
     text-align: center;
-    color: #102754;
+    color: #490181;
     line-height: 1;
     margin-top: 10px
 }
@@ -4989,7 +4989,7 @@
     opacity: .6;
     font-size: 13px;
     text-align: center;
-    color: #102754;
+    color: #490181;
     display: block;
     margin-top: 10px
 }
@@ -5080,7 +5080,7 @@
 .G_soz-header {
     font-size: 22px;
     font-weight: 700;
-    color: #102754;
+    color: #490181;
     margin-bottom: 30px;
     margin-top: 40px
 }
@@ -5116,7 +5116,7 @@
 
 .G_soz p {
     font-size: 15px;
-    color: #102754;
+    color: #490181;
     margin-bottom: 25px;
     line-height: normal
 }
@@ -5135,7 +5135,7 @@
     font-size: 30px;
     font-weight: 700;
     text-align: center;
-    color: #102754;
+    color: #490181;
     margin-top: 5px;
     margin-bottom: 25px
 }
@@ -5191,7 +5191,7 @@
     right: 30px;
     font-size: 12px;
     font-weight: 500;
-    color: #102754;
+    color: #490181;
     text-decoration: underline
 }
 
@@ -5250,7 +5250,7 @@
     font-size: 149px;
     font-weight: 800;
     text-align: center;
-    color: #102754;
+    color: #490181;
     line-height: 1
 }
 
@@ -5268,7 +5268,7 @@
     text-align: center;
     font-size: 30px;
     line-height: 1.2;
-    color: #102754
+    color: #490181
 }
 
 .Notfound-right {
@@ -5358,12 +5358,12 @@
     line-height: 1.1;
     font-size: 24px;
     font-weight: 700;
-    color: #102754
+    color: #490181
 }
 
 .Favoriler-right-header span {
     font-size: 18px;
-    color: #102754;
+    color: #490181;
     font-weight: 400
 }
 
@@ -5474,7 +5474,7 @@
 .Teklifimiz-no {
     font-size: 12px;
     font-weight: 700;
-    color: #102754
+    color: #490181
 }
 
 .Teklifimiz-head {
@@ -5533,7 +5533,7 @@
 .Iletisim-left-header h1 {
     font-size: 23px;
     font-weight: 700;
-    color: #102754;
+    color: #490181;
     margin-bottom: 15px;
     margin-top: 15px
 }
@@ -5685,7 +5685,7 @@
     border-radius: 0;
     font-size: 14px;
     font-weight: 500;
-    color: #102754;
+    color: #490181;
     border: none;
     padding-left: 0;
     -webkit-transition: 500ms;
@@ -5731,7 +5731,7 @@
     border-radius: 0;
     font-size: 14px;
     font-weight: 500;
-    color: #102754;
+    color: #490181;
     border: none;
     width: 100%;
     border-bottom: 1px solid #d8d8d8
@@ -5849,7 +5849,7 @@
 .Sss-video p {
     font-size: 13px;
     font-weight: 500;
-    color: #102754
+    color: #490181
 }
 
 .Sss .nav {
@@ -5928,7 +5928,7 @@
 
 .Bolge_list-locasyon span {
     font-size: 11px;
-    color: #102754;
+    color: #490181;
     letter-spacing: 8.6px
 }
 
@@ -5936,7 +5936,7 @@
     line-height: .6;
     font-size: 14px;
     font-weight: 700;
-    color: #102754
+    color: #490181
 }
 
 .Bolge_list-locasyon h3 {
@@ -6059,7 +6059,7 @@
     font-size: 13px;
     font-weight: 700;
     text-align: center;
-    color: #102754;
+    color: #490181;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -6259,7 +6259,7 @@
 .Rez-left-header h5 {
     font-size: 16px;
     font-weight: 700;
-    color: #102754;
+    color: #490181;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -6340,7 +6340,7 @@
 .Rez-left-item-onay label {
     font-size: 13px;
     font-weight: 500;
-    color: #102754;
+    color: #490181;
     margin-bottom: 0
 }
 
@@ -6356,7 +6356,7 @@
     border-radius: 8px;
     font-size: 13px;
     font-weight: 500;
-    color: #102754
+    color: #490181
 }
 
 .Rez-left-item-3 input {
@@ -6367,7 +6367,7 @@
     border-radius: 8px;
     font-size: 13px;
     font-weight: 500;
-    color: #102754
+    color: #490181
 }
 
 .Rez-left-item input:focus {
@@ -6455,7 +6455,7 @@
     padding-left: 20px;
     font-size: 12px;
     font-weight: 600;
-    color: #102754
+    color: #490181
 }
 
 .Rez-left-item .dropdown-item img {
@@ -6483,7 +6483,7 @@
 .Rez-left-item .intl-tel-input.separate-dial-code .selected-dial-code {
     font-size: 13px;
     font-weight: 500;
-    color: #102754;
+    color: #490181;
     padding-left: 25px
 }
 
@@ -7007,21 +7007,21 @@
     margin-top: 30px;
     font-size: 30px;
     font-weight: 700;
-    color: #102754
+    color: #490181
 }
 
 .Rez-finish-ok-info1 {
     opacity: .49;
     font-size: 12px;
     font-weight: 500;
-    color: #102754
+    color: #490181
 }
 
 .Rez-finish-ok-info2 {
     margin-top: 50px;
     font-size: 14px;
     font-weight: 500;
-    color: #102754;
+    color: #490181;
     padding-left: 5%;
     padding-right: 5%
 }
@@ -7043,7 +7043,7 @@
     background-color: #fff;
     font-size: 21px;
     font-weight: 700;
-    color: #102754;
+    color: #490181;
     margin-top: 20px
 }
 
@@ -7101,7 +7101,7 @@
     padding: 20px 40px 20px 0 !important;
     font-size: 13px !important;
     font-weight: 700 !important;
-    color: #102754 !important
+    color: #490181 !important
 }
 
 .date-picker-wrapper .month-wrapper {
@@ -7116,14 +7116,14 @@
     font-size: 18px;
     font-weight: 500;
     text-align: center;
-    color: #102754
+    color: #490181
 }
 
 .date-picker-wrapper .month-wrapper .week-name {
     font-size: 11px;
     font-weight: 500;
     text-align: center;
-    color: #102754;
+    color: #490181;
     height: 30px !important
 }
 
@@ -7230,7 +7230,7 @@
     margin-top: 15px;
     font-size: 32px;
     font-weight: 600;
-    color: #102754;
+    color: #490181;
     text-align: center
 }
 
@@ -7252,7 +7252,7 @@
 
 .modal-kosullar .close span {
     font-size: 32px;
-    color: #102754
+    color: #490181
 }
 
 @media (min-width: 1920px) {
@@ -7468,7 +7468,7 @@
     .Villa_detay-price-info-head p span {
         font-size: 12px;
         letter-spacing: 5px;
-        color: #102754
+        color: #490181
     }
 
     .Villa_detay-price-info-head .nav-tabs {
@@ -7486,7 +7486,7 @@
         padding-right: 5px;
         border-radius: 0;
         font-size: 13px;
-        color: #102754;
+        color: #490181;
         height: 100%;
         position: relative;
         display: -webkit-box;
@@ -7553,7 +7553,7 @@
 
     .Villa_detay-price-left .thead span {
         font-size: 12px;
-        color: #102754
+        color: #490181
     }
 
     .Villa_detay-price-item {
@@ -7646,7 +7646,7 @@
     .Villa_detay-price-right-head span {
         font-size: 12px;
         letter-spacing: 5px;
-        color: #102754;
+        color: #490181;
         font-weight: 400
     }
 
@@ -7707,7 +7707,7 @@
 
     .Favoriler .P_villas-info-in {
         height: 37%;
-        background-color: #102754;
+        background-color: #490181;
         padding-left: 9%;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -7895,8 +7895,8 @@
     }
 
     .Navtop-blog {
-        -webkit-box-shadow: 0 8px 28px -16px #102754;
-        box-shadow: 0 8px 28px -16px #102754
+        -webkit-box-shadow: 0 8px 28px -16px #490181;
+        box-shadow: 0 8px 28px -16px #490181
     }
 
     .gutterb {
@@ -9194,7 +9194,7 @@
 
     .Iletisim-left-header h1 {
         font-size: 17px;
-        color: #102754;
+        color: #490181;
         margin-bottom: 15px
     }
 
@@ -9299,7 +9299,7 @@
         border-radius: 0;
         font-size: 14px;
         font-weight: 500;
-        color: #102754;
+        color: #490181;
         border: none;
         padding-left: 0;
         -webkit-transition: 500ms;
@@ -9327,7 +9327,7 @@
     .Iletisim-form-item textarea {
         font-size: 14px;
         font-weight: 500;
-        color: #102754;
+        color: #490181;
         border: none;
         width: 100%;
         border-bottom: 1px solid #d8d8d8
@@ -10407,7 +10407,7 @@
         width: 100%;
         padding-left: 20px;
         font-size: 13px;
-        color: #102754;
+        color: #490181;
         background-color: transparent !important
     }
 
@@ -10537,7 +10537,7 @@
         align-items: center;
         font-size: 11px;
         line-height: 1.2;
-        color: #102754
+        color: #490181
     }
 
     .Teklif-item-property .check-label:before {
