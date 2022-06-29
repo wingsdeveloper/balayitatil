@@ -15,7 +15,7 @@ curl_setopt_array($curl, array(
   CURLOPT_FOLLOWLOCATION => true,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'POST',
-  CURLOPT_POSTFIELDS => array('data' => '[{"event_name": "Lead","event_id": "' . $event_id_lead . '","event_time": "' . time() .'","event_source_url": "'. $actual_link .'", "user_data": {"client_ip_address": "' . $fb_ip . '","ph" : "' . $ph . '","fn" : "' . $fn . '","em" : "' . $em . '","client_user_agent": "' . $_SERVER['HTTP_USER_AGENT'] . '"},"custom_data": {"content_name": "' . $reservation->villa->name . '","content_type": "product","currency": "TRY","value": "' . $value_final . '","order_id": "' . $reservation->code . '","content_id": "' . $reservation->villa_id . '"}}]','access_token' => 'EAAHTPiGDALEBAEcNNXC1nNAXJDI4V2r1hnaSlKvSH0TgWcoFPBzKGtKGZABzUVuszLurTdQ9qZBSunk0PZCqzVI73s07w2s5ZA2YgVaFl6ZCREl8buwcpAwC3bgZAWiVVegefRultu8o3Bx5nEJe6WYZC0RyNpZCR1ZA7bZALHsF8SDMsAL6WQQVd9JEwVSRuhx58ZD','test_event_code' => 'TEST50377'),
+  CURLOPT_POSTFIELDS => array('data' => '[{"event_name": "Lead","event_id": "' . $event_id_lead . '","event_time": "' . time() .'","event_source_url": "'. $actual_link .'", "user_data": {"client_ip_address": "' . $fb_ip . '","ph" : "' . $ph . '","fn" : "' . $fn . '","em" : "' . $em . '","client_user_agent": "' . $_SERVER['HTTP_USER_AGENT'] . '"},"custom_data": {"content_name": "' . $reservation->villa->name . '","content_type": "product","currency": "TRY","value": "' . $value_final . '","order_id": "' . $reservation->code . '","content_id": "' . $reservation->villa_id . '"}}]','access_token' => 'EAAHTPiGDALEBANKENo2ZAPSKmLeN0opQJsrrQdmeUyANnci2JKxLdpi7ZAPnfwwZA1VLWdP6UVf48N1MWo9l2fQ5CbZA0ZAJ487F18aZCsTpo5Mgpy6hZCiq0E6mZCuLLEnrCvSm2vty3KKQPFHUasZBLWqmsLi6SWZCsUg0mQr98ne7G9WvojsLUc','test_event_code' => 'TEST50377'),
 ));
 
 $response = curl_exec($curl);
@@ -298,7 +298,7 @@ curl_close($curl);
 
 <script>
 
-fbq('init', '1757769984530411', {
+fbq('init', '3420393284913528', {
     ph: '{{ $ph }}',
     fn: '{{ $fn }}',
     em: '{{ $em }}' });
