@@ -137,7 +137,12 @@
 
         $(".Dropdown-buton ").click(function () {
             $(".Dropdown-buton").toggleClass("pointernone");
+            $(".Dropdown-menu").slideToggle(400);
         })
+
+        $(".Dropdown-close").click(function () {
+            $(".Dropdown-menu").slideUp(400);
+    });
 
         $(".Navtop-discount-close ").click(function () {
             $(".Navtop-discount").slideUp(400);

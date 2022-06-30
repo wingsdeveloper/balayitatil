@@ -2866,6 +2866,8 @@
     background: transparent;
     margin-bottom: 100px;
     z-index: 99; }
+    .Villa_Search .containerindex {
+      padding: 0 !important; }
     .Villa_Search-in {
       flex-direction: column; }
     .Villa_Search-icon {
