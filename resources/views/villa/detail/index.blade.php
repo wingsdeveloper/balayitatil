@@ -1556,12 +1556,9 @@ window.addEventListener('load', function () {
 
                             <div class="swiper-wrapper">
                             @forelse($villa->photos as $photo)
-                            <div class="swiper-slide ">
-                                <a href="" data-fancybox="gallery" data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" data-title="{{$villa->name}}" class="" >
-
-                                    <img class="lazy " data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" alt="{{$villa->name}}" src="">
+                                <a href="{{ ImageProcess::getImageWatermarkedPath($photo) }}" data-fancybox="group-ofis" data-title="{{$villa->name}}" class="swiper-slide " >
+                                    <img class="swiper-lazy " data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" alt="" src="">
                                 </a>
-                                </div>
                                 @empty
                             &nbsp;
                         @endforelse
@@ -1573,10 +1570,8 @@ window.addEventListener('load', function () {
                             <div class="swiper-wrapper" style="">
                             @forelse($villa->photos as $photo)
                                 <button class="swiper-slide">
-                                    <img class="lazy "
-                                         data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}"
-                                         alt="{{$villa->name}}" src=""
-                                         >
+                                    <img class="swiper-lazy "data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" alt="" src="" >
+                                         <div class="swiper-lazy-preloader"></div>
                                 </button>
                                 @empty
                             &nbsp;
@@ -2051,8 +2046,8 @@ window.addEventListener('load', function () {
                         </svg>
                         <h4 class="header-lg">VİLLA KAT PLANI
                         </h4>
-                        <a class="ml-auto galleryxyz">VİLLANIN TÜM FOTOĞRAFLARI
-                        </a>
+                        <a class="ml-auto galleryxyz" href="javascript:;" data-fancybox-trigger="group-ofis" data-fancybox-index="1">VİLLANIN TÜM FOTOĞRAFLARI
+                                    </a>
                     </div>
                     <div class="Villa_detay-floor-head">
                         <ul class="nav nav-tabs">
