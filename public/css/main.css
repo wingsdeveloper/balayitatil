@@ -2687,13 +2687,13 @@
   align-items: center;
   font-size: 12px;
   font-weight: 700;
-  color: #fff;
+  color: #490181;
   margin-right: 0; }
 
 .RezervasyonM-head p {
   font-size: 20px;
   font-weight: 700;
-  color: #fff;
+  color: #490181;
   line-height: 1.2;
   display: flex;
   flex-direction: column; }
@@ -2709,7 +2709,7 @@
   color: #fff; }
 
 .RezervasyonM-header {
-  margin-top: 55px; }
+  margin-top: 35px; }
 
 .RezervasyonM-header-name h6 {
   font-size: 13px;
@@ -2931,6 +2931,10 @@
       width: 50%; }
     .Dropdown-menu-in-warning {
       background-color: #d6385e; }
+    .Dropdown-menu.Rezervasyon-search-person {
+      top: 100%; }
+      .Dropdown-menu.Rezervasyon-search-person .Dropdown-menu-item {
+        width: 100%; }
   .Dropdown .addon {
     -webkit-transform: translateY(-8px);
             transform: translateY(-8px); }
