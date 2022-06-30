@@ -437,7 +437,7 @@
   right: 0;
   height: calc(100vh - 85px);
   width: 100%;
-  background-color: #2c4061;
+  background-color: #6F18B5;
   z-index: 99999999;
   padding-top: 5vh;
   transition: 500ms; }
@@ -498,7 +498,7 @@
             color: #490181; }
   .overlay-bottom {
     position: absolute;
-    background-color: #283957;
+    background-color: #6F18B5;
     display: flex;
     left: 0;
     bottom: 0;
@@ -2664,7 +2664,6 @@
 
 .RezervasyonM {
   padding: 25px 20px;
-  margin-top: -120px;
   position: relative;
   z-index: 99; }
 

@@ -2122,14 +2122,14 @@
 }
 
 .Villa_detayM .Villa_detay-floor .tab_oda .nav-tabs .nav-item .nav-link:hover {
-    color: #490181;
+    color: #ffca0f;
     -webkit-transition: 500ms;
     transition: 500ms
 }
 
 .Villa_detayM .Villa_detay-floor .tab_oda .nav-tabs .nav-item .active {
-    border-color: #490181;
-    color: #490181
+    border-color: #ffca0f;
+    color: #ffca0f
 }
 
 .Villa_detayM .Villa_detay-floor-info {
@@ -2210,7 +2210,7 @@
 }
 
 .Villa_detayM .Villa_detay-map-info-link {
-    background-color: #434954;
+    background-color: #d6385e;
     width: 100%;
     margin-top: 0;
     padding-top: 20px;
