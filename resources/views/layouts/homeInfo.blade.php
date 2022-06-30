@@ -6,7 +6,7 @@
                         <img src="{{ asset('images/tursab-logo.png') }}" alt="">
                     </div>
                     <div class="Home-info-item-text">
-                        <h5>balayisepeti.com.tr 11095’nolu <b>Türsab Acentesidir.</b></h5>
+                        <h5>Wings Seyehat Tur. San. Tic.Ltd.Şti. 11095’nolu <b>Türsab Acentesidir.</b></h5>
                         <div class="Home-info-item-text-link">
                             <a target="_blank" href="https://www.tursab.org.tr/tr/ddsv">Belge Görüntüle</a>
                         </div>

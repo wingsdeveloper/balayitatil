@@ -11,24 +11,10 @@
         <div class="container">
             <div class="Content-in">
                 <h3 class="Content-title">Hakkımızda</h3>
-                <p>2015 yılında Villa Kalkan(villakalkan.com.tr) markası ile faaliyetlerimize başladığımız firmamız 2018
-                    yılı itibariyle Wings Seyahat Turizm Sanayi ve Ticaret Limited Şirketi çatısı altında Villa/Apart
-                    konaklamasından otel rezervasyonları,günübirlik tur ve aktivite organizasyonlarına kadar 10’un
-                    üzerinde internet sitelerimiz, Kaş/Kalkan ve Fethiyede bulunan ofislerimiz ve bünyemizdeki yüzlerce
-                    konaklama tesisleriyle hizmet vermektedir.</p>
-                <p class="text-bold">Firmamız 11095 numaralı TURSAB A grubu(Acente ünvanı Villa Kalkan Turizm) seyahat
-                    acentası belgesine sahip olup Kumluca Sanayi ve Ticaret Odası ile Fethiye Ticaret ve Sanayi Odasına
-                    kayıtlıdır.</p>
-                <p>Türkiye’nin doğal güzellikleri ve tarihi yapısıyla harmanlanmış “bölgelerde” sizlere villa tatili
-                    şansı sunan balayisepeti.com.tr, ister balayı tatili ister aile tatiliniz olsun sizlere unutulmaz
-                    bir tatil yaptırmayı amaçlıyor. Antalya başta olmak üzere Muğla’da da aktif olarak kiralık villa
-                    çeşitlerini sizlere sunan balayisepeti.com.tr, hayalinizdeki tatil için çok daha uygun fiyatlar
-                    ödemenizi ise kolaylaştırmak istiyor. Tatilinizi mükemmel kılmak için tüm talep ve isteklerinizi
-                    değerlendiren balayisepeti.com.tr, siz değerli misafirlerimizin memnuniyetlerini arttırmak için
-                    “özel ricalarınızı” mümkün olduğu mertebede gerçekleştirmekten onur duyuyor. Siz de başta Antalya ve
-                    Muğla olmak üzere tatiliniz için size en uygun kiralık villa seçeneklerini görmek ve hemen
-                    rezervasyon yapmak istiyorsanız web sayfamızda yer alan özel konseptlere ayrılmış villalara göz
-                    atmaya başlayın!</p>
+                <p>Wings Seyahat Turizm Sanayi ve Ticaret Limited Şirketi bünyesinde faaliyet göstermekte olan www.balayisepeti.com.tr ; Farklı bölgelerdeki yüzlerce tatil villası ve konaklama tesisi seçeneği ile sizlere hizmet vermektedir.
+                    Sektördeki gelişmeleri ve pazardaki yeni talepleri yakından takip eden firmamız yönetimi, güçlü idari ve mali birikimi ile sektörde öncü firmalardan biri olmayı sürdürmektedir.</p>
+                
+                <p>TURSAB A grubu (Acente ünvanı “Villa Kalkan Turizm) seyahat acentası belgesine sahip, Kumluca Sanayi ve Ticaret Odası ile Fethiye Ticaret ve Sanayi Odasına kayıtlı Wings Seyahat Turizm Sanayi ve Ticaret Limited Şirketi olarak, deneyimli kadromuz ile ihtiyaçların doğru analizini yaparak en uygun portföyle siz değerli müşterilerimize hizmet vermekten ve birlikte çalışmaktan gurur duyarız.</p>
 
                 <div class="Content-features">
                     <div class="Content-features-item">
