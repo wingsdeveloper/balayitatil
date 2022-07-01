@@ -41,7 +41,7 @@
             @elseif($website->id == 13)
                 background-color: #0C4473;
             @else
-                                               background-color: skyblue;
+                                               background-color: 4A0184;
         @endif
 
 
