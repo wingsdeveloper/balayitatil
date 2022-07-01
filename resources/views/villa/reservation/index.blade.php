@@ -464,7 +464,7 @@ curl_close($ch);
                                            name="address"
                                            class="form-control" placeholder="İkamet Adresi" value="{{$req[c_address]}}">
                                 </div>
-
+<!--
                                 <div class="Rez-left-item-3">
                                     <select  name="ikamet[ulke_id]" id="ulke_id_ikamet" class="form-control">
                                         @foreach(\App\Ulke::get() as $ulke)
@@ -474,7 +474,7 @@ curl_close($ch);
                                     </select>
                                 </div>
                                 <div class="Rez-left-item-3">
-                                    <select  name="ikamet[il_id]" id="il_id_ikamet" class="form-control" required>
+                                    <select  name="ikamet[il_id]" id="il_id_ikamet" class="form-control" >
                                         <option value="">İl Seçin</option>
                                         @foreach(\App\Iller::where('ulke_id', '223')->get() as $il)
                                             <option value="{{ $il->id }}">{{ $il->ad }}</option>
@@ -486,7 +486,7 @@ curl_close($ch);
                                         <option value="">İlçe Seçin</option>
                                     </select>
                                 </div>
-
+                            -->
                                 <label for="faturabilgi_kontrol" style="width: 100%">
                                     <input id="faturabilgi_kontrol" type="checkbox">
                                     <input type="hidden" name="fatura_kesilecek" value="0">
