@@ -41,20 +41,13 @@ function getMonthName($month_number)
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title></title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" rel="preload" as="style">
-    <link rel="stylesheet" href="{{ asset('css/library/animate.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/library/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/library/bootstrap-select.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/library/bootstrap-fullscreen-select.css') }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-    <link rel="stylesheet" href="{{ asset('css/library/font-awesome.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/library/hover.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/library/intl-tel-input.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/library/library.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/library/lv_window.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/library/global.css?v=1.34vk') }}">
-    <link rel="stylesheet" href="{{ asset('css/main.css?v=1.34vk') }}">
-    <link rel="stylesheet" href="{{ asset('css/library/theme-old.css?v=1.34vk') }}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="/reservation_assets/css/library/bootstrap.min.css">
+    <link rel="stylesheet" href="/reservation_assets/css/library/swiper.css">
+    <link rel="stylesheet" href="/reservation_assets/css/library/slick.css">
+    <link rel="stylesheet" href="/reservation_assets/css/library/slick-theme.css">
+    <link rel="stylesheet" href="/reservation_assets/css/library/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/reservation_assets/css/main.css?v=1.22vk">
 
 </head>
 
