@@ -482,7 +482,7 @@ curl_close($ch);
                                     </select>
                                 </div>
                                 <div class="Rez-left-item-3">
-                                    <select  name="ikamet[ilce_id]" id="ilce_id_ikamet" class="form-control" required>
+                                    <select  name="ikamet[ilce_id]" id="ilce_id_ikamet" class="form-control" >
                                         <option value="">İlçe Seçin</option>
                                     </select>
                                 </div>
