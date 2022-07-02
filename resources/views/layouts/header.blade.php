@@ -70,7 +70,7 @@ Navtop-ic
                                     <use xlink:href="#icon-search"></use>
                                 </svg>
                                 <input type="button" id="searchfocus" class="Navtop-top-search-buton">
-                                <input type="text" id="searchinput" autocomplete="off" placeholder="Villa Ara">
+                                <input type="text" id="searchinput" autocomplete="off" placeholder="Villa Ara" required>
                             </label>
                             <div id="villaListele" style="display: none;"></div>
                         </li>
@@ -106,7 +106,7 @@ Navtop-ic
             <div class="Search-menu">
                 <!-- <form action="">-->
                 <div class="Search-menu-in flex a-i-c">
-                    <input type="text" id="searchinput" autocomplete="off" placeholder="Aramaya Başla">
+                    <input type="text" id="searchinput" autocomplete="off" placeholder="Aramaya Başla" required>
                     <!-- <button>ARA</button>-->
                 </div>
                 <!--  </form>-->
