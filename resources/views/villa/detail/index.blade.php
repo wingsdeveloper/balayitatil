@@ -199,20 +199,14 @@ window.criteo_q.push(
 
   $('#dhesap_toplam2').html(formatted+" ₺");
 
-});
-
-window.addEventListener('load', function () {
-        //
-
-//メインスライド
-var slider = new Swiper ('.gallery-top', {
+  var slider = new Swiper ('.gallery-top', {
     slidesPerView: 1,
     centeredSlides: true,
     loop: true,
     loopedSlides:10, //スライドの枚数と同じ値を指定
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '#detail_next_btn',
+        prevEl: '#detail_prev_btn',
     },
 });
 
@@ -229,7 +223,10 @@ slider.controller.control = thumbs;
 thumbs.controller.control = slider;
 
 
-    });
+
+});
+
+
 
     </script>
 
