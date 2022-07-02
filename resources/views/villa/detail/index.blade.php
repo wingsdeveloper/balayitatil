@@ -218,7 +218,6 @@ window.criteo_q.push(
 var thumbs = new Swiper ('.gallery-thumbs', {
     slidesPerView: 10,
     spaceBetween: 10,
-    centeredSlides: true,
     observer: true,
     observeParents: true,
     lazy: true,
