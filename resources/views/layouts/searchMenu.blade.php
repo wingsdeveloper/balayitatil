@@ -108,7 +108,7 @@
                         <svg class="icon icon-search" data-original-title="" title="">
                             <use xlink:href="#icon-search"></use>
                         </svg>
-                        <span>ARA</span>
+                        <span>TESİS <b>ARA</b></span>
                     </button>
                 </div>
 
