@@ -50,6 +50,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 @stack('search_app_js')
 <script src="{{ asset('js/selectpicker.min.js') }}"></script>
 <script src="{{ asset('js/theme.min.js?v=1.36vk') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.js"></script>
+
 
 
 @stack('after_theme')
