@@ -209,6 +209,7 @@ window.addEventListener('load', function () {
             lazy: true,
             spaceBetween: 10,
             preloadImages: !1,
+            observer: true, observeParents: true,
             grabCursor: true,
             slideToClickedSlide: true,
             watchSlidesVisibility: true,
