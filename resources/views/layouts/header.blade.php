@@ -1,3 +1,4 @@
+@if(Agent::isDesktop())
 <div class="Navtop-discount" style="display: block">
         <div class="container">
             <div class="Navtop-discount-in">
@@ -7,7 +8,7 @@
             </div>
         </div>
 </div>
-    
+@endif    
 
 <header @if($view_name == "villa-detail-index") style="position:static!important" @endif class="Navtop  Navtop-detay @if($view_name == "ekstra-index" || $view_name == "errors::404" || $view_name == "errors::500" || $view_name == "villa-notfound-index" || $view_name == "offer-offer" || $view_name == "static-index" || $view_name == "offer-getOffer" || $view_name == "offer-done"  ||  $view_name == "villa-reservation-index" ||  $view_name == "villa-reservation-kredikart_index" || $view_name == "villa-reservation-done"|| $view_name == "villa-reservation-error")
 Navtop-ic
