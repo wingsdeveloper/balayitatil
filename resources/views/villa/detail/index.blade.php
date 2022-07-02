@@ -824,7 +824,7 @@ window.addEventListener('load', function () {
                             <div class="swiper-wrapper" style="">
                             @forelse($villa->photos as $photo)
                                 <button class="swiper-slide">
-                                    <img class="swiper-lazy "data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" alt="" src="" >
+                                    <img class="swiper-lazy "data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" alt="" style="max-height:55px" src="" >
                                          <div class="swiper-lazy-preloader"></div>
                                 </button>
                                 @empty
