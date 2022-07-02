@@ -202,43 +202,32 @@ window.criteo_q.push(
 });
 
 window.addEventListener('load', function () {
-        //
+            //
+            $('#gallery-thumbs').show();
 
-        var galleryThumbs = new Swiper('.gallery-thumbs', {
-            slidesPerView: 9,
-            lazy: true,
-            spaceBetween: 10,
-            preloadImages: !1,
-            centeredSlides: true,
-            slideToClickedSlide: true,
-            observer: true,
-            observeParents: true,
+            var galleryThumbs = new Swiper('.gallery-thumbs', {
+                spaceBetween: 9,
+                slidesPerView: 10,
+                freeMode: true,
+                watchSlidesVisibility: true,
+                watchSlidesProgress: true,
+            });
+
+            var galleryTop = new Swiper('.gallery-top', {
+                loop: true,
+                navigation: {
+                    nextEl: '#detail_next_btn',
+                    prevEl: '#detail_prev_btn',
+                },
+                thumbs: {
+                    swiper: galleryThumbs,
+                },
+            });
+
+        
 
         });
 
-        var galleryTop = new Swiper('.gallery-top', {
-            slidesPerView: 1,
-            loopedSlides: 10,
-            loop: true,
-            lazy: true,
-            paginationClickable: true,
-            preloadImages: !1,
-            navigation: {
-                nextEl: '#detail_next_btn',
-                prevEl: '#detail_prev_btn',
-            },
-            thumbs: {
-                swiper: galleryThumbs,
-            },
-        });
-
-      
-
-        galleryTop.controller.control = galleryThumbs;
-        galleryThumbs.controller.control = galleryTop;
-
-
-    });
 
     </script>
 
