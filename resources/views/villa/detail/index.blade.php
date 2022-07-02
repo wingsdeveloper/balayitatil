@@ -1548,12 +1548,9 @@ thumbs.controller.control = slider;
 
                             <div class="swiper-wrapper">
                             @forelse($villa->photos as $photo)
-                            <div class="swiper-slide ">
-                                <a href="" data-fancybox="gallery" data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" data-title="{{$villa->name}}" class="" >
-
-                                    <img class="lazy " data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" alt="{{$villa->name}}" src="">
+                                <a href="{{ ImageProcess::getImageWatermarkedPath($photo) }}" data-fancybox="group-ofis" data-title="{{$villa->name}}" class="swiper-slide " >
+                                    <img class="swiper-lazy " data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" alt="" src="">
                                 </a>
-                                </div>
                                 @empty
                             &nbsp;
                         @endforelse
