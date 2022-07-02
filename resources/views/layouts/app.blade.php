@@ -3,12 +3,14 @@
 <head>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KK37GCW');</script>
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NTRMKWM');</script>
 <!-- End Google Tag Manager -->
-
+<!-- Criteo Loader File -->
+<script type="text/javascript" src="//dynamic.criteo.com/js/ld/ld.js?a=46955" async="true"></script>
+<!-- END Criteo Loader File -->
     @include('layouts.meta')
     @include('layouts.head')
     @yield('head')
@@ -24,6 +26,10 @@
 </head>
 
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NTRMKWM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <main id="main">
     @if($view_name != "blog-category-index" && $view_name != "blog-detail-index" && $view_name != "blog-list-index")
         @include('layouts.header')
@@ -43,9 +49,8 @@
 
 @stack('search_app_js')
 <script src="{{ asset('js/selectpicker.min.js') }}"></script>
-<script src="{{ asset('js/theme.min.js?v=1.21vk') }}"></script>
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script src="{{ asset('js/main-new.js?v=1.21vk') }}" type="text/javascript"></script>
+<script src="{{ asset('js/theme.min.js?v=1.36vk') }}"></script>
+
 
 @stack('after_theme')
 
@@ -124,8 +129,6 @@
     })
 </script>
 
-@if(Agent::isDesktop())
-
 <script type="text/javascript">
     $('.lazy-load').Lazy();
     $(document).mouseup(function (e) {
@@ -141,8 +144,6 @@
             $(".Dropdown-buton").toggleClass("pointernone");
         })
 
-      
-
         $(".Navtop-discount-close ").click(function () {
             $(".Navtop-discount").slideUp(400);
         })
@@ -150,38 +151,6 @@
 
     });
 </script>
-
-@elseif(Agent::isMobile())
-<script type="text/javascript">
-    $('.lazy-load').Lazy();
-    $(document).mouseup(function (e) {
-        if ($(e.target).closest(".Dropdown-menu").attr('style', 'display: block').length ===
-            0) {
-            $(".Dropdown-menu").slideUp(400);
-            $(".Dropdown-buton").removeClass("pointernone");
-        }
-    });
-    $(document).ready(function () {
-
-        $(".Dropdown-buton ").click(function () {
-            $(".Dropdown-menu").slideToggle(400);
-            $(".Dropdown-buton").toggleClass("pointernone");
-        })
-
-        $(".Dropdown-close ").click(function () {
-            $(".Dropdown-menu").slideUp(400);
-        })
-
-      
-        $(".Navtop-discount-close ").click(function () {
-            $(".Navtop-discount").slideUp(400);
-        })
-
-
-    });
-</script>
-
-@endif
 <div id="async"></div>
 
 @stack('pro_js')
