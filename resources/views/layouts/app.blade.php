@@ -43,9 +43,9 @@
 
 @stack('search_app_js')
 <script src="{{ asset('js/selectpicker.min.js') }}"></script>
-<script src="{{ asset('js/theme.min.js?v=1.19vk') }}"></script>
+<script src="{{ asset('js/theme.min.js?v=1.20vk') }}"></script>
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script src="{{ asset('js/main-new.js?v=1.19vk') }}" type="text/javascript"></script>
+<script src="{{ asset('js/main-new.js?v=1.20vk') }}" type="text/javascript"></script>
 
 @stack('after_theme')
 
@@ -124,6 +124,8 @@
     })
 </script>
 
+@if(Agent::isDesktop())
+
 <script type="text/javascript">
     $('.lazy-load').Lazy();
     $(document).mouseup(function (e) {
@@ -148,6 +150,38 @@
 
     });
 </script>
+
+@elseif(Agent::isMobile())
+<script type="text/javascript">
+    $('.lazy-load').Lazy();
+    $(document).mouseup(function (e) {
+        if ($(e.target).closest(".Dropdown-menu").attr('style', 'display: block').length ===
+            0) {
+            $(".Dropdown-menu").slideUp(400);
+            $(".Dropdown-buton").removeClass("pointernone");
+        }
+    });
+    $(document).ready(function () {
+
+        $(".Dropdown-buton ").click(function () {
+            $(".Dropdown-menu").slideToggle(400);
+            $(".Dropdown-buton").toggleClass("pointernone2");
+        })
+
+        $(".Dropdown-close ").click(function () {
+            $(".Dropdown-menu").slideUp(400);
+        })
+
+      
+        $(".Navtop-discount-close ").click(function () {
+            $(".Navtop-discount").slideUp(400);
+        })
+
+
+    });
+</script>
+
+@endif
 <div id="async"></div>
 
 @stack('pro_js')
