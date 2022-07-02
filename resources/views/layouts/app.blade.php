@@ -43,9 +43,9 @@
 
 @stack('search_app_js')
 <script src="{{ asset('js/selectpicker.min.js') }}"></script>
-<script src="{{ asset('js/theme.min.js?v=1.20vk') }}"></script>
+<script src="{{ asset('js/theme.min.js?v=1.21vk') }}"></script>
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script src="{{ asset('js/main-new.js?v=1.20vk') }}" type="text/javascript"></script>
+<script src="{{ asset('js/main-new.js?v=1.21vk') }}" type="text/javascript"></script>
 
 @stack('after_theme')
 
