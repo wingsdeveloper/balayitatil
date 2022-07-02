@@ -221,6 +221,7 @@ window.addEventListener('load', function () {
             slidesPerView: 1,
             loop: true,
             lazy: true,
+            observer: true, observeParents: true,
             preloadImages: !1,
             navigation: {
                 nextEl: '#detail_next_btn',
