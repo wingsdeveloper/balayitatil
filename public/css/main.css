@@ -2302,7 +2302,7 @@
     .Villa_detay-menu-name:after {
       content: "";
       position: absolute;
-      right: -20px;
+      right: -19px;
       border-left: 20px solid #d6385e;
       border-top: 40px solid transparent;
       border-bottom: 40px solid transparent; }
