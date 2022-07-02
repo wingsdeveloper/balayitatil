@@ -69,7 +69,7 @@ window.criteo_q.push(
         <div class="P_villas-item item-3   flex">
             {!! $badge !!}
             <div class="On-odeme">
-                            <p class="On-odeme-yuzde">%<b>30</b></p>
+                            <p class="On-odeme-yuzde">%<b>{{$villa->prepayment_rate}}</b></p>
                             <p class="On-odeme-text">Şimdi Öde<span>Kalanı</span>Girişte Öde!</p>
                         </div>
             <div class="P_villas-img ">
@@ -92,7 +92,7 @@ window.criteo_q.push(
                     <span>Villa Kodu: {{ $website->prefix }}{{ $villa->code }}</span>
                 </div>
                     <div class="P_villas-info-people">
-                        <p><b>2</b> Kişi /  En Az <b>4</b> Gece</p>
+                        <p><b>{{ $villa->number_person }} </b> Kişi /  En Az <b>{{ $villa->min_accommodation }}</b> Gece</p>
                     </div>
                 <div class="P_villas-info-in">
                 <div class="info">
@@ -113,12 +113,7 @@ window.criteo_q.push(
                         </svg>
                         <span><b>Kalkan</b> Bölgesinde </span>
                     </div>
-                    <div class="info takvim">
-                        <svg class="icon icon-new-calendar" data-original-title="" title="">
-                            <use xlink:href="#icon-new-calendar"></use>
-                        </svg>
-                        <span><b>Takvimi Güncel!</b></span>
-                    </div>
+                    
                 </div>
                 <div class="P_villas-info-money">
                     <svg class="icon icon-wallet ">

@@ -187,6 +187,7 @@ dataLayer.push({
                     @endphp
                     <div class="P_villas-item item-3   flex">
                         {!! $badge !!}
+                        
                         <div class="On-odeme">
                             <p class="On-odeme-yuzde">%<b>30</b></p>
                             <p class="On-odeme-text">Şimdi Öde<span>Kalanı</span>Girişte Öde!</p>
@@ -205,7 +206,7 @@ dataLayer.push({
                     <span>Villa Kodu: {{ $website->prefix }}{{ $villa->code }}</span>
                 </div>
                     <div class="P_villas-info-people">
-                        <p><b>2</b> Kişi /  En Az <b>4</b> Gece</p>
+                        <p><b>{{ $villa->number_person }} </b> Kişi /  En Az <b>{{ $villa->min_accommodation }}</b> Gece</p>
                     </div>
                 <div class="P_villas-info-in">
                 <div class="info">
