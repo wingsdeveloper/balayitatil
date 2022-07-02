@@ -209,7 +209,6 @@ window.addEventListener('load', function () {
             lazy: true,
             spaceBetween: 10,
             preloadImages: !1,
-            observer: true, observeParents: true,
             grabCursor: true,
             slideToClickedSlide: true,
             watchSlidesVisibility: true,
@@ -221,7 +220,6 @@ window.addEventListener('load', function () {
             slidesPerView: 1,
             loop: true,
             lazy: true,
-            observer: true, observeParents: true,
             preloadImages: !1,
             navigation: {
                 nextEl: '#detail_next_btn',
