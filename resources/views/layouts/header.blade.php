@@ -9,13 +9,14 @@
 </div>
     
 
-<header @if($view_name == "villa-detail-index") style="position:static!important" @endif class="Navtop @if($view_name == "ekstra-index" || $view_name == "errors::404" || $view_name == "errors::500" || $view_name == "villa-notfound-index" || $view_name == "offer-offer" || $view_name == "static-index" || $view_name == "offer-getOffer" || $view_name == "offer-done"  ||  $view_name == "villa-reservation-index" ||  $view_name == "villa-reservation-kredikart_index" || $view_name == "villa-reservation-done"|| $view_name == "villa-reservation-error")
+<header @if($view_name == "villa-detail-index") style="position:static!important" @endif class="Navtop  Navtop-detay @if($view_name == "ekstra-index" || $view_name == "errors::404" || $view_name == "errors::500" || $view_name == "villa-notfound-index" || $view_name == "offer-offer" || $view_name == "static-index" || $view_name == "offer-getOffer" || $view_name == "offer-done"  ||  $view_name == "villa-reservation-index" ||  $view_name == "villa-reservation-kredikart_index" || $view_name == "villa-reservation-done"|| $view_name == "villa-reservation-error")
 Navtop-ic
 @elseif($view_name == "villa-detail-index" || $view_name == "static-index" || $view_name == "faq-index"  || $view_name == "contact-index" || $view_name == "payment-error" || $view_name == "payment-success" || $view_name == "villa-reservation-prekvk" || $view_name == "villa-reservation-prereservationdone" )
         Navtop-ic
 @elseif(($view_name == "villa-list-index") || $view_name == "home-index" || ($view_name == "villa-search-index") || ($view_name == "villa-search-index_new") || ($view_name == "villa-category-detail") || ($view_name == "area-detail-index"))
         Navtop-search
 @endif">
+
 
     <div class="container ">
         <nav class="navbar navbar-expand-lg">
@@ -33,7 +34,7 @@ Navtop-ic
             </a>
 
             <div class="  navbar-collapse navbar-collapse-menu  " id="ac">
-                
+               
                 <ul class="navbar-nav  ml-auto">
                     @forelse($pages as $page)
                         @php
@@ -53,8 +54,8 @@ Navtop-ic
                     @empty
                         Herhangi bir sayfa eklenmedi henüz.
                     @endforelse
-
-                     <li class="nav-item nav-item-search">
+                    @if(Agent::isDesktop())
+                    <li class="nav-item nav-item-search">
                             <label for="">
                                 <svg class="icon icon-search" data-original-title="" title="">
                                     <use xlink:href="#icon-search"></use>
@@ -64,12 +65,16 @@ Navtop-ic
                             </label>
                             <div id="villaListele" style="display: none;"></div>
                         </li>
+                        @endif
                 </ul>
             </div>
 
             @if(Agent::isMobile())
                 <div class="Mobil_menu mobile-f">
-                   
+                    <a href="https://www.lycianescapes.com"
+                       class="nav-link" style="padding-top: .2rem!important;margin-top: .1rem!important;padding-right: 12px!important;">
+                        <img height="25" src="{{ asset('images/uk-flag-mobile.png') }}" alt="" >
+                    </a>
                     <div class="Search-icon">
                         <svg class="icon icon-search" id="searchfocus">
                             <use xlink:href="#icon-search"></use>
@@ -107,4 +112,3 @@ Navtop-ic
 @if(Agent::isMobile())
     <div id="villaListele"></div>
 @endif
-

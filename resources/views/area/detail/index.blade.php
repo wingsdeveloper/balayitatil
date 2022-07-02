@@ -60,12 +60,10 @@ window.criteo_q.push(
                             @if($villa->panel_villa)
                             {!! view('ux.badge',['param'=>$villa->panel_villa->panel_tag])->render() !!}
                             @endif
-                            <span class="P_villas-locasyon">
-                        <svg class="icon icon-point">
-                            <use xlink:href="#icon-point"></use>
-                        </svg>
-                                {{ isset($villa->area->name) ? $villa->area->name : '' }}
-                    </span>
+                            <div class="On-odeme">
+                                <p class="On-odeme-yuzde">%<b>{{$villa->prepayment_rate}}</b></p>
+                                <p class="On-odeme-text">Şimdi Öde<span>Kalanı</span>Girişte Öde!</p>
+                            </div>
 
                             <div class="P_villas-img ">
                                 @php
@@ -76,35 +74,34 @@ window.criteo_q.push(
                             </div>
                             <div class="P_villas-info">
                                 <div class="P_villas-info-kod">
-                                    <span>Villa Kodu: {{ $website->prefix }}{{ $villa->code }}</span>
                                     <p>{{ $villa->name }}</p>
+                                    <span>Villa Kodu: {{ $website->prefix }}{{ $villa->code }}</span>
+                                </div>
+                                <div class="P_villas-info-people">
+                                    <p><b>{{ $villa->number_person }} </b> Kişi /  En Az <b>{{ $villa->min_accommodation }}</b> Gece</p>
                                 </div>
 
                                 <div class="P_villas-info-in">
-                                    <div class="info mobile-f">
-                                        <svg class="icon icon-point">
-                                            <use xlink:href="#icon-point"></use>
-                                        </svg>
-                                        <span>{{ isset($villa->area->name) ? $villa->area->name : '' }}</span>
-                                    </div>
-                                    <div class="info">
+                                <div class="info">
                                         <svg class="icon icon-bed">
                                             <use xlink:href="#icon-bed"></use>
                                         </svg>
                                         <span>{{ $villa->number_bedroom }} Yatak Odası</span>
                                     </div>
                                     <div class="info">
-                                        <svg class="icon icon-shower">
-                                            <use xlink:href="#icon-shower"></use>
-                                        </svg>
-                                        <span>{{ $villa->number_bathroom }} Banyo</span>
-                                    </div>
+                                                <svg class="icon" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M.55 0c.234 0 .424.183.424.41v1.463h6.43c1.46.002 2.695 1.049 2.887 2.45 2.397.216 4.232 2.158 4.238 4.487v.85c.37.167.604.527.598.921-.003.554-.464 1.003-1.036 1.01H5.619a1.036 1.036 0 0 1-1-.808 1.002 1.002 0 0 1 .591-1.122v-.85c0-2.327 1.83-4.271 4.224-4.488-.185-.945-1.037-1.63-2.03-1.63H.974V4.39c0 .226-.19.41-.423.41a.417.417 0 0 1-.424-.41V.41c0-.227.19-.41.424-.41zM5.62 10.771h8.472c.1 0 .181-.078.181-.175a.179.179 0 0 0-.181-.176H5.619c-.1 0-.182.079-.182.176 0 .097.081.175.182.175zm.438-1.17v-.79c0-2.038 1.707-3.689 3.813-3.689 2.105 0 3.812 1.651 3.812 3.688v.79H6.057zM12.15 14.574c-.17-.183-.42-.46-.42-.973v-.235c0-.227.164-.412.367-.412.202 0 .366.185.366.412v.235c0 .155.045.218.195.379.17.183.424.46.424.973 0 .513-.259.79-.43.973-.149.16-.201.224-.201.379 0 .154.051.218.2.378.17.183.428.46.428.974 0 .513-.25.79-.421.973-.15.16-.195.224-.195.379v.352c0 .228-.164.412-.366.412-.203 0-.367-.184-.367-.412v-.352c0-.514.25-.79.42-.974.15-.16.198-.224.198-.378 0-.155-.053-.218-.202-.38-.17-.182-.428-.459-.428-.972 0-.514.257-.79.427-.973.149-.161.204-.225.204-.38 0-.153-.049-.217-.198-.378zM8.742 14.574c-.17-.183-.421-.46-.421-.973v-.235c0-.227.164-.412.367-.412.202 0 .366.185.366.412v.235c0 .155.045.218.195.379.17.183.423.46.423.973 0 .513-.258.79-.428.973-.15.16-.202.224-.202.379 0 .154.051.218.2.378.17.183.427.46.427.974 0 .513-.25.79-.42.973-.15.16-.195.224-.195.379v.352c0 .228-.164.412-.366.412-.203 0-.367-.184-.367-.412v-.352c0-.514.25-.79.42-.974.15-.16.198-.224.198-.378 0-.155-.053-.218-.202-.38-.17-.182-.428-.459-.428-.972 0-.514.256-.79.426-.973.15-.161.204-.225.204-.38 0-.153-.048-.217-.197-.378z" fill="#fff"/>
+                                                </svg>
+                                                <span>{{ $villa->number_bathroom }} Banyo</span>
+                                            </div>
                                     <div class="info">
-                                        <svg class="icon icon-user">
-                                            <use xlink:href="#icon-user"></use>
+                                        <svg class="icon icon-new-location" data-original-title="" title="">
+                                            <use xlink:href="#icon-new-location"></use>
                                         </svg>
-                                        <span>{{ $villa->number_person }} Kişilik</span>
+                                        <span><b>Kalkan</b> Bölgesinde </span>
                                     </div>
+                                    
+                                </div>
                                 </div>
                                 <div class="P_villas-info-money">
                                     <svg class="icon icon-wallet ">
