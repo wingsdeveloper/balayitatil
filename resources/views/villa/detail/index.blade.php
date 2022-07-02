@@ -210,9 +210,7 @@ window.addEventListener('load', function () {
             spaceBetween: 10,
             preloadImages: !1,
             centeredSlides: true,
-            grabCursor: true,
             slideToClickedSlide: true,
-            paginationClickable: true,
             observer: true,
             observeParents: true,
 
@@ -220,12 +218,9 @@ window.addEventListener('load', function () {
 
         var galleryTop = new Swiper('.gallery-top', {
             slidesPerView: 1,
-            loopedSlides: 10,
+            loopedSlides: 9,
             loop: true,
             lazy: true,
-            paginationClickable: true,
-            observer: true,
-            observeParents: true,
             preloadImages: !1,
             navigation: {
                 nextEl: '#detail_next_btn',
@@ -236,17 +231,8 @@ window.addEventListener('load', function () {
             },
         });
 
-        galleryTop.on('slideChangeTransitionEnd', function() {
-            let index_currentSlide = galleryTop.realIndex;
-            let currentSlide = galleryTop.slides[index_currentSlide]
-            galleryThumbs.slideTo(index_currentSlide, 1000, false);
-        });
-
-        galleryThumbs.on('slideChangeTransitionEnd', function() {
-            let index_currentSlide = galleryThumbs.realIndex;
-            let currentSlide = galleryThumbs.slides[index_currentSlide]
-            galleryTop.slideTo(index_currentSlide, 1000, false);
-        });
+        slider.controller.control = thumbs;
+        thumbs.controller.control = slider;
 
 
     });
