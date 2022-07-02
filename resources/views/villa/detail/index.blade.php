@@ -209,21 +209,23 @@ window.addEventListener('load', function () {
             lazy: true,
             spaceBetween: 10,
             preloadImages: !1,
+            centeredSlides: true,
             grabCursor: true,
             slideToClickedSlide: true,
             paginationClickable: true,
-            watchSlidesVisibility: true,
-            watchSlidesProgress: true,
+            observer: true,
+            observeParents: true,
 
         });
 
         var galleryTop = new Swiper('.gallery-top', {
             slidesPerView: 1,
+            loopedSlides: 10,
             loop: true,
             lazy: true,
             paginationClickable: true,
             observer: true,
-    observeParents: true,
+            observeParents: true,
             preloadImages: !1,
             navigation: {
                 nextEl: '#detail_next_btn',
