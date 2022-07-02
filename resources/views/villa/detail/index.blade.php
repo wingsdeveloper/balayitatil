@@ -211,6 +211,7 @@ window.addEventListener('load', function () {
             preloadImages: !1,
             grabCursor: true,
             slideToClickedSlide: true,
+            paginationClickable: true,
             watchSlidesVisibility: true,
             watchSlidesProgress: true,
 
@@ -220,6 +221,9 @@ window.addEventListener('load', function () {
             slidesPerView: 1,
             loop: true,
             lazy: true,
+            paginationClickable: true,
+            observer: true,
+    observeParents: true,
             preloadImages: !1,
             navigation: {
                 nextEl: '#detail_next_btn',
