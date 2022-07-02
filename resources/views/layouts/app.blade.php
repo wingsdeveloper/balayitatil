@@ -3,13 +3,12 @@
 <head>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NTRMKWM');</script>
-<!-- End Google Tag Manager -->
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KK37GCW');</script>
+    <!-- End Google Tag Manager -->
 <!-- Criteo Loader File -->
-<script type="text/javascript" src="//dynamic.criteo.com/js/ld/ld.js?a=46955" async="true"></script>
 <!-- END Criteo Loader File -->
     @include('layouts.meta')
     @include('layouts.head')
@@ -26,9 +25,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NTRMKWM"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
 <!-- End Google Tag Manager (noscript) -->
 <main id="main">
     @if($view_name != "blog-category-index" && $view_name != "blog-detail-index" && $view_name != "blog-list-index")
