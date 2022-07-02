@@ -15,7 +15,7 @@
 @if($view_name != "offer-getOffer")
     @if(!$whatsappErr)
     
-    <a id="whatapp_click_zaraz" style="right: 10px; bottom: 20px; z-index: 999999999999999" onclick="gtag('event', 'whatsapp', {'event_category' : 'click'});"
+    <a id="whatapp_click_zaraz" style="right: 10px; bottom: 60px; z-index: 999999999999999" onclick="gtag('event', 'whatsapp', {'event_category' : 'click'});"
            href="https://api.whatsapp.com/send?phone=902526060669" class="float" target="_blank">
             <svg class="icon icon-whatsapp">
                 <use xlink:href="#icon-whatsapp"></use>

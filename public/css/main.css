@@ -2858,6 +2858,12 @@
       padding-top: 120px; }
     .Home-banner-kurumsal .Home-banner-in {
       padding-bottom: 150px; }
+    .Home-banner-search .Home-banner-in {
+      padding-top: 100px;
+      padding-bottom: 0; }
+    .Home-banner-search .Villa_Search {
+      margin-top: 0;
+      margin-bottom: 40px; }
   .Villa_Search {
     flex-direction: column;
     padding: 0;
@@ -3003,7 +3009,9 @@
             height: 22px;
             background-image: url(../images/icon-kesfet-play.svg);
             background-size: 100% 100%;
-            margin-right: 10px; } }
+            margin-right: 10px; }
+  .Detail-slider .gallery-top {
+    border-radius: 0; } }
 
 @media (max-height: 768px) {
   .Rezervasyon-Question {

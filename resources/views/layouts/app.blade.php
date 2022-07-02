@@ -163,16 +163,25 @@
         }
     });
     $(document).ready(function () {
-
+        @if(($view_name == "villa-detail-index"))
         $(".Dropdown-buton ").click(function () {
-
             $(".Dropdown-buton").toggleClass("pointernone");
-            $(".Dropdown-menu").slideToggle();
         })
-        $(".Dropdown-close").click(function () {
-            $(".Dropdown-menu").slideUp(400);
-        })
+@else
 
+$(".Dropdown-buton ").click(function () {
+
+$(".Dropdown-buton").toggleClass("pointernone");
+$(".Dropdown-menu").slideToggle();
+})
+$(".Dropdown-close").click(function () {
+$(".Dropdown-menu").slideUp(400);
+})
+       
+        @endif
+       
+
+       
         $(".Navtop-discount-close ").click(function () {
             $(".Navtop-discount").slideUp(400);
         })
