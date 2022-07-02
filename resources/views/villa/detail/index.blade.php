@@ -203,6 +203,8 @@ window.criteo_q.push(
     slidesPerView: 1,
     centeredSlides: true,
     loop: true,
+    lazy: true,
+    preloadImages: !1,
     loopedSlides:10, //スライドの枚数と同じ値を指定
     navigation: {
         nextEl: '#detail_next_btn',
@@ -211,9 +213,11 @@ window.criteo_q.push(
 });
 
 var thumbs = new Swiper ('.gallery-thumbs', {
-    slidesPerView: 'auto',
+    slidesPerView: 10,
     spaceBetween: 10,
     centeredSlides: true,
+    lazy: true,
+    preloadImages: !1,
     loop: true,
     slideToClickedSlide: true,
 });
