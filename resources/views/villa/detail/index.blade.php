@@ -202,32 +202,49 @@ window.criteo_q.push(
 });
 
 window.addEventListener('load', function () {
-            //
-            $('#gallery-thumbs').show();
+        //
 
-            var galleryThumbs = new Swiper('.gallery-thumbs', {
-                spaceBetween: 9,
-                slidesPerView: 10,
-                freeMode: true,
-                watchSlidesVisibility: true,
-                watchSlidesProgress: true,
-            });
-
-            var galleryTop = new Swiper('.gallery-top', {
-                loop: true,
-                navigation: {
-                    nextEl: '#detail_next_btn',
-                    prevEl: '#detail_prev_btn',
-                },
-                thumbs: {
-                    swiper: galleryThumbs,
-                },
-            });
-
-        
+        var galleryThumbs = new Swiper('.gallery-thumbs', {
+            slidesPerView: 9,
+            lazy: true,
+            spaceBetween: 10,
+            preloadImages: !1,
+            grabCursor: true,
+            slideToClickedSlide: true,
+            
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
 
         });
 
+        var galleryTop = new Swiper('.gallery-top', {
+            slidesPerView: 1,
+            loop: true,
+            lazy: true,
+            preloadImages: !1,
+            navigation: {
+                nextEl: '#detail_next_btn',
+                prevEl: '#detail_prev_btn',
+            },
+            thumbs: {
+                swiper: galleryThumbs,
+            },
+        });
+
+        galleryTop.on('slideChangeTransitionEnd', function() {
+            let index_currentSlide = galleryTop.realIndex;
+            let currentSlide = galleryTop.slides[index_currentSlide]
+            galleryThumbs.slideTo(index_currentSlide, 1000, false);
+        });
+
+        galleryThumbs.on('slideChangeTransitionEnd', function() {
+            let index_currentSlide = galleryThumbs.realIndex;
+            let currentSlide = galleryThumbs.slides[index_currentSlide]
+            galleryTop.slideTo(index_currentSlide, 1000, false);
+        });
+
+
+    });
 
     </script>
 
