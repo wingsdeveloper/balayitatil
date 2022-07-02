@@ -188,7 +188,7 @@ dataLayer.push({
                     <div class="P_villas-item item-3   flex">
                         {!! $badge !!}
                         <div class="On-odeme">
-                            <p class="On-odeme-yuzde">%<b>20</b></p>
+                            <p class="On-odeme-yuzde">%<b>30</b></p>
                             <p class="On-odeme-text">Şimdi Öde<span>Kalanı</span>Girişte Öde!</p>
                         </div>
                         <div class="P_villas-img ">
