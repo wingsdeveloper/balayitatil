@@ -204,8 +204,11 @@ window.criteo_q.push(
     centeredSlides: true,
     loop: true,
     lazy: true,
+    observer: true,
+    observeParents: true,
+    slideToClickedSlide: true,
     preloadImages: !1,
-    loopedSlides:10, //スライドの枚数と同じ値を指定
+    loopedSlides:10, 
     navigation: {
         nextEl: '#detail_next_btn',
         prevEl: '#detail_prev_btn',
@@ -216,6 +219,8 @@ var thumbs = new Swiper ('.gallery-thumbs', {
     slidesPerView: 10,
     spaceBetween: 10,
     centeredSlides: true,
+    observer: true,
+    observeParents: true,
     lazy: true,
     preloadImages: !1,
     loop: true,
