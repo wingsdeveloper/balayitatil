@@ -238,9 +238,10 @@ dataLayer.push({
                         <use xlink:href="#icon-wallet"></use>
                     </svg>
                     <div class="flex-column">
-                        <h6>{{number_format((float)$villa->starting_price, 0, ',', '.')}} ₺</h6>
-                        <p>GECELİK </p>
-                        <span>BAŞLAYAN FİYATLARLA</span>
+
+                        <span>{{ $staticData['gun_farki'] }} GECE</span>
+                                        <p>{{ $staticData['start_date'] }} - {{ $staticData['end_date'] }}</p>
+                                        <h6>{{number_format((float)$villa->toplam, 0, ',', '.')}} ₺</h6>
                     </div>
                 </div>
 
