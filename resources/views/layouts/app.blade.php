@@ -129,6 +129,7 @@
     })
 </script>
 
+@if(Agent::isDesktop())
 <script type="text/javascript">
     $('.lazy-load').Lazy();
     $(document).mouseup(function (e) {
@@ -151,6 +152,35 @@
 
     });
 </script>
+@elseif(Agent::isMobile())
+<script type="text/javascript">
+    $('.lazy-load').Lazy();
+    $(document).mouseup(function (e) {
+        if ($(e.target).closest(".Dropdown-menu").attr('style', 'display: block').length ===
+            0) {
+            $(".Dropdown-menu").slideUp(400);
+            $(".Dropdown-buton").removeClass("pointernone");
+        }
+    });
+    $(document).ready(function () {
+
+        $(".Dropdown-buton ").click(function () {
+
+            $(".Dropdown-buton").toggleClass("pointernone");
+            $(".Dropdown-menu").slideToggle();
+        })
+        $(".Dropdown-close").click(function () {
+            $(".Dropdown-menu").slideUp(400);
+        })
+
+        $(".Navtop-discount-close ").click(function () {
+            $(".Navtop-discount").slideUp(400);
+        })
+
+
+    });
+</script>
+@endif
 <div id="async"></div>
 
 @stack('pro_js')

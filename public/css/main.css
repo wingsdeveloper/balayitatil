@@ -2867,8 +2867,6 @@
     z-index: 99; }
     .Villa_Search .containerindex {
       padding: 0 !important; }
-    .Villa_Search-in {
-      flex-direction: column; }
     .Villa_Search-icon {
       display: none; }
     .Villa_Search-top {
@@ -2881,13 +2879,17 @@
       border-right: none;
       padding: 12px 20px;
       width: 100%; }
+      .Villa_Search-item-date {
+        order: 1; }
       .Villa_Search-item-bolge {
-        width: 100%; }
+        order: 2;
+        width: 49%; }
         .Villa_Search-item-bolge .dropdown-toggle::after {
           -webkit-transform: translate(-22px, -5px);
                   transform: translate(-22px, -5px); }
       .Villa_Search-item-tur {
-        width: 100%; }
+        order: 4;
+        width: 70%; }
         .Villa_Search-item-tur .dropdown-toggle::after {
           -webkit-transform: translate(-40px, 5px);
                   transform: translate(-40px, 5px); }
@@ -2896,13 +2898,15 @@
         .Villa_Search-item .villa_date .addon {
           top: 15px; }
       .Villa_Search-item-kisi {
-        width: 100%; }
+        order: 3;
+        width: 49%; }
         .Villa_Search-item-kisi .dropdown-toggle::after {
           content: "" url(../images/icon-arrow-down.svg) !important;
           -webkit-transform: translate(-20px, 0px);
                   transform: translate(-20px, 0px); }
       .Villa_Search-item-button {
-        width: 100%;
+        order: 5;
+        width: 28%;
         background-color: #d6385e; }
         .Villa_Search-item-button-buton {
           background-image: none; }
@@ -2912,6 +2916,11 @@
             font-weight: 500;
             line-height: 1.8;
             color: #fff; }
+            .Villa_Search-item-button-buton span b {
+              display: block;
+              font-size: 20px;
+              font-weight: 700;
+              line-height: 1; }
           .Villa_Search-item-button-buton svg {
             display: none; }
           .Villa_Search-item-button-buton:hover {
@@ -2926,7 +2935,7 @@
   .Dropdown-menu {
     width: 100%;
     margin-left: 0;
-    top: 43%; }
+    top: 100%; }
     .Dropdown-menu-item {
       width: 50%; }
     .Dropdown-menu-in-warning {
