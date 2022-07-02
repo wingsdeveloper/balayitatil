@@ -433,33 +433,28 @@ $(".arttir").click(function () {
         var s = $('meta[name="base_url"]').attr("content"),
             a = ($('meta[name="page"]').attr("content"), 0);
 
-            $('#searchinput').on('propertychange  input paste', function (e) {
-                e.stopImmediatePropagation();
-                var textString = $(this).val();
-                var listelenecek = $("#villaListele");
-                listelenecek.html("");
-                if (textString != "" && textString.length > 2) {
-                    listelenecek.css("display", "block");
-                    $.ajax({
-                        type: "GET", url: url + "/realtime_search/" + textString, success: function (sonc) {
-                            listelenecek.html(sonc.view);
-                            listelenecek.addClass("Navtop-livesearch");
-                            $("#villaListele").parent().fadeIn();
-                        }
-                    });
-                } else {
-                    listelenecek.css("display", "none");
-                }
+        $("#searchinput").on("propertychange  input paste", function (e) {
+            clearTimeout(a);
+            let t = $(this);
+            var i = t.val(),
+                n = $("#villaListele");
+            n.html(""), "" != i && 2 < i.length ? ($(document).find(".icon.icon-search.blinking_icon").length || $(document).find(".icon.icon-search").addClass("blinking_icon"), (a = setTimeout(function () {
+                "" != i && 2 < i.length && (n.css("display", "block"), $.ajax({
+                    type: "GET",
+                    url: s + "/realtime_search/" + i,
+                    success: function (e) {
+                        n.html(e.view), n.addClass("Navtop-livesearch"), $("#villaListele").parent().fadeIn();
+                    },
+                }).always(function () {
+                    $(document).find(".icon.icon-search").removeClass("blinking_icon");
+                }));
+            }, 250))) : n.css("display", "none");
+        }),
+
+            $("#searchinput").on("keydown", function (e) {
+                13 == e.which && (e.preventDefault(), 1 === (e = $("#villaListele a")).children().length && e.children(0).addClass("Navtop-livesearch-focus").click());
             });
-            $('#searchinput').on('keydown', function (e) {
-                if (e.which == 13) {
-                    e.preventDefault();
-                    var liste = $("#villaListele a");
-                    if (liste.children().length === 1) {
-                        liste.children(0).addClass("Navtop-livesearch-focus").click();
-                    }
-                }
-            });
+
 
         var e = $(document).height() - $(window).height() - $(window).scrollTop();
 
