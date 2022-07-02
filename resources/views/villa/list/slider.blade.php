@@ -40,5 +40,5 @@
     @if($view_name == "villa-search-index")
         
             @include('layouts.homeInfo') 
-
+            
     @endif
