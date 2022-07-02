@@ -48,14 +48,14 @@ $pricenews=VillaPriceNew::select(DB::raw('min(CAST(daily_price_tl AS decimal(18,
     $villaDetail['number_bedroom']=$villa->number_bedroom;
     $villaDetail['min_accommodation']= $min_accommodation;
     $villaDetail['area']=$villa->area->name;
-    $villaDetail['link']='https://villakalkan.com.tr/'.$villa->seo->seo_url;
+    $villaDetail['link']='https://balayisepeti.com.tr/'.$villa->seo->seo_url;
     /* fiyat */
     foreach($pricenews as $price) {
         $villaDetail['prices'][$price->month]=$price->price;
       }
 /* resim */
       foreach($villa->photos as $photo) {
-        $villaDetail['photos'][]= 'https://villakalkan.com.tr/villa/'.$photo->path.'/'.$photo->name;
+        $villaDetail['photos'][]= 'https://balayisepeti.com.tr/villa/'.$photo->path.'/'.$photo->name;
       }
       return $villaDetail;
 });
