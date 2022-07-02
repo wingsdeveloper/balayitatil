@@ -71,10 +71,7 @@ Navtop-ic
 
             @if(Agent::isMobile())
                 <div class="Mobil_menu mobile-f">
-                    <a href="https://www.lycianescapes.com"
-                       class="nav-link" style="padding-top: .2rem!important;margin-top: .1rem!important;padding-right: 12px!important;">
-                        <img height="25" src="{{ asset('images/uk-flag-mobile.png') }}" alt="" >
-                    </a>
+                   
                     <div class="Search-icon">
                         <svg class="icon icon-search" id="searchfocus">
                             <use xlink:href="#icon-search"></use>
