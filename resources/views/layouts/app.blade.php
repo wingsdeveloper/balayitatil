@@ -165,7 +165,7 @@
 
         $(".Dropdown-buton ").click(function () {
             $(".Dropdown-menu").slideToggle(400);
-            $(".Dropdown-buton").toggleClass("pointernone2");
+            $(".Dropdown-buton").toggleClass("pointernone");
         })
 
         $(".Dropdown-close ").click(function () {
