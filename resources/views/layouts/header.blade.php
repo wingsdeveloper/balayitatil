@@ -115,5 +115,5 @@ Navtop-ic
     </div>
 </header>
 @if(Agent::isMobile())
-    <div id="villaListele"></div>
+    <div id="villaListele" style="display: none;"></div>
 @endif
