@@ -34,8 +34,10 @@
                 <div class="Villa_Search-item Villa_Search-item-tur">
                     <label class="Villa_Search-item-info" for="">Villa Türü Seçiniz</label>
                     <div class="Dropdown">
-                        <svg class="icon addon" data-original-title="" title="">
-                            <use xlink:href="#icon-marker"></use>
+                        
+                        <svg class="icon addon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 16px;height: 16px;">
+                            <path d="M14.3992 0H4.79922C3.91682 0 3.19922 0.7176 3.19922 1.6V11.2C3.19922 12.0824 3.91682 12.8 4.79922 12.8H14.3992C15.2816 12.8 15.9992 12.0824 15.9992 11.2V1.6C15.9992 0.7176 15.2816 0 14.3992 0ZM4.79922 11.2V1.6H14.3992L14.4008 11.2H4.79922Z" fill="#CBC2D8"/>
+                            <path d="M1.6 4.8001H0V14.4001C0 15.2825 0.7176 16.0001 1.6 16.0001H11.2V14.4001H1.6V4.8001ZM8.7464 7.6153L7.3656 6.2345L6.2344 7.3657L8.8536 9.9849L13.4152 4.5129L12.1848 3.4873L8.7464 7.6153Z" fill="#CBC2D8"/>
                         </svg>
                         <button class="Dropdown-buton" type="button">
                             <b class="tursay">@if(isset($req) AND !empty($req->category)) {{count($req->category)}} @else
@@ -92,7 +94,7 @@
                     <label class="Villa_Search-item-info" for="">Kişi Sayısı Seçiniz</label>
                     <div class="dropdown bootstrap-select">
                     <select autocomplete="off" class="selectpicker " name="kisi_sayisi" id="v_filter_kisi">
-                        <option value="0">Kişi Sayısı Seçiniz</option>
+                        <option value="0">Kişi Sayısı</option>
                         @for($i=1; $i<=11; $i++)
                             <option value="{{$i}}"
                                     @if(isset($req) AND !empty($req->kisi_sayisi)) @if($req->kisi_sayisi==$i) selected="selected" @endif @endif>{{$i}}{{($i==11)?'+':''}}
