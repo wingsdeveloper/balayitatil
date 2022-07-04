@@ -1552,26 +1552,28 @@ thumbs.controller.control = slider;
                                 </a>
                                 @empty
                             &nbsp;
-                        @endforelse
+                            @endforelse
                             </div>
 
                         </div>
-                        <div class="swiper-container gallery-thumbs "
-                             id="gallery-thumbs" style="display: block;">
-                            <div class="swiper-wrapper" style="">
-                            @forelse($villa->photos as $photo)
-                                <button class="swiper-slide">
-                                    <img class="swiper-lazy "
-                                         data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}"
-                                         alt="{{$villa->name}}" src=""
-                                         >
-                                </button>
-                                @empty
-                            &nbsp;
-                        @endforelse
-                                
+                        <!--
+                            <div class="swiper-container gallery-thumbs "
+                                id="gallery-thumbs" style="display: block;">
+                                <div class="swiper-wrapper" style="">
+                                @forelse($villa->photos as $photo)
+                                    <button class="swiper-slide">
+                                        <img class="swiper-lazy "
+                                            data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}"
+                                            alt="{{$villa->name}}" src=""
+                                            >
+                                    </button>
+                                    @empty
+                                &nbsp;
+                                @endforelse
+                                    
+                                </div>
                             </div>
-                        </div>
+                        -->
                     </section>
         <section class="Villa_detayM mobile">
             <div id="rez" class="RezervasyonM">
