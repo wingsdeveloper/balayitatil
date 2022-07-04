@@ -462,7 +462,9 @@ body select:active {
     margin-bottom: 30px;
     transition: 500ms;
 }
-
+.item-3 .P_villas-img img{
+    min-height: 300px;
+}
 .item-5 {
     position: relative;
     width: calc(20% - 30px);

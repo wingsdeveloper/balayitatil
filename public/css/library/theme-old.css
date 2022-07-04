@@ -7339,6 +7339,9 @@
         margin-right: 30px
     }
 
+    .P_villas-item .P_villas-img img{
+        min-height: auto;
+    }
 
 
     .P_villas-info-in .info {
