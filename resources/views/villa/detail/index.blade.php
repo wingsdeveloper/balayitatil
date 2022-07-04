@@ -810,20 +810,22 @@ thumbs.controller.control = slider;
                             </div>
 
                         </div>
-                        <div class="swiper-container gallery-thumbs "
-                             id="gallery-thumbs" style="display: block;">
-                            <div class="swiper-wrapper" style="">
-                            @forelse($villa->photos as $photo)
-                                <button class="swiper-slide">
-                                    <img class="swiper-lazy "data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" alt="" style="max-height:55px" src="" >
-                                         <div class="swiper-lazy-preloader"></div>
-                                </button>
-                                @empty
-                            &nbsp;
-                        @endforelse
-                                
+                        <!--
+                            <div class="swiper-container gallery-thumbs "
+                                id="gallery-thumbs" style="display: block;">
+                                <div class="swiper-wrapper" style="">
+                                @forelse($villa->photos as $photo)
+                                    <button class="swiper-slide">
+                                        <img class="swiper-lazy "data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" alt="" style="max-height:55px" src="" >
+                                            <div class="swiper-lazy-preloader"></div>
+                                    </button>
+                                    @empty
+                                &nbsp;
+                                @endforelse
+                                    
+                                </div>
                             </div>
-                        </div>
+                        -->
                     </section>
 
                         <div class="Villa_detay-property">
