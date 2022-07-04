@@ -6083,6 +6083,7 @@
 
 .Bolgeler-icons {
     margin-top: 40px;
+    margin-bottom: 40px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -9409,6 +9410,7 @@
 
     .Bolgeler-icons {
         margin-top: 20px;
+        margin-bottom: 0;
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
