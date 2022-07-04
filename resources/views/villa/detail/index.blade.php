@@ -215,20 +215,6 @@ window.criteo_q.push(
     },
 });
 
-var thumbs = new Swiper ('.gallery-thumbs', {
-    slidesPerView: 10,
-    spaceBetween: 10,
-    observer: true,
-    observeParents: true,
-    lazy: true,
-    preloadImages: !1,
-    loop: true,
-    slideToClickedSlide: true,
-});
-
-
-slider.controller.control = thumbs;
-thumbs.controller.control = slider;
 
 
 
