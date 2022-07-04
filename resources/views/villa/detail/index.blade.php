@@ -1561,7 +1561,7 @@ thumbs.controller.control = slider;
                             <div class="swiper-wrapper" style="">
                             @forelse($villa->photos as $photo)
                                 <button class="swiper-slide">
-                                    <img class="lazy "
+                                    <img class="swiper-lazy "
                                          data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}"
                                          alt="{{$villa->name}}" src=""
                                          >
