@@ -45,6 +45,232 @@ use App\Events\PreReservationMail;
 class ReservationController extends Controller
 {
 
+
+    public function infoTelbul($iphone)
+        {
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, 'https://api.infoset.app/v1/contacts?&Phone=' . $iphone . '&additionalProp1[op]=0&additionalProp1[val]=string&additionalProp2[op]=0&additionalProp2[val]=string&additionalProp3[op]=0&additionalProp3[val]=string');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+
+
+        $headers = array();
+        $headers[] = 'Accept: application/json';
+        $headers[] = 'X-Api-Key: 418a190c-ebae-4d1c-bee3-cf9395b141ee';
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        $result = curl_exec($ch);
+        $result = json_decode($result);
+
+        if (curl_error($ch)) {
+            echo 'Error:' . curl_error($ch);
+        }
+        curl_close($ch);
+
+        if(isset(($result->items)[0]->id)){
+            
+            $tsonuc = ($result->items)[0]->id;
+
+        }else {
+            $tsonuc = 0;
+        }
+
+        return $tsonuc;
+
+
+        }
+
+
+    public function infoMailbul($imail)
+        {
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, 'https://api.infoset.app/v1/contacts?&Email=' . $imail . '&additionalProp1[op]=0&additionalProp1[val]=string&additionalProp2[op]=0&additionalProp2[val]=string&additionalProp3[op]=0&additionalProp3[val]=string');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+
+
+        $headers = array();
+        $headers[] = 'Accept: application/json';
+        $headers[] = 'X-Api-Key: 418a190c-ebae-4d1c-bee3-cf9395b141ee';
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        $result = curl_exec($ch);
+        $result = json_decode($result);
+
+        if (curl_error($ch)) {
+            echo 'Error:' . curl_error($ch);
+        }
+        curl_close($ch);
+        if(isset(($result->items)[0]->id)){
+            
+            $msonuc = ($result->items)[0]->id;
+
+        }else {
+            $msonuc = 0;
+        }
+
+        return $msonuc;
+
+
+        }
+
+
+        public function infoMusteriEkle($infoMusteriData){
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, 'https://api.infoset.app/v1/contacts');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($infoMusteriData));
+
+        $headers = array();
+        $headers[] = 'Accept: application/json';
+        $headers[] = 'Authorization: Bearer 418a190c-ebae-4d1c-bee3-cf9395b141ee';
+        $headers[] = 'X-Api-Key: 418a190c-ebae-4d1c-bee3-cf9395b141ee';
+        $headers[] = 'Content-Type: application/json-patch+json';
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        $result = curl_exec($ch);
+        $result=json_decode($result);
+        if (curl_error($ch)) {
+        echo 'Error:' . curl_error($ch);
+
+        }
+
+        curl_close($ch);
+        if(isset($result->id)){
+            return $result->id;
+
+        }else{
+            $musteriyok = 0;
+
+            return $musteriyok;
+        }
+      
+
+
+        }
+
+        public function infoMusteriGuncelle($infoMusteriData,$infoMusteriID){
+            $ch = curl_init();
+
+            curl_setopt($ch, CURLOPT_URL, 'https://api.infoset.app/v1/contacts/'. $infoMusteriID .'');
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($infoMusteriData));
+            $headers = array();
+            $headers[] = 'Accept: application/json';
+            $headers[] = 'Authorization: Bearer 418a190c-ebae-4d1c-bee3-cf9395b141ee';
+            $headers[] = 'X-Api-Key: 418a190c-ebae-4d1c-bee3-cf9395b141ee';
+            $headers[] = 'Content-Type: application/json-patch+json';
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+           
+            $result = curl_exec($ch);
+            
+            if (curl_error($ch)) {
+                echo 'Error:' . curl_error($ch);
+              
+            }
+
+            curl_close($ch);
+            $sonuc= json_encode($result);
+            return $sonuc;
+        }
+    
+    public function infoFirsatEkle($infoFirsatEkleData){
+
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, 'https://api.infoset.app/v1/deals');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($infoFirsatEkleData));
+        $headers = array();
+        $headers[] = 'Accept: application/json';
+        $headers[] = 'Authorization: Bearer 418a190c-ebae-4d1c-bee3-cf9395b141ee';
+        $headers[] = 'X-Api-Key: 418a190c-ebae-4d1c-bee3-cf9395b141ee';
+        $headers[] = 'Content-Type: application/json-patch+json';
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+
+
+
+
+        $result = curl_exec($ch);
+        $result=json_decode($result);
+        if (curl_errno($ch)) {
+            echo 'Error:' . curl_error($ch);
+        }
+        curl_close($ch);
+      
+        if(isset($result->id)){
+            return $result->id;
+
+        }else{
+
+            $rezyok = 0;
+            return $rezyok;
+        }
+      
+
+
+    }
+
+    public function infoFirsatGuncelle ($infoFirsatGuncelleData,$infoFirsatID){
+      
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://api.infoset.app/v1/deals/'. $infoFirsatID .'');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($infoFirsatGuncelleData));
+
+
+        $headers = array();
+        $headers[] = 'Accept: application/json';
+        $headers[] = 'X-Api-Key: 418a190c-ebae-4d1c-bee3-cf9395b141ee';
+        $headers[] = 'Content-Type: application/json-patch+json';
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        $result = curl_exec($ch);
+        if (curl_errno($ch)) {
+            echo 'Error:' . curl_error($ch);
+        }
+        curl_close($ch);
+        $sonuc= json_encode($result);
+        return $sonuc;
+       
+    }
+
+
+    public function infoFirsatNotEkle($infoNotData){
+       
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://api.infoset.app/v1/deals/logs');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($infoNotData));
+
+        $headers = array();
+        $headers[] = 'Accept: application/json';
+        $headers[] = 'X-Api-Key: 418a190c-ebae-4d1c-bee3-cf9395b141ee';
+        $headers[] = 'Content-Type: application/json-patch+json';
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        $result = curl_exec($ch);
+        if (curl_errno($ch)) {
+            echo 'Error:' . curl_error($ch);
+        }
+        curl_close($ch);
+        $sonuc= json_encode($result);
+        return $sonuc;
+
+    }
+
     public function sozlesmeDownload($id)
     {
         // $customer = Customer::find($id);
@@ -222,17 +448,152 @@ class ReservationController extends Controller
     public function preReservationDone(Request $request)
     {
         $code = $request->input('code');
+        
         if($code) {
             $reservation = PreReservation::where('code', $code)->first();
+            $customer=$reservation->customer_real;
+          // İnfoset Müşteri Kontrolu Yapıyoruz Yoksa Ekliyoruz
+       
+          if (empty($customer->infosetID)){
+
+            $infoMusteriData=['firstName'=>$customer->name,
+            'fullName' => $customer->name,
+            'email' => $customer->email,
+            'phone' => $customer->phone,
+            'status'=>'P'];     
+
+            $musterisonuc = $this->infoTelbul($customer->phone);
+            if($musterisonuc > 0){
+            $customer->infosetID=$musterisonuc;
+            $customer->save();
+        
+            }
+         
+          
+            
+            if ( $this->infoTelbul($customer->phone) < 0 )
+            {
+                $musterisonuc = $this->infoMailbul($customer->email);
+                if($musterisonuc > 0){
+                    $customer->infosetID=$musterisonuc;
+                    $customer->save();
+                
+                    }
+              
+            
+            } else {
+                $musterisonuc = 0;
+            }
+         
+    
+            if($musterisonuc == 0){
+              $musterisonuc = $this->infoMusteriEkle($infoMusteriData);
+              if($musterisonuc > 0){
+                $customer->infosetID=$musterisonuc;
+                $customer->save();
+            
+                }
+            }
+           
+
+        }
+
+
+     
+         // Rezervasyon Ekleme ve Güncelleme Süreci 
+         if($reservation->infosetID > 0)
+         {   $infoFirsatID= $reservation->infosetID;
+             $infoFirsatGuncelleData=[
+                 "name"=>$reservation->code,
+                 "contactId"=>$customer->infosetID,
+                 "companyId"=> $reservation->villa->infosetID,
+                 "value"=> intval($reservation->total_price),
+                 "currency"=> "TRY",
+                 "source" =>5,
+                 "pipelineId" => 10767,
+                 
+                 "status" =>1,
+                 "followerIds" => 7801,
+                
+                 "categoryIds" => 2895,
+                 "customFields"=>json_encode([
+                        -
+                                "Ödeme Linki"=>$reservation->cc_link,
+                                "Kiralanan Villa"=>$reservation->villa->name,
+                                
+                                 "Checkout Tarihi"=>$reservation->end_date,
+                                 "Checkin Tarihi" =>$reservation->start_date,
+                                 "Rezervasyon Tarihi"=>$reservation->created_at,
+                                 "Ön Ödeme Tutarı" => $reservation->pre_payment,
+                                 "Kalan Ödeme Tutarı" => $reservation->entry_payment,
+                                 "Hasar Depozitosu" => $reservation->villa->damage_deposit_amount,
+                                 "Liste Fiyatı İndirimsiz" => $reservation->orginal_price,
+                                 "Kişi Bilgisi"=>"Yetiskin :".$reservation->adult_count." Çocuk: ".$reservation->child_count." Bebek:".$reservation->baby_count])
+        
+             ];  
+             $infoMusteriID = $customer->infosetID;
+             $infoMusteriData=['firstName'=>$customer->name,
+             'fullName' => $customer->name,
+             'email' => $customer->email,
+             'phone' => $customer->phone,
+             'status'=>'P'];   
+ 
+             $firsatsonuc = $this->infoFirsatGuncelle($infoFirsatGuncelleData,$infoFirsatID);
+             $musterisonuc = $this->infoMusteriGuncelle($infoMusteriData,$infoMusteriID);
+           
+             
+             $reservation->save();
+ 
+         } else
+ 
+         {
+             $infoFirsatEkleData=[
+                 "name"=>$reservation->code,
+                 "contactId"=>$customer->infosetID,
+                 "companyId"=> $reservation->villa->infosetID,
+                 "value"=> intval($reservation->total_price),
+                 "currency"=> "TRY",
+                 "source" =>5,
+                 "pipelineId" => 10767,
+            
+                 "status" =>1,
+                 "followerIds" => 7801,
+                 "stageId" => 43716,
+                 "categoryIds" => 2895,
+                 "customFields"=>json_encode([
+                   
+                                "Ödeme Linki"=>$reservation->cc_link,
+                                "Kiralanan Villa"=>$reservation->villa->name,
+                               
+                                 "Checkout Tarihi"=>$reservation->end_date,
+                                 "Checkin Tarihi" =>$reservation->start_date,
+                                 "Rezervasyon Tarihi"=>$reservation->created_at,
+                                 "Ön Ödeme Tutarı" => $reservation->pre_payment,
+                                 "Kalan Ödeme Tutarı" => $reservation->entry_payment,
+                                 "Hasar Depozitosu" => $reservation->villa->damage_deposit_amount,
+                                 "Liste Fiyatı İndirimsiz" => $reservation->orginal_price,
+                                 "Kişi Bilgisi"=>"Yetiskin :".$reservation->adult_count." Çocuk: ".$reservation->child_count." Bebek:".$reservation->baby_count])
+        
+             ];  
+             $firsatsonuc = $this->infoFirsatEkle($infoFirsatEkleData);
+             $reservation->infosetID=$firsatsonuc;
+             
+             $reservation->save();
+            
+              
+         }
+
+          
+           
             if ($reservation->view_page=='0') {
                 $reservation->view_page='1';
                 $reservation->save();
+                return view("villa.reservation.prereservationdone", compact(["code","reservation","customer"]));
 
-                return view("villa.reservation.prereservationdone", compact(["code","reservation"]));
             }else {
                 return redirect()->route('home');
             }
-
+ 
         }else{
             return redirect()->route('home');
         }
