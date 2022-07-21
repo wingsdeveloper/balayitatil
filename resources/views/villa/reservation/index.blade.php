@@ -26,10 +26,19 @@
 @push('javascripts')
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
     <script>
-        $(document).ready(function() {
-            $("#creditcard").inputmask({"mask": "(999) 999-9999"});
-            });
-        
+        var selector = document.getElementById("creditcard");
+
+var im = new Inputmask("99-9999999");
+im.mask(selector);
+
+//or
+
+Inputmask({"mask": "(999) 999-9999", ... other_options, ...}).mask(selector);
+Inputmask("9-a{1,3}9{1,3}").mask(selector);
+Inputmask("9", { repeat: 10 }).mask(selector);
+
+Inputmask({ regex: "\\d*" }).mask(selector);
+Inputmask({ regex: String.raw`\d*` }).mask(selector);
     </script>
 
     <script>
