@@ -26,6 +26,9 @@
 @push('javascripts')
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
     <script>
+        $(document).ready(function() {
+            $("#creditcard").inputmask({"mask": "(999) 999-9999"});
+            });
         
     </script>
 
@@ -641,7 +644,7 @@
                                </label>
                            </div>
                            <div class="Rez-left-payment-item-right">
-                               <input type="text" name="number" data-inputmask="'mask': '9999 9999 9999 9999'" class="form-control" placeholder="0000-0000-0000-0000"/>
+                               <input type="text" name="number" id="creditcard" data-inputmask="'mask': '9999 9999 9999 9999'" class="form-control" placeholder="0000-0000-0000-0000"/>
                            </div>
                         </div>
                         <div class="Rez-left-payment-item">
