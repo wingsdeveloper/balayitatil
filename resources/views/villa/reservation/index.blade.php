@@ -24,16 +24,8 @@
     @endif
 @endpush
 @push('javascripts')
-
+    <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
     <script>
-        const num = 4764400094253041;
-        const regex = /\d{4}/g;
-
-        const res = num.toString().replace(regex, (maths) => maths === 12 ? maths : maths + ' ')
-
-        const responseEl = document.getElementById("creditcard");
-
-        responseEl.innerText = res;
         
     </script>
 
@@ -70,7 +62,6 @@
                 $('input[name="idnumber"]').inputFilter(function(value) {
                     return /^\d*$/.test(value);    // Allow digits only, using a RegExp
                 });
-                $("#creditcard").inputmask({"mask": "(999) 999-9999"});
             });
         </script>
 
@@ -650,7 +641,7 @@
                                </label>
                            </div>
                            <div class="Rez-left-payment-item-right">
-                               <input type="text" name="number" id="creditcard" class="form-control" data-inputmask="'mask': '9999 9999 9999 9999'" placeholder="0000-0000-0000-0000"/>
+                               <input type="text" name="number" data-inputmask="'mask': '9999 9999 9999 9999'" class="form-control" placeholder="0000-0000-0000-0000"/>
                            </div>
                         </div>
                         <div class="Rez-left-payment-item">
