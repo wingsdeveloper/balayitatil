@@ -34,6 +34,7 @@
         const responseEl = document.getElementById("creditcard");
 
         responseEl.innerText = res;
+        
     </script>
 
     <script>
@@ -69,6 +70,7 @@
                 $('input[name="idnumber"]').inputFilter(function(value) {
                     return /^\d*$/.test(value);    // Allow digits only, using a RegExp
                 });
+                $("#creditcard").inputmask({"mask": "(999) 999-9999"});
             });
         </script>
 
