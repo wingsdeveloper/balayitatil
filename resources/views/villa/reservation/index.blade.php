@@ -24,21 +24,12 @@
     @endif
 @endpush
 @push('javascripts')
-    <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script>
     <script>
-        var selector = document.getElementById("creditcard");
-
-var im = new Inputmask("99-9999999");
-im.mask(selector);
-
-//or
-
-Inputmask({"mask": "(999) 999-9999", ... other_options, ...}).mask(selector);
-Inputmask("9-a{1,3}9{1,3}").mask(selector);
-Inputmask("9", { repeat: 10 }).mask(selector);
-
-Inputmask({ regex: "\\d*" }).mask(selector);
-Inputmask({ regex: String.raw`\d*` }).mask(selector);
+$(document).ready(function() {
+$("#creditcard").inputmask({"mask": "(999) 999-9999"});
+});
+        
     </script>
 
     <script>
