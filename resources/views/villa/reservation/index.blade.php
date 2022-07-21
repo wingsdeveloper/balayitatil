@@ -24,366 +24,354 @@
     @endif
 @endpush
 @push('javascripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/card/1.3.1/js/card.min.js"></script>
-<script>
-    new Card({
-        form: 'form',
-        container: '.card',
-        formSelectors: {
-            numberInput: 'input[name=number]',
-            expiryInput: 'input[name=expiry]',
-            cvcInput: 'input[name=cvv]',
-            nameInput: 'input[name=cart_name]'
-        },
 
-        width: 390, // optional — default 350px
-        formatting: true,
-
-        placeholders: {
-            number: '•••• •••• •••• ••••',
-            name: 'Ad Soyad',
-            expiry: '••/••',
-            cvc: '•••'
-        }
-    })
-</script>
-
-<script>
-    $(function () {
-        $('.nav-pills').on('click', 'a[data-toggle="tab"] input[type=radio]', function(event) {
-            event.stopPropagation();
-            $(this).parent().tab('show');
-        });
-        $('.nav-pills .nav-link').click(function () {
-        $('.nav-link').find('input[type=radio]').attr('checked',true);
-        $('.nav-link.active').find('input[type=radio]').attr('checked',false);
-    });
-    });
-</script>
     <script>
-        (function($) {
-            $.fn.inputFilter = function(inputFilter) {
-                return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
-                    if (inputFilter(this.value)) {
-                        this.oldValue = this.value;
-                        this.oldSelectionStart = this.selectionStart;
-                        this.oldSelectionEnd = this.selectionEnd;
-                    } else if (this.hasOwnProperty("oldValue")) {
-                        this.value = this.oldValue;
-                        this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
-                    } else {
-                        this.value = "";
-                    }
-                });
-            };
-        }(jQuery));
-        $(document).ready(function() {
-            $('input[name="idnumber"]').inputFilter(function(value) {
-                return /^\d*$/.test(value);    // Allow digits only, using a RegExp
+        const num = 4764400094253041;
+        const regex = /\d{4}/g;
+
+        const res = num.toString().replace(regex, (maths) => maths === 12 ? maths : maths + ' ')
+
+        const responseEl = document.getElementById("creditcard");
+
+        responseEl.innerText = res;
+    </script>
+
+    <script>
+        $(function () {
+            $('.nav-pills').on('click', 'a[data-toggle="tab"] input[type=radio]', function(event) {
+                event.stopPropagation();
+                $(this).parent().tab('show');
             });
+            $('.nav-pills .nav-link').click(function () {
+            $('.nav-link').find('input[type=radio]').attr('checked',true);
+            $('.nav-link.active').find('input[type=radio]').attr('checked',false);
+        });
         });
     </script>
+        <script>
+            (function($) {
+                $.fn.inputFilter = function(inputFilter) {
+                    return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
+                        if (inputFilter(this.value)) {
+                            this.oldValue = this.value;
+                            this.oldSelectionStart = this.selectionStart;
+                            this.oldSelectionEnd = this.selectionEnd;
+                        } else if (this.hasOwnProperty("oldValue")) {
+                            this.value = this.oldValue;
+                            this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+                        } else {
+                            this.value = "";
+                        }
+                    });
+                };
+            }(jQuery));
+            $(document).ready(function() {
+                $('input[name="idnumber"]').inputFilter(function(value) {
+                    return /^\d*$/.test(value);    // Allow digits only, using a RegExp
+                });
+            });
+        </script>
 
-    <script src="{{ asset('js/library/intlTelInput-jquery.min.js') }}">
-    </script>
-    <script src="{{asset('js/loadingoverlay.min.js')}}"></script>
-    <script type="text/javascript">
-        function checkle(x) {
-            $(".rezonay").prop('checked', true);
-            $(".rezonay").attr('onchange', 'checksil(this)');
-        }
-
-        function checksil(x) {
-            $(".rezonay").prop('checked', false);
-            $(".rezonay").attr('onchange', 'checkle(this)');
-        }
-
-        function ulkeKoduSec(x) {
-            $(x).val();
-        }
-
-        $("form").submit(function () {
-            $("#prephone").val($("#phone").intlTelInput("getSelectedCountryData").dialCode);
-            //$("body").LoadingOverlay("show");
-        });
-        $("#phone").intlTelInput({
-            formatOnDisplay: false,
-            nationalMode: false,
-            autoPlaceholder: 'aggressive',
-            separateDialCode: true,
-            preferredCountries: ['TR', 'DE', 'FR', 'AT', 'NL', 'BE', 'CH', 'GB', 'RU'],
-        });
-
-        @if(Agent::isMobile())
-        $("input[type='radio']").change(function () {
-            var type = $(this).val();
-            $(".payment_type_desc").hide();
-            $("#payment_type_" + type).show();
-        });
-        @endif
-        $(document).on('click', '#tckontrol', function () {
-            var checked = $(this).prop('checked');
-            if (checked == true) {
-                /*tcvatandasi degilim*/
-                $('input[name="idnumber"]').prop('disabled', true)
-            } else {
-                $('input[name="idnumber"]').prop('disabled', false)
+        <script src="{{ asset('js/library/intlTelInput-jquery.min.js') }}">
+        </script>
+        <script src="{{asset('js/loadingoverlay.min.js')}}"></script>
+        <script type="text/javascript">
+            function checkle(x) {
+                $(".rezonay").prop('checked', true);
+                $(".rezonay").attr('onchange', 'checksil(this)');
             }
-        })
-        $(document).on('click', '#faturabilgi_kontrol', function () {
 
-            if ($(this).prop('checked') == true) {
-                /*fatura[] formunda yer alan butun hepsini disabled edelim*/
+            function checksil(x) {
+                $(".rezonay").prop('checked', false);
+                $(".rezonay").attr('onchange', 'checkle(this)');
+            }
 
-                $(document).find('input[name="fatura_kesilecek"]').val('1');
-                $(document).find('.fatura-aciklama').removeClass('hidden');
-                $(document).find("input[name^='fatura']").attr('disabled', false);
-                $(document).find("input[name^='fatura']").attr('disabled', false);
-                $(document).find("select[name^='fatura']").attr('disabled', false);
-                $(document).find("input[name^='fatura']").closest('.Rez-left-price_type-item').removeClass('hidden');
-                $(document).find("input[name^='fatura']").removeClass('hidden');
-                $(document).find("select[name^='fatura']").removeClass('hidden');
+            function ulkeKoduSec(x) {
+                $(x).val();
+            }
 
+            $("form").submit(function () {
+                $("#prephone").val($("#phone").intlTelInput("getSelectedCountryData").dialCode);
+                //$("body").LoadingOverlay("show");
+            });
+            $("#phone").intlTelInput({
+                formatOnDisplay: false,
+                nationalMode: false,
+                autoPlaceholder: 'aggressive',
+                separateDialCode: true,
+                preferredCountries: ['TR', 'DE', 'FR', 'AT', 'NL', 'BE', 'CH', 'GB', 'RU'],
+            });
+
+            @if(Agent::isMobile())
+            $("input[type='radio']").change(function () {
+                var type = $(this).val();
+                $(".payment_type_desc").hide();
+                $("#payment_type_" + type).show();
+            });
+            @endif
+            $(document).on('click', '#tckontrol', function () {
+                var checked = $(this).prop('checked');
+                if (checked == true) {
+                    /*tcvatandasi degilim*/
+                    $('input[name="idnumber"]').prop('disabled', true)
+                } else {
+                    $('input[name="idnumber"]').prop('disabled', false)
+                }
+            })
+            $(document).on('click', '#faturabilgi_kontrol', function () {
+
+                if ($(this).prop('checked') == true) {
+                    /*fatura[] formunda yer alan butun hepsini disabled edelim*/
+
+                    $(document).find('input[name="fatura_kesilecek"]').val('1');
+                    $(document).find('.fatura-aciklama').removeClass('hidden');
+                    $(document).find("input[name^='fatura']").attr('disabled', false);
+                    $(document).find("input[name^='fatura']").attr('disabled', false);
+                    $(document).find("select[name^='fatura']").attr('disabled', false);
+                    $(document).find("input[name^='fatura']").closest('.Rez-left-price_type-item').removeClass('hidden');
+                    $(document).find("input[name^='fatura']").removeClass('hidden');
+                    $(document).find("select[name^='fatura']").removeClass('hidden');
+
+                    $(document).find('div[data-group]').addClass('hidden');
+                    $(document).find('div[data-group]').find('input').attr('disabled', true);
+
+                    $(document).find('div[data-group="' + 0 + '"]').removeClass('hidden');
+                    $(document).find('div[data-group="' + 0 + '"]').find('input').attr('disabled', false);
+
+                    $(document).find('#billing_type1').trigger('click');
+
+                } else {
+                    $(document).find('input[name="fatura_kesilecek"]').val('0');
+                    $(document).find('.fatura-aciklama').addClass('hidden');
+                    $(document).find("input[name^='fatura']").attr('disabled', true);
+                    $(document).find("input[name^='fatura']").attr('disabled', true);
+                    $(document).find("select[name^='fatura']").attr('disabled', true);
+                    $(document).find("input[name^='fatura']").closest('.Rez-left-price_type-item').addClass('hidden');
+                    $(document).find("input[name^='fatura']").addClass('hidden');
+                    $(document).find("select[name^='fatura']").addClass('hidden');
+                }
+            })
+            $(document).on('change', '#tckontrol', function () {
+                var checked = $(this).prop('checked');
+                if (checked == true) {
+                    $('input[name="tc"]').val('0')
+                } else {
+                    $('input[name="tc"]').val('1')
+                }
+            })
+        </script>
+
+        <script>
+            $("#phone").on("keypress keyup blur", function (event) {
+
+                if ($(".selected-dial-code").html() === "+90") {
+                    $("#phone").attr('minlength', '10');
+                    $("#phone").attr('maxlength', '10');
+                } else {
+                    $("#phone").attr('minlength', '9');
+                    $("#phone").attr('maxlength', '15');
+                }
+
+                if ($(".selected-dial-code").html() === "+90" && $(this).val() === "" && event.which === 48) {
+                    event.preventDefault();
+                    return false;
+                }
+
+
+                $(this).val($(this).val().replace(/[^\d].+/, ""));
+
+                if ((event.which < 48 || event.which > 57)) {
+                    event.preventDefault();
+                }
+            });
+        </script>
+
+
+        <script>
+
+
+
+            $(document).on('change', 'input[name="fatura[billing_type]"]', function () {
                 $(document).find('div[data-group]').addClass('hidden');
                 $(document).find('div[data-group]').find('input').attr('disabled', true);
 
-                $(document).find('div[data-group="' + 0 + '"]').removeClass('hidden');
-                $(document).find('div[data-group="' + 0 + '"]').find('input').attr('disabled', false);
+                $(document).find('div[data-group="' + $(this).val() + '"]').removeClass('hidden');
+                $(document).find('div[data-group="' + $(this).val() + '"]').find('input').attr('disabled', false);
+            })
+            $(document).on('change', '#ulke_id', function () {
 
-                $(document).find('#billing_type1').trigger('click');
+                let ulke_id = $(this).val();
 
-            } else {
-                $(document).find('input[name="fatura_kesilecek"]').val('0');
-                $(document).find('.fatura-aciklama').addClass('hidden');
-                $(document).find("input[name^='fatura']").attr('disabled', true);
-                $(document).find("input[name^='fatura']").attr('disabled', true);
-                $(document).find("select[name^='fatura']").attr('disabled', true);
-                $(document).find("input[name^='fatura']").closest('.Rez-left-price_type-item').addClass('hidden');
-                $(document).find("input[name^='fatura']").addClass('hidden');
-                $(document).find("select[name^='fatura']").addClass('hidden');
-            }
+                let route = "{{ route('search.il-getir', '#ULKE_ID#') }}";
+                route = route.replace('#ULKE_ID#', ulke_id);
+
+                $.ajax({
+                    url: route,
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {_token: "{{ csrf_token() }}"},
+                })
+                    .done(function (data) {
+                        /*TODO gelen verilerin hepsini illere ekleyecegiz.*/
+                        let options = '<option>İl Seçiniz</option>';
+                        $.each(data.data, function (index, value) {
+                            options = options + '<option value="' + value.id + '">' + value.ad + '</option>';
+                        })
+                        $(document).find('#il_id').html(options);
+                    })
+                    .fail(function () {
+                        console.log("error");
+                    })
+                    .always(function () {
+                        console.log("complete");
+                    });
+            })
+            $(document).on('change', '#il_id', function () {
+
+                let il_id = $(this).val();
+
+                let route = "{{ route('search.ilce-getir', '#IL_ID#') }}";
+                route = route.replace('#IL_ID#', il_id);
+
+                $.ajax({
+                    url: route,
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {_token: "{{ csrf_token() }}"},
+                })
+                    .done(function (data) {
+                        /*TODO gelen verilerin hepsini illere ekleyecegiz.*/
+                        let options = '<option>İlçe Seçiniz</option>';
+                        $.each(data.data, function (index, value) {
+                            options = options + '<option value="' + value.id + '">' + value.ad + '</option>';
+                        })
+                        $(document).find('#ilce_id').html(options);
+                    })
+                    .fail(function () {
+                        console.log("error");
+                    })
+                    .always(function () {
+                        console.log("complete");
+                    });
+            })
+
+            $(document).on('change', '#ulke_id_ikamet', function () {
+
+    let ulke_id = $(this).val();
+
+    let route = "{{ route('search.il-getir', '#ULKE_ID#') }}";
+    route = route.replace('#ULKE_ID#', ulke_id);
+
+    $.ajax({
+        url: route,
+        type: 'POST',
+        dataType: 'json',
+        data: {_token: "{{ csrf_token() }}"},
+    })
+        .done(function (data) {
+            /*TODO gelen verilerin hepsini illere ekleyecegiz.*/
+            let options = '<option>İl Seçiniz</option>';
+            $.each(data.data, function (index, value) {
+                options = options + '<option value="' + value.id + '">' + value.ad + '</option>';
+            })
+            $(document).find('#il_id_ikamet').html(options);
         })
-        $(document).on('change', '#tckontrol', function () {
-            var checked = $(this).prop('checked');
-            if (checked == true) {
-                $('input[name="tc"]').val('0')
-            } else {
-                $('input[name="tc"]').val('1')
-            }
+        .fail(function () {
+            console.log("error");
         })
-    </script>
-
-    <script>
-        $("#phone").on("keypress keyup blur", function (event) {
-
-            if ($(".selected-dial-code").html() === "+90") {
-                $("#phone").attr('minlength', '10');
-                $("#phone").attr('maxlength', '10');
-            } else {
-                $("#phone").attr('minlength', '9');
-                $("#phone").attr('maxlength', '15');
-            }
-
-            if ($(".selected-dial-code").html() === "+90" && $(this).val() === "" && event.which === 48) {
-                event.preventDefault();
-                return false;
-            }
-
-
-            $(this).val($(this).val().replace(/[^\d].+/, ""));
-
-            if ((event.which < 48 || event.which > 57)) {
-                event.preventDefault();
-            }
+        .always(function () {
+            console.log("complete");
         });
-    </script>
+    })
+    $(document).on('change', '#il_id_ikamet', function () {
 
+    let il_id = $(this).val();
 
-    <script>
+    let route = "{{ route('search.ilce-getir', '#IL_ID#') }}";
+    route = route.replace('#IL_ID#', il_id);
 
-
-
-        $(document).on('change', 'input[name="fatura[billing_type]"]', function () {
-            $(document).find('div[data-group]').addClass('hidden');
-            $(document).find('div[data-group]').find('input').attr('disabled', true);
-
-            $(document).find('div[data-group="' + $(this).val() + '"]').removeClass('hidden');
-            $(document).find('div[data-group="' + $(this).val() + '"]').find('input').attr('disabled', false);
-        })
-        $(document).on('change', '#ulke_id', function () {
-
-            let ulke_id = $(this).val();
-
-            let route = "{{ route('search.il-getir', '#ULKE_ID#') }}";
-            route = route.replace('#ULKE_ID#', ulke_id);
-
-            $.ajax({
-                url: route,
-                type: 'POST',
-                dataType: 'json',
-                data: {_token: "{{ csrf_token() }}"},
+    $.ajax({
+        url: route,
+        type: 'POST',
+        dataType: 'json',
+        data: {_token: "{{ csrf_token() }}"},
+    })
+        .done(function (data) {
+            /*TODO gelen verilerin hepsini illere ekleyecegiz.*/
+            let options = '<option>İlçe Seçiniz</option>';
+            $.each(data.data, function (index, value) {
+                options = options + '<option value="' + value.id + '">' + value.ad + '</option>';
             })
-                .done(function (data) {
-                    /*TODO gelen verilerin hepsini illere ekleyecegiz.*/
-                    let options = '<option>İl Seçiniz</option>';
-                    $.each(data.data, function (index, value) {
-                        options = options + '<option value="' + value.id + '">' + value.ad + '</option>';
-                    })
-                    $(document).find('#il_id').html(options);
-                })
-                .fail(function () {
-                    console.log("error");
-                })
-                .always(function () {
-                    console.log("complete");
-                });
+            $(document).find('#ilce_id_ikamet').html(options);
         })
-        $(document).on('change', '#il_id', function () {
-
-            let il_id = $(this).val();
-
-            let route = "{{ route('search.ilce-getir', '#IL_ID#') }}";
-            route = route.replace('#IL_ID#', il_id);
-
-            $.ajax({
-                url: route,
-                type: 'POST',
-                dataType: 'json',
-                data: {_token: "{{ csrf_token() }}"},
-            })
-                .done(function (data) {
-                    /*TODO gelen verilerin hepsini illere ekleyecegiz.*/
-                    let options = '<option>İlçe Seçiniz</option>';
-                    $.each(data.data, function (index, value) {
-                        options = options + '<option value="' + value.id + '">' + value.ad + '</option>';
-                    })
-                    $(document).find('#ilce_id').html(options);
-                })
-                .fail(function () {
-                    console.log("error");
-                })
-                .always(function () {
-                    console.log("complete");
-                });
+        .fail(function () {
+            console.log("error");
         })
-
-        $(document).on('change', '#ulke_id_ikamet', function () {
-
-let ulke_id = $(this).val();
-
-let route = "{{ route('search.il-getir', '#ULKE_ID#') }}";
-route = route.replace('#ULKE_ID#', ulke_id);
-
-$.ajax({
-    url: route,
-    type: 'POST',
-    dataType: 'json',
-    data: {_token: "{{ csrf_token() }}"},
-})
-    .done(function (data) {
-        /*TODO gelen verilerin hepsini illere ekleyecegiz.*/
-        let options = '<option>İl Seçiniz</option>';
-        $.each(data.data, function (index, value) {
-            options = options + '<option value="' + value.id + '">' + value.ad + '</option>';
-        })
-        $(document).find('#il_id_ikamet').html(options);
+        .always(function () {
+            console.log("complete");
+        });
     })
-    .fail(function () {
-        console.log("error");
-    })
-    .always(function () {
-        console.log("complete");
-    });
-})
-$(document).on('change', '#il_id_ikamet', function () {
 
-let il_id = $(this).val();
-
-let route = "{{ route('search.ilce-getir', '#IL_ID#') }}";
-route = route.replace('#IL_ID#', il_id);
-
-$.ajax({
-    url: route,
-    type: 'POST',
-    dataType: 'json',
-    data: {_token: "{{ csrf_token() }}"},
-})
-    .done(function (data) {
-        /*TODO gelen verilerin hepsini illere ekleyecegiz.*/
-        let options = '<option>İlçe Seçiniz</option>';
-        $.each(data.data, function (index, value) {
-            options = options + '<option value="' + value.id + '">' + value.ad + '</option>';
-        })
-        $(document).find('#ilce_id_ikamet').html(options);
-    })
-    .fail(function () {
-        console.log("error");
-    })
-    .always(function () {
-        console.log("complete");
-    });
-})
-
-    </script>
+        </script>
 @endpush
 
 @section('content')
 @php
-$re = $_GET["code"];
-$ch = curl_init();
+    $re = $_GET["code"];
+    $ch = curl_init();
 
-curl_setopt($ch, CURLOPT_URL, 'https://api.infoset.app/v1/deals?Name='. $re .'&additionalProp1[op]=0&additionalProp1[val]=string&additionalProp2[op]=0&additionalProp2[val]=string&additionalProp3[op]=0&additionalProp3[val]=string');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
-
-
-$headers = array();
-$headers[] = 'Accept: application/json';
-$headers[] = 'X-Api-Key: 418a190c-ebae-4d1c-bee3-cf9395b141ee';
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
-$result = curl_exec($ch);
-$result=json_decode($result);
-if (curl_errno($ch)) {
-    echo 'Error:' . curl_error($ch);
-}
-curl_close($ch);
-$infosetID = ($result->items)[0]->id;
-$status =($result->items)[0]->status;
-echo $status;
-if($ipsonuc == 1){
-    if($status <= 2){
-
-  
-    $tarayici = $_SERVER['HTTP_USER_AGENT'];
-        $sonuc="Müşteri Ödeme Yap Sayfasını Görüntüledi  -  $tarayici  - $fb_ip";
+    curl_setopt($ch, CURLOPT_URL, 'https://api.infoset.app/v1/deals?Name='. $re .'&additionalProp1[op]=0&additionalProp1[val]=string&additionalProp2[op]=0&additionalProp2[val]=string&additionalProp3[op]=0&additionalProp3[val]=string');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 
 
-$postData2=[
-                   'notes' => $sonuc,
-                   
-                   'dealId' => $infosetID,
-                   ];    
-$ch = curl_init();
+    $headers = array();
+    $headers[] = 'Accept: application/json';
+    $headers[] = 'X-Api-Key: 418a190c-ebae-4d1c-bee3-cf9395b141ee';
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-curl_setopt($ch, CURLOPT_URL, 'https://api.infoset.app/v1/deals/logs');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postData2));
+    $result = curl_exec($ch);
+    $result=json_decode($result);
+    if (curl_errno($ch)) {
+        echo 'Error:' . curl_error($ch);
+    }
+    curl_close($ch);
+    $infosetID = ($result->items)[0]->id;
+    $status =($result->items)[0]->status;
+    echo $status;
+    if($ipsonuc == 1){
+        if($status <= 2){
 
-$headers = array();
-$headers[] = 'Accept: application/json';
-$headers[] = 'X-Api-Key: 418a190c-ebae-4d1c-bee3-cf9395b141ee';
-$headers[] = 'Content-Type: application/json-patch+json';
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    
+        $tarayici = $_SERVER['HTTP_USER_AGENT'];
+            $sonuc="Müşteri Ödeme Yap Sayfasını Görüntüledi  -  $tarayici  - $fb_ip";
 
-$result = curl_exec($ch);
-if (curl_errno($ch)) {
-    echo 'Error:' . curl_error($ch);
-}
-curl_close($ch);
-}
-}
+
+    $postData2=[
+        'notes' => $sonuc,
+        
+        'dealId' => $infosetID,
+            ];    
+    $ch = curl_init();
+
+    curl_setopt($ch, CURLOPT_URL, 'https://api.infoset.app/v1/deals/logs');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postData2));
+
+    $headers = array();
+    $headers[] = 'Accept: application/json';
+    $headers[] = 'X-Api-Key: 418a190c-ebae-4d1c-bee3-cf9395b141ee';
+    $headers[] = 'Content-Type: application/json-patch+json';
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+    $result = curl_exec($ch);
+    if (curl_errno($ch)) {
+        echo 'Error:' . curl_error($ch);
+    }
+    curl_close($ch);
+    }
+    }
 
 @endphp
     <section class="Progress desktop">
@@ -430,7 +418,7 @@ curl_close($ch);
                         <div class="Rez-left-group">
                             <div class="Rez-left-header  ">
                                 <h5>
-                <span>1
+                <span>
                 </span> Kişisel Bilgiler
                                 </h5>
                                 <p>
@@ -660,7 +648,7 @@ curl_close($ch);
                                </label>
                            </div>
                            <div class="Rez-left-payment-item-right">
-                               <input type="text" name="number" class="form-control" placeholder="0000-0000-0000-0000"/>
+                               <input type="text" name="number" id="creditcard" class="form-control" placeholder="0000-0000-0000-0000"/>
                            </div>
                         </div>
                         <div class="Rez-left-payment-item">
