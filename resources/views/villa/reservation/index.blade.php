@@ -26,9 +26,9 @@
 @push('javascripts')
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script>
     <script>
-$(document).ready(function() {
-$("#creditcard").inputmask({"mask": "(999) 999-9999"});
-});
+        $(document).ready(function() {
+        $("#creditcard").inputmask({"mask": "(999) 999-9999"});
+        });
         
     </script>
 
