@@ -65,7 +65,7 @@ fbq('track', 'PageView',{}, {eventID : '{{ $event_id_pageview }}' });
 </script>
 <!-- Meta Pixel Code -->
 
-
+<meta name="google-site-verification" content="QT1Pe-Wn3edPjfq2J2PjOfkzfR_T1s8-m0F97EXdMOs" />
 
 
 <style>
