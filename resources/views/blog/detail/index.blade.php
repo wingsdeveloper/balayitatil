@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="Blog-item-image col-md-5 pr-0">
-                            <img src="{{ImageProcess::getImageByPath( isset($blog) && !empty($blog) ? $blog->image : '' )}}" class="w-100" alt="">
+                            <img src="{{ImageProcess::getImageByPath( isset($blog) && !empty($blog) ? $blog->image : '' )}}" class="w-100" alt="Balayı Sepeti - Blog">
                         </div>
                     </div>
                 </div>

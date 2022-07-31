@@ -3,7 +3,7 @@
             <div class="Home-info-in">
                 <div class="Home-info-item">
                     <div class="Home-info-item-img">
-                        <img src="{{ asset('images/tursab-logo.png') }}" alt="">
+                        <img src="{{ asset('images/tursab-logo.png') }}" width="87" height="46" alt="Tursab Logo" >
                     </div>
                     <div class="Home-info-item-text">
                         <h5>Wings Seyehat Tur. San. Tic.Ltd.Şti. 11095’nolu <b>Türsab Acentesidir.</b></h5>
@@ -14,7 +14,7 @@
                 </div>
                 <div class="Home-info-item">
                     <div class="Home-info-item-img">
-                        <img src="{{ asset('images/icon-wallet.svg') }}" alt="">
+                        <img src="{{ asset('images/icon-wallet.svg') }}" width="65" height="65" alt="Icon Wallet">
                     </div>
                     <div class="Home-info-item-text">
                         <h5>%30 Ön ödeme ve <b>İptal güvencesi</b></h5>

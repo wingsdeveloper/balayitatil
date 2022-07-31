@@ -119,7 +119,7 @@
                                                 @if(!empty($yuklenecek))
                                                     <div class="carousel-item {{($key==0)? 'active':''}} item"
                                                          style="/*background-image: url({{ImageProcess::getImageByPath($yuklenecek)}});*/">
-                                                        <img class="lazy" data-lazy-load-src="{{ImageProcess::getImageByPath($yuklenecek)}}" style="height: 100%; width: 100%;" {{($key==0)? '':''}} alt="">
+                                                        <img class="lazy" data-lazy-load-src="{{ImageProcess::getImageByPath($yuklenecek)}}" style="height: 100%; width: 100%;" {{($key==0)? '':''}} alt="Balayı Sepeti - Teklif ">
                                                     </div>
                                                 @endif
                                             @endforeach

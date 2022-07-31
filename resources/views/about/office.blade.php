@@ -20,7 +20,7 @@
                                        {{--data-width="{{ $width }}" data-height="{{ $height }}"
                                        itemprop="contentUrl"--}} class="fancybox global_link">
                                     </a>
-                                    <img src="{{ImageProcess::getImageByPath( $vertical->office_photo) }}" class="w-100" alt="">
+                                    <img src="{{ImageProcess::getImageByPath( $vertical->office_photo) }}" class="w-100" alt="Ofis Görseli">
                                 </figure>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                                {{--data-width="{{ $width }}" data-height="{{ $height }}"
                                itemprop="contentUrl"--}} class="fancybox global_link">
                             </a>
-                            <img src="{{ImageProcess::getImageByPath( $hr->office_photo) }}" class="w-100" alt="">
+                            <img src="{{ImageProcess::getImageByPath( $hr->office_photo) }}" class="w-100" alt="Ofis Görseli">
                         </figure>
                     </div>
                     @endforeach
@@ -61,7 +61,7 @@
                                {{--data-width="{{ $width }}" data-height="{{ $height }}"
                                itemprop="contentUrl"--}} class="fancybox global_link">
                             </a>
-                            <img src="{{ImageProcess::getImageByPath( $h->office_photo) }}" class="w-100 fancybox" alt="">
+                            <img src="{{ImageProcess::getImageByPath( $h->office_photo) }}" class="w-100 fancybox" alt="Ofis Görseli">
                         </figure>
                     </div>
                     @endforeach

@@ -23,7 +23,7 @@
                                        {{--data-width="{{ $width }}" data-height="{{ $height }}"
                                        itemprop="contentUrl"--}} class="fancybox global_link">
                                     </a>
-                                    <img src="{{ImageProcess::getImageByPath( $document->document_photo) }}" class="w-100" alt="">
+                                    <img src="{{ImageProcess::getImageByPath( $document->document_photo) }}" class="w-100" alt="Balayı Sepeti - Belgeler">
                                 </figure>
                             </div>
                             @endforeach

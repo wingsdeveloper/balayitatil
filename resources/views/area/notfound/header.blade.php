@@ -59,7 +59,7 @@
                                         </ul>
                                     </div>
                                     <div class="dropdown-image">
-                                        <img  src="{{ asset('images/nav.jpg') }}" class="w-100 nav-image" alt="">
+                                        <img  src="{{ asset('images/nav.jpg') }}" class="w-100 nav-image" alt="Balayı Sepeti - Menü">
                                         <script>
                                             var degisken='h';
 

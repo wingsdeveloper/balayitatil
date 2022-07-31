@@ -25,7 +25,7 @@
                         <a href="#" class="global_link"></a>
                     @endif
                     @if(isset($area->websitePanelAreaContent) && !empty($area->websitePanelAreaContent))
-                        <img src="{{ImageProcess::getImageByPath($area->websitePanelAreaContent->list_image)}}" class="w-100" alt="">
+                        <img src="{{ImageProcess::getImageByPath($area->websitePanelAreaContent->list_image)}}" class="w-100" alt="Balayı Sepeti - Bölgeler">
                     @endif
                     <div class="Bolge_list-info">
 

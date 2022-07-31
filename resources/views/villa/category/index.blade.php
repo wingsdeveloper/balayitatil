@@ -36,7 +36,7 @@
                             <a href="{{ route('category.detail',[$link,$seo_url]) }}" class="global_link"></a>
                             <img
                                 src="{{ImageProcess::getImageByPath($category->list_image)}}"
-                                class="w-100" alt="">
+                                class="w-100" alt="Balayı Sepeti - Villa Seçenekleri">
 
                         </div>
                         <div class="V_secenekler-item-text">

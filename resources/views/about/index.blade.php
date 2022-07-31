@@ -47,7 +47,7 @@
                     <h3 class="new-title">Banka Bilgilerimiz</h3>
 
                     <div class="Info-left-in">
-                        <img src="{{ asset('images/garanti-bankasi-logo.png') }}" alt="">
+                        <img src="{{ asset('images/garanti-bankasi-logo.png') }}" alt="Garanti Bankası - Logo">
                         <div class="Info-left-item">
                             <span>Alıcı Ünvan</span>
                             <p>Wings Seyahat Turizm Sanayi ve Ticaret Ltd.Şti.</p>
@@ -59,7 +59,7 @@
                             </p>
                         </div>
                         <hr>
-                        <img src="{{ asset('images/garanti-bankasi-logo.png') }}" alt="">
+                        <img src="{{ asset('images/garanti-bankasi-logo.png') }}" alt="Garanti Bankası - Logo">
                         <div class="Info-left-item">
                             <span>Alıcı Ünvan</span>
                             <p>Wings Seyahat Turizm Sanayi ve Ticaret Ltd.Şti.</p>
@@ -145,7 +145,7 @@
                 <div class="Basin-content">
                     <div class="Basin-content-item">
                         <a target="_blank" href="https://villakalkan.com.tr/"><img src="images/villa-kalkan-logo.png"
-                                                                          alt=""></a></div>
+                                                                          alt="Diğer Markalarımız - Villa Kalkan"></a></div>
                  
                     <div class="Basin-content-item">
                         <a href="https://www.lycianescapes.com/"><img src="images/lyc-logo.png" alt="Diğer Markalarımız - Lycian Escapes"></a>
@@ -226,12 +226,12 @@
                 <div class="Ofis-content">
                     <div class="Ofis-content-item">
                     <a href="images/fethiye-ofis/1.jpg" data-fancybox="group-ofis-fethiye">
-                            <img src="images/fethiye-ofis/1.jpg" alt="">
+                            <img src="images/fethiye-ofis/1.jpg" alt="Fethiye Ofis">
                         </a>
                     </div>
                     <div class="Ofis-content-item">
                     <a href="images/fethiye-ofis/2.jpg" data-fancybox="group-ofis-fethiye">
-                            <img src="images/fethiye-ofis/2.jpg" alt="">
+                            <img src="images/fethiye-ofis/2.jpg" alt="Fethiye Ofis">
                             <span class="Ofis-content-item-more"><i class="icon-gallery"></i>+7 Fotoğraf Daha</span>
                         </a>
                         <div class="Ofis-content-item-list">

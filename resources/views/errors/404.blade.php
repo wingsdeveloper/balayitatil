@@ -8,12 +8,12 @@
                     <p><strong>Üzgünüz, </strong>Sayfa bulunamadı</p>
                 </div>
                 <div class="Notfound-right">
-                    <img src="{{ asset('images/not.png') }}" class="w-100" alt="">
+                    <img src="{{ asset('images/not.png') }}" class="w-100" alt="Balayı Sepeti - 404">
                 </div>
                 <a href="{{ url('/') }}" class="Notfound-link buton_orange pos-ab-x-center p-0">ANASAYFAYA GİT</a>
             </div>
             <div class="Notfound-404">
-                <img src="{{ asset('images/404.svg') }}" class="  " alt="">
+                <img src="{{ asset('images/404.svg') }}" class="  " alt="Balayı Sepeti - 404">
             </div>
         </div>
     </section>

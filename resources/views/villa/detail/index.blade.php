@@ -788,7 +788,7 @@ window.criteo_q.push(
                             <div class="swiper-wrapper">
                             @forelse($villa->photos as $photo)
                                 <a href="{{ ImageProcess::getImageWatermarkedPath($photo) }}" data-fancybox="group-ofis" data-title="{{$villa->name}}" class="swiper-slide " >
-                                    <img class="swiper-lazy " data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" alt="" src="">
+                                    <img class="swiper-lazy " data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" alt="Balayı Sepeti - Villa Detayı" src="">
                                 </a>
                                 @empty
                             &nbsp;
@@ -802,7 +802,7 @@ window.criteo_q.push(
                                 <div class="swiper-wrapper" style="">
                                 @forelse($villa->photos as $photo)
                                     <button class="swiper-slide">
-                                        <img class="swiper-lazy "data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" alt="" style="max-height:55px" src="" >
+                                        <img class="swiper-lazy "data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" alt="Balayı Sepeti - Villa Detayı" style="max-height:55px" src="" >
                                             <div class="swiper-lazy-preloader"></div>
                                     </button>
                                     @empty
@@ -1123,7 +1123,7 @@ window.criteo_q.push(
                                                                                     <img
                                                                                         data-src="{{  ImageProcess::getImageWatermarkedPath($image->photo) }}"
                                                                                         class="w-100 swiper-lazy"
-                                                                                        alt="">
+                                                                                        alt="Balayı Sepeti - Villa Detayı">
                                                                                 </div>
                                                                             @endforeach
 
@@ -1536,7 +1536,7 @@ window.criteo_q.push(
                             <div class="swiper-wrapper">
                             @forelse($villa->photos as $photo)
                                 <a href="{{ ImageProcess::getImageWatermarkedPath($photo) }}" data-fancybox="group-ofis" data-title="{{$villa->name}}" class="swiper-slide " >
-                                    <img class="swiper-lazy " data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" alt="" src="">
+                                    <img class="swiper-lazy " data-src="{{ ImageProcess::getImageWatermarkedPath($photo) }}" alt="Balayı Sepeti - {{$villa->name}} Detay" src="">
                                 </a>
                                 @empty
                             &nbsp;

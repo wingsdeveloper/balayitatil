@@ -724,7 +724,7 @@
 
                 <div class="Rez-left-danger1">
                     <div class="Rez-left-danger1-left">
-                        <img src="images/n_icon-info.svg" alt="">
+                        <img src="images/n_icon-info.svg" width="30" height="30" alt="Icon Info">
                         <p>
                             Farklı ödeme yöntemleri için lütfen rezervasyon danışmanı
                             ile irtibata geçiniz.
@@ -748,7 +748,7 @@
 
                 <div class="Rez-left-danger1">
                     <div class="Rez-left-danger1-left">
-                        <img src="images/n_icon-info.svg" alt="">
+                        <img src="images/n_icon-info.svg" width="30" height="30" alt="Icon Info">
                         <p>
                             Farklı ödeme yöntemleri için lütfen rezervasyon danışmanı
                             ile irtibata geçiniz.
@@ -762,7 +762,7 @@
                     </div>
                 </div>
                 <div class="Rez-left-danger2">
-                    <img src="images/n_icon-danger.svg" alt="">
+                    <img src="images/n_icon-danger.svg" width="31" height="30" alt="Icon Danger">
                     <p>
                         Rezervasyonunuzu tamamladıktan sonra verilen opsiyon süresi
                         içinde ödeme yaptığınız takdirde rezervasyonunuz onaylanacaktır.
@@ -1031,14 +1031,14 @@
                             </div>
                             <div class="Rez-right-contact-in">
                                 <a href="tel:02422520032" class="Rez-right-contact-item">
-                                    <img src="{{ asset('images/n_icon-phone.svg')}}" alt="">
+                                    <img src="{{ asset('images/n_icon-phone.svg')}}" width="33" height="33" alt="Icon Phone">
                                     <p>0 252
                                         <span>606 06 69</span>
                                     </p>
                                 </a>
                                 <a href="https://api.whatsapp.com/send?phone=902526060669 &"
                                    class="Rez-right-contact-item">
-                                    <img src="{{asset('images/n_icon-whatsapp.svg')}}" alt="">
+                                    <img src="{{asset('images/n_icon-whatsapp.svg')}}" width="33" height="33" alt="Icon Whatsapp">
                                     <p>0 252
                                         <span>606 06 69</span>
                                     </p>

@@ -147,10 +147,10 @@ $fark= $interval->format('%a');
                             @endphp
                             @if($villa_url != null)
                                 <a href="{{ route('static', [$reservation->villa->seo->seo_url]) }}">
-                                    <img src="/{{$resim}}" alt="">
+                                    <img src="/{{$resim}}" alt="Balayı Sepeti - Rezervasyon">
                                 </a>
                             @else
-                                <img src="/{{$resim}}" alt="">
+                                <img src="/{{$resim}}" alt="Balayı Sepeti - Rezervasyon">
                             @endif
                         </div>
 
@@ -327,7 +327,7 @@ $fark= $interval->format('%a');
                         <div class="Activity-item">
                             <a href="" class="global_link"></a>
                             <div class="Activity-item-image">
-                                <img src="images/activite.jpg" alt="">
+                                <img src="images/activite.jpg" alt="Balayı Sepeti - Aktivite">
                             </div>
                             <div class="Activity-item-text">
                                 <p>
@@ -347,7 +347,7 @@ $fark= $interval->format('%a');
                         <div class="Activity-item">
                             <a href="" class="global_link"></a>
                             <div class="Activity-item-image">
-                                <img src="images/activite.jpg" alt="">
+                                <img src="images/activite.jpg" alt="Balayı Sepeti - Aktivite">
                             </div>
                             <div class="Activity-item-text">
                                 <p>
@@ -367,7 +367,7 @@ $fark= $interval->format('%a');
                         <div class="Activity-item">
                             <a href="" class="global_link"></a>
                             <div class="Activity-item-image">
-                                <img src="images/activite.jpg" alt="">
+                                <img src="images/activite.jpg" alt="Balayı Sepeti - Aktivite">
                             </div>
                             <div class="Activity-item-text">
                                 <p>
@@ -387,7 +387,7 @@ $fark= $interval->format('%a');
                         <div class="Activity-item">
                             <a href="" class="global_link"></a>
                             <div class="Activity-item-image">
-                                <img src="images/activite.jpg" alt="">
+                                <img src="images/activite.jpg" alt="Balayı Sepeti - Aktivite">
                             </div>
                             <div class="Activity-item-text">
                                 <p>
@@ -407,7 +407,7 @@ $fark= $interval->format('%a');
                         <div class="Activity-item">
                             <a href="" class="global_link"></a>
                             <div class="Activity-item-image">
-                                <img src="images/activite.jpg" alt="">
+                                <img src="images/activite.jpg" alt="Balayı Sepeti - Aktivite">
                             </div>
                             <div class="Activity-item-text">
                                 <p>
@@ -427,7 +427,7 @@ $fark= $interval->format('%a');
                         <div class="Activity-item">
                             <a href="" class="global_link"></a>
                             <div class="Activity-item-image">
-                                <img src="images/activite.jpg" alt="">
+                                <img src="images/activite.jpg" alt="Balayı Sepeti - Aktivite">
                             </div>
                             <div class="Activity-item-text">
                                 <p>
@@ -447,7 +447,7 @@ $fark= $interval->format('%a');
                         <div class="Activity-item">
                             <a href="" class="global_link"></a>
                             <div class="Activity-item-image">
-                                <img src="images/activite.jpg" alt="">
+                                <img src="images/activite.jpg" alt="Balayı Sepeti - Aktivite">
                             </div>
                             <div class="Activity-item-text">
                                 <p>
@@ -467,7 +467,7 @@ $fark= $interval->format('%a');
                         <div class="Activity-item">
                             <a href="" class="global_link"></a>
                             <div class="Activity-item-image">
-                                <img src="images/activite.jpg" alt="">
+                                <img src="images/activite.jpg" alt="Balayı Sepeti - Aktivite">
                             </div>
                             <div class="Activity-item-text">
                                 <p>

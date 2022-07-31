@@ -98,10 +98,10 @@ function getMonthName($month_number)
                             @endphp
                             @if($villa_url != null)
                                 <a href="{{ route('static', [$reservation->villa->seo->seo_url]) }}">
-                                    <img src="/{{$resim}}" alt="">
+                                    <img src="/{{$resim}}" alt="Balayı Sepeti - Rezervasyon">
                                 </a>
                             @else
-                                <img src="/{{$resim}}" alt="">
+                                <img src="/{{$resim}}" alt="Balayı Sepeti - Rezervasyon">
                             @endif
 
                         </div>

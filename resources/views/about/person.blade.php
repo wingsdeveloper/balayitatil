@@ -9,7 +9,7 @@
                         <p>{{ $worker->worker_position }}</p>
                         <div class="Hakkimizda-person-item-img">
                             @if($worker->worker_photo != null)
-                                <img src="{{ImageProcess::getImageByPath( $worker->worker_photo) }}"  alt="">
+                                <img src="{{ImageProcess::getImageByPath( $worker->worker_photo) }}"  alt="Balayı Sepeti - Ekibimiz">
                             @else
                                 Resimsiz
                             @endif
@@ -25,7 +25,7 @@
                         <div class="Hakkimizda-person-master-item">
                             <div class="Hakkimizda-person-master-img">
                                 @if($manager->manager_photo != null)
-                                    <img src="{{ImageProcess::getImageByPath( $manager->manager_photo) }}" alt="">
+                                    <img src="{{ImageProcess::getImageByPath( $manager->manager_photo) }}" alt="Balayı Sepeti - Ekibimiz">
                                 @else
                                     Resimsiz
                                 @endif
