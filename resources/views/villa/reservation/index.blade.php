@@ -26,43 +26,20 @@
 
 @push('javascripts')
 
-<script src="{{ asset('js/card-new.js') }}"></script>
+<script src="{{ asset('js/inputmask.min.js') }}"></script>
 
 
 <script>
-    var card = new Card({
-    // a selector or DOM element for the form where users will
-    // be entering their information
-    form: 'form', // *required*
-    // a selector or DOM element for the container
-    // where you want the card to appear
-    container: '.card', // *required*
 
-    formSelectors: {
-        numberInput: 'input[name=number]',
-        expiryInput: 'input[name=expiry]',
-        cvcInput: 'input[name=cvv]',
-        nameInput: 'input[name=cart_name]'
-    },
 
-    width: 390, // optional — default 350px
-    formatting: true, // optional - default true
+    var ccNumberMask = new Inputmask("9999 9999 9999 9999");
+    ccNumberMask.mask(document.getElementById("cc-number"));
 
-    // Default placeholders for rendered fields - optional
-    placeholders: {
-        number: '•••• •••• •••• ••••',
-        name: 'Ad Soyad',
-        expiry: "{{ ($req['payment_method']=='vakif')?'••/••••':'••/••' }}",
-        cvc: '•••'
-    },
+    var ccExpiryMask = new Inputmask("{{ ($req['payment_method']=='vakif')?'99 / 9999':'99 / 99' }}"); 
+    ccExpiryMask.mask(document.getElementById("cc-expiry"));
 
-    masks: {
-        cardNumber: '•' // optional - mask card number
-    },
-
-    // if true, will log helpful messages for setting up Card
-    debug: false // optional - default false
-});
+    var ccCvvMask = new Inputmask("999");
+    ccCvvMask.mask(document.getElementById("cc-cvv"));
 </script>
    
      
@@ -679,7 +656,7 @@
                                </label>
                            </div>
                            <div class="Rez-left-payment-item-right">
-                               <input type="tel" name="number" id="creditcard"  class="form-control" placeholder="0000-0000-0000-0000"/>
+                               <input type="text" name="number" id="cc-number"  class="form-control" placeholder="0000-0000-0000-0000"/>
                            </div>
                         </div>
                         <div class="Rez-left-payment-item">
@@ -701,7 +678,7 @@
                            </div>
 
                             <div class="Rez-left-payment-item-right">
-                               <input type="tel" placeholder="MM/YY" name="expiry"
+                               <input type="tel" placeholder="MM/YY" id="cc-expiry" name="expiry"
                                       class="form-control" />
                            </div>
 
@@ -715,7 +692,7 @@
                          </div>
 
                             <div class="Rez-left-payment-item-right">
-                               <input type="number" name="cvv"
+                               <input type="text" id="cc-cvv" name="cvv" maxlength="3"
                                       class="form-control" />
                            </div>
                         </div>
@@ -760,7 +737,7 @@
                                </label>
                            </div>
                            <div class="Rez-left-payment-item-right">
-                               <input type="tel" name="number" id="creditcard"   class="form-control" placeholder="0000-0000-0000-0000"/>
+                               <input type="tel" name="number" id="cc-number"   class="form-control" placeholder="0000-0000-0000-0000"/>
                            </div>
                         </div>
                         <div class="Rez-left-payment-item">
@@ -783,7 +760,7 @@
 
                             <div class="Rez-left-payment-item-right">
                                <input type="tel" placeholder="MM/YYYY" name="expiry"
-                                      class="form-control" />
+                                      class="form-control" id="cc-expiry" />
                            </div>
 
                         </div>
