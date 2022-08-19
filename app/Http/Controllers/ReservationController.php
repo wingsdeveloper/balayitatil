@@ -405,6 +405,7 @@ class ReservationController extends Controller
                 $preReservation->start_date = $giris_tarih;
                 $preReservation->end_date = $cikis_tarih;
                 $preReservation->payment_type = $req->payment_type;
+                $preReservation->payment_method = 'vakif';
                 $preReservation->idnumber = $req->idnumber;
                 $preReservation->address = $req->address;
                 $preReservation->tc = $req->tc;
