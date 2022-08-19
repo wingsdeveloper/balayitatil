@@ -26,28 +26,43 @@
 
 @push('javascripts')
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/card/1.3.1/js/card.min.js"></script>
+<script src="{{ asset('js/card-new.js') }}"></script>
+
+
 <script>
-    new Card({
-        form: 'form',
-        container: '.card',
-        formSelectors: {
-            numberInput: 'input[name=number]',
-            expiryInput: 'input[name=expiry]',
-            cvcInput: 'input[name=cvv]',
-            nameInput: 'input[name=cart_name]'
-        },
+    var card = new Card({
+    // a selector or DOM element for the form where users will
+    // be entering their information
+    form: 'form', // *required*
+    // a selector or DOM element for the container
+    // where you want the card to appear
+    container: '.card', // *required*
 
-        width: 390, // optional — default 350px
-        formatting: true,
+    formSelectors: {
+        numberInput: 'input[name=number]',
+        expiryInput: 'input[name=expiry]',
+        cvcInput: 'input[name=cvv]',
+        nameInput: 'input[name=cart_name]'
+    },
 
-        placeholders: {
-            number: '•••• •••• •••• ••••',
-            name: 'Ad Soyad',
-            expiry: "{{ ($req['payment_method']=='vakif')?'••/••••':'••/••' }}",
-            cvc: '•••'
-        }
-    })
+    width: 390, // optional — default 350px
+    formatting: true, // optional - default true
+
+    // Default placeholders for rendered fields - optional
+    placeholders: {
+        number: '•••• •••• •••• ••••',
+        name: 'Ad Soyad',
+        expiry: "{{ ($req['payment_method']=='vakif')?'••/••••':'••/••' }}",
+        cvc: '•••'
+    },
+
+    masks: {
+        cardNumber: '•' // optional - mask card number
+    },
+
+    // if true, will log helpful messages for setting up Card
+    debug: false // optional - default false
+});
 </script>
    
      
