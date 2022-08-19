@@ -23,7 +23,32 @@
 
     @endif
 @endpush
+
 @push('javascripts')
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/card/1.3.1/js/card.min.js"></script>
+<script>
+    new Card({
+        form: 'form',
+        container: '.card',
+        formSelectors: {
+            numberInput: 'input[name=number]',
+            expiryInput: 'input[name=expiry]',
+            cvcInput: 'input[name=cvv]',
+            nameInput: 'input[name=cart_name]'
+        },
+
+        width: 390, // optional — default 350px
+        formatting: true,
+
+        placeholders: {
+            number: '•••• •••• •••• ••••',
+            name: 'Ad Soyad',
+            expiry: "{{ ($req['payment_method']=='vakif')?'••/••••':'••/••' }}",
+            cvc: '•••'
+        }
+    })
+</script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script>
     <script>
         $(document).ready(function() {
@@ -644,7 +669,7 @@
                                </label>
                            </div>
                            <div class="Rez-left-payment-item-right">
-                               <input type="text" name="number" id="creditcard" data-inputmask="'mask': '9999 9999 9999 9999'" class="form-control" placeholder="0000-0000-0000-0000"/>
+                               <input type="text" name="number" id="creditcard"  class="form-control" placeholder="0000-0000-0000-0000"/>
                            </div>
                         </div>
                         <div class="Rez-left-payment-item">
@@ -684,6 +709,93 @@
                                       class="form-control" />
                            </div>
                         </div>
+                        <div class="Rez-left-payment-item">
+
+                            <div class="Rez-left-payment-item-left">
+                            <label for="">ÖDENECEK TUTAR
+                                <span>Yerinizi ayırtmak için ödenecek tutar</span>
+                            </label>
+                            </div>
+
+                                <div class="Rez-left-payment-item-right">
+                                <div class="form-row">
+                                <div class="form-group col-md-9">
+                                <input type="number" name="total"
+                                        class="form-control" />
+                                </div>
+                                    <div class="form-group col-md-3">
+                                    <select name="currency_code" class="form-control">
+                                                        @foreach($currencies as $currency)
+                                                            <option value="{{ $currency->code }}">{{ $currency->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                </div>
+                            </div>
+
+                                    </div>
+
+                        </div>
+
+
+                    </div>
+                    <div id="odemeFormu" style="hidden"></div>
+                    @endif
+                    @if($req['payment_method']=="vakif" )
+                    <div class="card">
+
+                        <div class="Rez-left-payment-item">
+                           <div class="Rez-left-payment-item-left">
+                               <label for="">Kart Numarası
+                                   <span>16 haneli kart numaranız</span>
+                               </label>
+                           </div>
+                           <div class="Rez-left-payment-item-right">
+                               <input type="text" name="number" id="creditcard" data-inputmask="'mask': '9999 9999 9999 9999'" class="form-control" placeholder="0000-0000-0000-0000"/>
+                           </div>
+                        </div>
+                        <div class="Rez-left-payment-item">
+                            <div class="Rez-left-payment-item-left">
+                              <label for="">Ad Soyad
+                                  <span>Kart Sahibinin adı soyadı</span>
+                              </label>
+                          </div>
+                            <div class="Rez-left-payment-item-right">
+                             <input type="text" name="cart_name"
+                                    class="form-control"/>
+                         </div>
+                        </div>
+                        <div class="Rez-left-payment-item">
+                            <div class="Rez-left-payment-item-left">
+                               <label for="">SKT
+                                   <span>Son kullanma tarihi</span>
+                               </label>
+                           </div>
+
+                            <div class="Rez-left-payment-item-right">
+                               <input type="text" placeholder="MM/YYYY" name="expiry"
+                                      class="form-control" />
+                           </div>
+
+                        </div>
+
+                        <div class="Rez-left-payment-item">
+
+                            <div class="Rez-left-payment-item-left">
+                             <label for="">Kart Tipi
+                                 <span>Kartın ön yüzündeki tip bilgisi</span>
+                             </label>
+                         </div>
+
+                            <div class="Rez-left-payment-item-right">
+                                <select name="brand_name" class="form-control">
+                                    <option value="100">VISA</option>
+                                    <option value="200">MASTERCARD</option>
+                                    <option value="300">TROY</option>
+                                
+                                </select>
+                           </div>
+                        </div>
+                       
                         <div class="Rez-left-payment-item">
 
                             <div class="Rez-left-payment-item-left">

@@ -768,6 +768,23 @@ class ReservationController extends Controller
                 return app(PaymentController::class)->post($data);
             }
 
+            if ($pre->payment_method == "vakif") {
+                $tmp = explode('/', request()->expiry);
+                $data = [
+                    'total' => $req->total,
+                    'number' => $req->number,
+                    'year' => trim($tmp[1]),
+                    'month' => trim($tmp[0]),
+                    'brand_name' => $req->brand_name,
+                    'currency_code' => $req->currency_code,
+                    'code' => $pre->code,
+                    'name' => $req->cart_name,
+                    'ip' => $req->ip()
+                ];
+
+                return app(PaymentController::class)->postVakif($data);
+            }
+
             if ($pre->payment_method == "iyzico") {
                 $pc = new PaymentController;
                 $iyziData = $pc->iyzicoData($pre->code);

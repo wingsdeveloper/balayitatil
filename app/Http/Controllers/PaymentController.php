@@ -67,6 +67,87 @@ class PaymentController extends Controller
         endif;
     }
 
+/* Vakıf */
+public function postVakif($postData){
+
+    $oid='VK-MAN-PAY-' . date('Ymds') . rand(10000, 99999);
+    $data = (new \App\Repo\Pos\Vakifbank())
+    ->setMerchantId("000000006097810")
+    ->setMerchantPassword("Fo5n4H8N")
+    ->setTerminalNo("VP782406")
+    ->setOrderId($oid)
+    ->setCardNumber(str_replace(' ', '', $postData['number']))
+    ->setExpiryDate(substr($postData['year'],-2).$postData['month'])
+    ->setPurchaseAmount($postData['total'])
+    ->setCurrency($postData['currency_code'])
+    ->setBrandName($postData['brand_name'])
+    ->setSuccessUrl(action('PaymentController@postSuccessVakif'))
+    ->setFailureUrl(action('PaymentController@postErrorVakif'))
+    ->check();
+
+
+    $this->repo->reservation_code = $postData['code'];
+    $this->repo->url = route('odemeYap', ['code' => $postData['code']]);
+    $this->repo->order_id = $oid;
+    $this->repo->name = $postData['name'];
+    $this->repo->currency_code = $postData['currency_code'];
+    $this->repo->total = $postData['total'];
+    $this->repo->ip = $postData['ip'];
+    $this->repo->save();
+
+    $postData['oid']=$oid;
+    session()->put('payment', $postData); // sonraki adım için bilgiler sessionda tutuluyor
+    
+    return view('payment.error', ['code' => $postData['code'],'error_message'=>$data['text']]);
+  
+    
+  
+}
+
+
+public function postSuccessVakif(Request $request)
+{
+  
+    $notify = new ManuelPayment;
+
+  $result = (new \App\Repo\Pos\Vakifbank())
+    ->setMerchantId("000000006097810")
+    ->setMerchantPassword("Fo5n4H8N")
+    ->setTerminalNo("VP782406")
+    ->setCardNumber(str_replace(' ', '', session()->get('payment.number')))
+    ->setExpiryDate(session()->get('payment.year').session()->get('payment.month'))
+    ->setPurchaseAmount(session()->get('payment.total'))
+    ->setCurrency(session()->get('payment.currency_code'))
+    ->getPayment($request);
+    if ($result['ResultCode'] != '0000') {
+        // Para çekimi başarısız.
+        $this->repo->where('order_id', session()->get('payment.oid'))->update(['message' => $result['ResultDetail'], 'status' => 'error']);
+        return view('payment.error', ['code' => session()->get('payment.code'),'error_message'=>$result['ResultDetail']]);   
+    }
+ 
+    
+
+ $this->repo->where('order_id', session()->get('payment.oid'))->update(['status' => 'success']);
+    try {
+        event(new YeniOdemeAlindi(session()->get('payment.oid')));
+        $notify->notifyWunderList(session()->get('payment.oid'));
+
+    } catch (\Exception $e) {
+
+    }
+    return redirect()->route('odemeLanding', ['order_id' => session()->get('payment.oid')]); 
+
+}
+
+public function postErrorVakif()
+    {
+        $error = 'İşlem başarısız';
+        $this->repo->where('order_id', session()->get('payment.oid'))->update(['message' => $error, 'status' => 'error']);
+
+        return view('payment.error', ['code' => session()->get('payment.code'),'error_message'=>$error]);
+    }
+    
+    /*TEB */
     public function post($postData)
     {
         

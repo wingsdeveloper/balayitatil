@@ -19,7 +19,7 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        'odeme-yap', 'odeme-yap-basarili', 'odeme-yap-basarisiz', 'odeme-yap-2', 'odeme-yap-2-basarili', 'odeme-yap-2-basarisiz',
+        'odeme-yap-sonuc','vakif-odeme-yap-basarisiz','odeme-yap', 'odeme-yap-basarili', 'odeme-yap-basarisiz', 'odeme-yap-2', 'odeme-yap-2-basarili', 'odeme-yap-2-basarisiz',
         'test-iyzico', 'odeme-yap-iyzico/*','odeme-yap-iyzico/*','odeme-yap2'
     ];
 }

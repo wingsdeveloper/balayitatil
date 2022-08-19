@@ -146,10 +146,13 @@ Route::get('facebook.xml', 'FacebookController@index');
 //Route::get('odeme-yap', 'PaymentController@index')->name('kredikart');
 Route::post('odeme-yap', 'PaymentController@post');
 Route::post('odeme-yap-iyzico/{code}/', 'PaymentController@iyzicoPost')->name('iyzicoPost');
+Route::post('odeme-yap-vakif', 'PaymentController@postVakif');
 
 Route::get('odeme-talebi-basari/{code}', 'PaymentController@iyzicoLandingPage')->name('iyzicoLanding');
 Route::post('odeme-yap-basarili', 'PaymentController@postSuccess');
 Route::post('odeme-yap-basarisiz', 'PaymentController@postError');
+Route::post('odeme-yap-sonuc', 'PaymentController@postSuccessVakif')->name('vakifSuccess');
+Route::post('vakif-odeme-yap-basarisiz', 'PaymentController@postErrorVakif')->name('vakifError');
 
 Route::get('odeme-yap-2', 'PaymentController@index2');
 Route::post('odeme-yap-2', 'PaymentController@post2');
