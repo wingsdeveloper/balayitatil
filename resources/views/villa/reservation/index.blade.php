@@ -679,7 +679,7 @@
                                </label>
                            </div>
                            <div class="Rez-left-payment-item-right">
-                               <input type="text" name="number" id="creditcard"  class="form-control" placeholder="0000-0000-0000-0000"/>
+                               <input type="tel" name="number" id="creditcard"  class="form-control" placeholder="0000-0000-0000-0000"/>
                            </div>
                         </div>
                         <div class="Rez-left-payment-item">
@@ -701,7 +701,7 @@
                            </div>
 
                             <div class="Rez-left-payment-item-right">
-                               <input type="text" placeholder="MM/YY" name="expiry"
+                               <input type="tel" placeholder="MM/YY" name="expiry"
                                       class="form-control" />
                            </div>
 
@@ -715,7 +715,7 @@
                          </div>
 
                             <div class="Rez-left-payment-item-right">
-                               <input type="text" name="cvv"
+                               <input type="number" name="cvv"
                                       class="form-control" />
                            </div>
                         </div>
